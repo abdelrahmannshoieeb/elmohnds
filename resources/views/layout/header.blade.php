@@ -256,11 +256,11 @@
                                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"><a href="#">
                                                 <div class="menu-item-wrap"><span class="menu-item-title">Products</span></div>
                                             </a></li>
-                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"><a href="blog/index.html">
-                                                <div class="menu-item-wrap"><span class="menu-item-title">Blog</span></div>
+                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"><a href="{{ route('wishlist') }}">
+                                                <div class="menu-item-wrap"><span class="menu-item-title">wishlist</span></div>
                                             </a></li>
-                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"><a href="#">
-                                                <div class="menu-item-wrap"><span class="menu-item-title">Features</span></div>
+                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"><a href="{{ route('cart') }}">
+                                                <div class="menu-item-wrap"><span class="menu-item-title">cart</span></div>
                                             </a></li>
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"><a href="{{ route('contact') }}">
                                                 <div class="menu-item-wrap"><span class="menu-item-title">contact</span></div>

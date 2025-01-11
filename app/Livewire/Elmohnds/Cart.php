@@ -93,6 +93,8 @@ class Cart extends Component
                 'updated_at' => now(),
             ]);
         }
+
+        session()->put('cartid', $cartId);
         session()->flash('message', 'Cart saved successfully!');
     }
     public function render()

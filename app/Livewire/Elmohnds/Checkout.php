@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Elmohnds;
 
+use App\Models\Cart;
 use App\Models\Shiping;
 use Livewire\Component;
 
@@ -18,7 +19,7 @@ class Checkout extends Component
     public $items = [];
 
 
-    public $name, $address, $phone, $email, $city;
+    public $name, $address, $phone, $email, $city , $government;
     public function mount()
     {
         $this->cities = Shiping::all();
@@ -44,7 +45,7 @@ class Checkout extends Component
                 }
             }
         }
-
+        // dd(session()->all());
     }
 
    
@@ -55,18 +56,65 @@ class Checkout extends Component
     {
         $this->shipping = $this->getShippingForCity($cityId);
     }
-
-    // Fetch shipping cost for the selected city from the shipping table
     private function getShippingForCity($cityId)
     {
         $shipping = Shiping::where('id', $cityId)->first();
         $this ->shipping = $shipping->price;
+        $this ->government = $shipping->name;
         return $shipping ? $shipping->price : 10; // Default to 10 if no rate found
     }
 
 
     public function placeOrder () {
 
+        $this->validate([
+            'name' => 'required|string|max:255',
+            'address' => 'string|max:255',
+            'phone' => 'required|string|max:15',
+            'email' => 'email|max:255',
+            'city' => 'required|string|max:255',
+        ]);
+        $cart = session()->get('cart');
+        if ( empty($cart)) {
+            session()->flash('success', '  اختر المنتجات اولا');
+        }
+        else {
+          // dd([
+        //     'name' => $this->name,
+        //     'address' => $this->address,
+        //     'phone' => $this->phone,
+        //     'email' => $this->email,
+        //     'city' => $this->city,
+        //     'government' => $this->government,
+
+        // ]);
+
+        $order = new \App\Models\Order([
+            'name' => $this->name,
+            'landmark' => $this->address,
+            'phone' => $this->phone,
+            'email' => $this->email,
+            'city' => $this->city,
+            'government' => $this->government,
+            'shipping' => $this->shipping,
+            'subtotal' => $this->subtotal,
+            'total' => $this->subtotal + $this->shipping,
+            'cart_id' => session()->get('cartid'),
+        ]);
+        $order->save();
+        $cart = Cart::find(session()->get('cartid'));
+        $cart->status = 'pending';
+        $cart->save();
+        session()->forget('cartid');
+        session()->forget('cart');
+
+        $this->reset([
+            'name', 'address', 'phone', 'email', 'city',
+        ]);
+        
+        session()->flash('success', '  تم ارسال الطلب بنجاح');
+        }
+        
         
     }
     public function render()
