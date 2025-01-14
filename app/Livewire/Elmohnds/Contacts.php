@@ -32,6 +32,12 @@ class Contacts extends Component
 
         redirect()->route('home');
     }
+
+    public function goToPrevious()
+    {
+        return redirect()->route('home');
+
+    }
     public function render()
     {
         return view('livewire.elmohnds.contacts');

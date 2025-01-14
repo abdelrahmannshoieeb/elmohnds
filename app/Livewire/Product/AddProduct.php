@@ -22,6 +22,7 @@ class AddProduct extends Component
     public $gallary = [];
     public $stock;
     public $isActive;
+    public $rating;
     public $discount;
     public $category_id;
     public $brand_id;
@@ -41,6 +42,7 @@ class AddProduct extends Component
         'description' => 'nullable|string',
         'price' => 'required|numeric',
         'stock' => 'nullable|numeric',
+        'rating' => 'nullable|numeric|min:0|max:5',
         'discount' => 'nullable|numeric',
         'isActive' => 'boolean',
         'category_id' => 'nullable|exists:categories,id',
@@ -101,6 +103,7 @@ class AddProduct extends Component
             'desc' => $this->description,
             'price' => $this->price,
             'stock' => $this->stock,
+            'rating' => $this->rating,
             'status' => $this->isActive ? 'active' : 'inactive',
             'category_id' => $this->category_id,
             'brand_id' => $this->brand_id,
@@ -118,7 +121,7 @@ class AddProduct extends Component
             ]);
         }
 
-        $this->reset('name', 'description','discount' ,'price', 'stock', 'isActive', 'category_id', 'brand_id', 'image', 'gallary', 'customAttributes');
+        $this->reset('name', 'description', 'discount' ,'price', 'stock', 'isActive', 'category_id', 'brand_id', 'image', 'gallary', 'customAttributes');
         session()->flash('message', 'تم اضافة المنتج بنجاح');
     }
     public function addAttribute()

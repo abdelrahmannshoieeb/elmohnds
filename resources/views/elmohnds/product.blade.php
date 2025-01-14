@@ -1272,9 +1272,9 @@
 									aria-expanded="true">
 									<div class="tab-content-wrapper">
 
-										<h3 class="entry-product-section-heading product-description-heading">Description</h3>
+										<h3 class="entry-product-section-heading product-description-heading">الوصف</h3>
 
-										<p>Pure cotton that feels soft and nice against your skin.</p>
+										<p>{{ $product->desc }}.</p>
 
 									</div>
 								</div>
@@ -1292,7 +1292,7 @@
 												<div class="review-rating-template-wrapper no-reviews">
 
 													<div class="product-reviews-summary-bar">
-														<h4 class="heading">Rating &amp; Review</h4>
+														<h4 class="heading">التعليقات والتقييمات</h4>
 														<div class="product-reviews-summary-bar-info">
 															<div class="product-reviews-summary-bar-details">
 																<div class="tm-star-rating style-01 entry-product-star-rating">
@@ -1309,13 +1309,13 @@
 																</div>
 
 																<div class="reviews-count">
-																	Based on 0 Reviews </div>
+																	بناء على المراجعات </div>
 															</div>
 															<div class="tm-button-wrapper"> <a data-minimog-toggle="modal" data-minimog-target="#modal-product-write-review" class="tm-button style-border tm-button-nm" href="#">
 																	<div class="button-content-wrapper">
 
 
-																		<span class="button-text">Write a review</span>
+																		<span class="button-text">اكتب تعليق</span>
 
 
 																	</div>
@@ -1330,7 +1330,18 @@
 
 														@if ($product->reviews->count() > 0)
 														@foreach ($product->reviews as $review)
-														<p class="woocommerce-noreviews">{{ $review->comment }}</p>
+														<p class="woocommerce-noreviews ">
+															<a href="#" class="header-icon"
+																aria-label="Log in">
+																<span class="icon">
+																	<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M14.5156 12.875C15.9479 12.875 17.1719 13.3958 18.1875 14.4375C19.2292 15.4531 19.75 16.6771 19.75 18.1094V19.125C19.75 19.6458 19.5677 20.0885 19.2031 20.4531C18.8385 20.8177 18.3958 21 17.875 21H4.125C3.60417 21 3.16146 20.8177 2.79688 20.4531C2.43229 20.0885 2.25 19.6458 2.25 19.125V18.1094C2.25 16.6771 2.75781 15.4531 3.77344 14.4375C4.8151 13.3958 6.05208 12.875 7.48438 12.875C7.82292 12.875 8.31771 12.9792 8.96875 13.1875C9.64583 13.3958 10.3229 13.5 11 13.5C11.6771 13.5 12.3542 13.3958 13.0312 13.1875C13.7083 12.9792 14.2031 12.875 14.5156 12.875ZM17.875 19.125V18.1094C17.875 17.1979 17.5365 16.4167 16.8594 15.7656C16.2083 15.0885 15.4271 14.75 14.5156 14.75C14.4375 14.75 14.0208 14.8542 13.2656 15.0625C12.5365 15.2708 11.7812 15.375 11 15.375C10.2188 15.375 9.45052 15.2708 8.69531 15.0625C7.96615 14.8542 7.5625 14.75 7.48438 14.75C6.57292 14.75 5.77865 15.0885 5.10156 15.7656C4.45052 16.4167 4.125 17.1979 4.125 18.1094V19.125H17.875ZM14.9844 10.6094C13.8906 11.7031 12.5625 12.25 11 12.25C9.4375 12.25 8.10938 11.7031 7.01562 10.6094C5.92188 9.51562 5.375 8.1875 5.375 6.625C5.375 5.0625 5.92188 3.73438 7.01562 2.64062C8.10938 1.54688 9.4375 1 11 1C12.5625 1 13.8906 1.54688 14.9844 2.64062C16.0781 3.73438 16.625 5.0625 16.625 6.625C16.625 8.1875 16.0781 9.51562 14.9844 10.6094ZM13.6562 3.96875C12.9271 3.23958 12.0417 2.875 11 2.875C9.95833 2.875 9.07292 3.23958 8.34375 3.96875C7.61458 4.69792 7.25 5.58333 7.25 6.625C7.25 7.66667 7.61458 8.55208 8.34375 9.28125C9.07292 10.0104 9.95833 10.375 11 10.375C12.0417 10.375 12.9271 10.0104 13.6562 9.28125C14.3854 8.55208 14.75 7.66667 14.75 6.625C14.75 5.58333 14.3854 4.69792 13.6562 3.96875Z" fill="#000000" />
+																	</svg> </span>
+															</a>
+															{{ $review->comment }}
+
+															<p style = "float:left;"> 20{{$review ->created_at->format ('y-m-d') }}</p>
+														</p>
 														@endforeach
 														@else
 														<p class="woocommerce-noreviews">There are no reviews yet.</p>
@@ -1351,7 +1362,7 @@
 				<div class="related products entry-product-section">
 					<div class="container-broad">
 						<div class="entry-product-block">
-							<h2 class="entry-product-section-heading">Related products</h2>
+							<h2 class="entry-product-section-heading">منتجات متعلقة</h2>
 
 							<div
 								class="tm-swiper tm-slider minimog-product group-style-06 style-carousel-06 caption-style-06" data-items-desktop="5" data-items-tablet-extra="3" data-items-mobile-extra="2" data-gutter-desktop="30" data-nav="1" data-gutter-tablet-extra="20" data-gutter-mobile-extra="16" style="--items-desktop: 5;--items-tablet-extra: 3;--items-mobile-extra: 2;--gutter-desktop: 30;--gutter-tablet-extra: 20;--gutter-mobile-extra: 16;">
@@ -1526,8 +1537,8 @@
 		</div>
 	</div>
 	<div id="woosw_wishlist" class="woosw-popup woosw-popup-center"></div>
-	
-	
+
+
 	<div id="popup-search" class="page-search-popup" aria-hidden="true" role="dialog" hidden>
 		<div class="inner scroll-y">
 			<div class="container-wide">
@@ -1702,1511 +1713,573 @@
 			</div>
 		</div>
 	</div>
-	<div id="page-mobile-main-menu" class="page-mobile-main-menu" aria-hidden="true" role="dialog" hidden>
-		<div class="inner">
-			<div id="page-close-mobile-menu" class="page-close-mobile-menu">
-				<span class="fal fa-times"></span>
-			</div>
-			<div class="page-mobile-menu-content scroll-y">
-				<ul class="mobile-nav-tabs" role="tablist">
-					<li class="active"
-						id="tab-title-main-menu"
-						aria-controls="tab-content-main-menu"
-						role="tab"
-						aria-selected="true"
-						tabindex="0">Menu</li>
-					<li id="tab-title-cat-menu"
-						aria-controls="tab-content-cat-menu"
-						role="tab"
-						aria-selected="false"
-						tabindex="-1">Categories</li>
-				</ul>
+	<livewire:elmohnds.aside>
 
-				<div class="mobile-menu-nav-menus">
-					<div class="mobile-nav-tab mobile-nav-tab-main-menu"
-						id="tab-content-main-menu"
-						aria-labelledby="tab-title-main-menu"
-						role="tabpanel"
-						tabindex="0"
-						aria-expanded="true">
-						<ul id="mobile-menu-primary" class="menu__container">
-							<li class="menu-item-open-modal-demo-preview menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-330 level-1"><a href="../../index.html">
-									<div class="menu-item-wrap"><span class="menu-item-title">Home</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-40 level-1"><a href="../../shop/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-title">Shop</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"><a href="#">
-									<div class="menu-item-wrap"><span class="menu-item-title">Products</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"><a href="../../blog/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-title">Blog</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"><a href="#">
-									<div class="menu-item-wrap"><span class="menu-item-title">Features</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"><a href="../../store-listing/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-title">Store List</span></div>
-								</a></li>
-						</ul>
+		<div id="page-mobile-tabs" class="page-mobile-tabs">
+			<div class="tabs">
+
+				<a href="{{ route('home') }}" class="mobile-tab-link" aria-label="Home">
+					<div class="icon">
+						<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M21.779 10.6767L12.369 2.94569C11.9843 2.62539 11.4995 2.45 10.999 2.45C10.4984 2.45 10.0136 2.62539 9.62892 2.94569L0.218899 10.6767C0.157352 10.7282 0.106553 10.7913 0.0694048 10.8625C0.0322563 10.9336 0.00948516 11.0114 0.00239165 11.0913C-0.00470186 11.1712 0.00402122 11.2518 0.0280628 11.3284C0.0521044 11.405 0.0909935 11.476 0.14251 11.5376L0.533623 12.0074C0.637642 12.1316 0.786713 12.2094 0.948074 12.2237C1.10943 12.238 1.26988 12.1877 1.39415 12.0838L2.44336 11.2221V18.3381C2.44426 18.662 2.57333 18.9724 2.80234 19.2014C3.03136 19.4304 3.34171 19.5595 3.66559 19.5604H8.55451C8.87838 19.5595 9.18873 19.4304 9.41775 19.2014C9.64677 18.9724 9.77583 18.662 9.77674 18.3381V14.3659H12.2212V18.3381C12.2221 18.662 12.3512 18.9724 12.5802 19.2014C12.8092 19.4304 13.1195 19.5595 13.4434 19.5604H18.3323C18.6547 19.5597 18.9638 19.4319 19.1926 19.2049C19.4214 18.9778 19.5515 18.6697 19.5546 18.3473V11.2213L20.6061 12.0853C20.7303 12.1892 20.8908 12.2395 21.0521 12.2252C21.2135 12.2109 21.3626 12.1331 21.4666 12.0089L21.8573 11.5395C21.909 11.4778 21.948 11.4065 21.9721 11.3296C21.9961 11.2528 22.0048 11.172 21.9975 11.0918C21.9902 11.0116 21.9672 10.9337 21.9297 10.8624C21.8922 10.7912 21.841 10.7281 21.779 10.6767V10.6767ZM17.7155 17.727H14.0545V13.7548C14.0536 13.4309 13.9246 13.1206 13.6956 12.8915C13.4665 12.6625 13.1562 12.5335 12.8323 12.5326H9.16562C8.84174 12.5335 8.53139 12.6625 8.30238 12.8915C8.07336 13.1206 7.9443 13.4309 7.94339 13.7548V17.727H4.2767V9.71646L10.999 4.19274L17.7212 9.71417L17.7155 17.727Z" fill="black" />
+						</svg>
 					</div>
-
-					<div class="mobile-nav-tab mobile-nav-tab-cat-menu"
-						id="tab-content-cat-menu"
-						aria-labelledby="tab-title-cat-menu"
-						role="tabpanel"
-						tabindex="0"
-						hidden
-						aria-expanded="false">
-						<ul id="menu-product-categories-1" class="product-category-dropdown menu__container">
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-888 level-1 menu-item-has-icon"><a href="../../product-category/furniture/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M12.5 6.25H15V8.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M7.5 13.75H5V11.25" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M16.875 3.75H3.125C2.77982 3.75 2.5 4.02982 2.5 4.375V15.625C2.5 15.9702 2.77982 16.25 3.125 16.25H16.875C17.2202 16.25 17.5 15.9702 17.5 15.625V4.375C17.5 4.02982 17.2202 3.75 16.875 3.75Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Furniture</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-product-ancestor menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"><a href="../../product-category/beds-mattresses/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M8.125 13.125V6.25H16.25C16.913 6.25 17.5489 6.51339 18.0178 6.98223C18.4866 7.45107 18.75 8.08696 18.75 8.75V13.125" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M1.25 16.25V3.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M1.25 13.125H18.75V16.25" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M8.125 6.25H1.25" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Beds &amp; Mattresses</span><span class="toggle-sub-menu"> </span></div>
-								</a>
-								<ul class="sub-menu children mega-menu">
-									<li class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305">
-										<div class="mega-menu-content">
-											<div data-elementor-type="wp-post" data-elementor-id="1298" class="elementor elementor-1298">
-												<div class="elementor-inner">
-													<div class="elementor-section-wrap">
-														<section class="elementor-section elementor-top-section elementor-element elementor-element-8e1d000 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch" data-id="8e1d000" data-element_type="section">
-															<div class="elementor-container elementor-column-gap-extended">
-																<div class="elementor-row">
-																	<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-8b6c475" data-id="8b6c475" data-element_type="column">
-																		<div class="elementor-column-wrap elementor-element-populated">
-																			<div class="elementor-widget-wrap">
-																				<div class="elementor-element elementor-element-60475cc elementor-widget elementor-widget-heading" data-id="60475cc" data-element_type="widget" data-widget_type="heading.default">
-																					<div class="elementor-widget-container">
-																						<h2 class="elementor-heading-title elementor-size-default">Beds</h2>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-b358feb elementor-widget elementor-widget-spacer" data-id="b358feb" data-element_type="widget" data-widget_type="spacer.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-spacer">
-																							<div class="elementor-spacer-inner"></div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-e8afc0b elementor-widget elementor-widget-tm-simple-list" data-id="e8afc0b" data-element_type="widget" data-widget_type="tm-simple-list.default">
-																					<div class="elementor-widget-container">
-																						<div class="minimog-simple-list minimog-simple-list--style-03">
-																							<div class="item elementor-repeater-item-9c988d6 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/beds/beds-with-storage/index.html"> Beds with storage
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-3273de3 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/beds/cribs/index.html"> Cribs
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-ae766a0 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/beds/guest-beds-daybeds/index.html"> Guest beds &amp; daybeds
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-6be6940 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/beds/kids-beds/index.html"> Kids beds
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-f3b149c truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/beds/queen-king-size/index.html"> Queen &amp; King size
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-a895da8 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/beds/twin-beds/index.html"> Twin beds
-
-																								</a>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-9f68a3e" data-id="9f68a3e" data-element_type="column">
-																		<div class="elementor-column-wrap elementor-element-populated">
-																			<div class="elementor-widget-wrap">
-																				<div class="elementor-element elementor-element-6404ce2 elementor-widget elementor-widget-heading" data-id="6404ce2" data-element_type="widget" data-widget_type="heading.default">
-																					<div class="elementor-widget-container">
-																						<h2 class="elementor-heading-title elementor-size-default">Mattresses</h2>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-0aabf9e elementor-widget elementor-widget-spacer" data-id="0aabf9e" data-element_type="widget" data-widget_type="spacer.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-spacer">
-																							<div class="elementor-spacer-inner"></div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-80795f1 elementor-widget elementor-widget-tm-simple-list" data-id="80795f1" data-element_type="widget" data-widget_type="tm-simple-list.default">
-																					<div class="elementor-widget-container">
-																						<div class="minimog-simple-list minimog-simple-list--style-03">
-																							<div class="item elementor-repeater-item-9c988d6 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/mattresses/crib-mattresses/index.html"> Crib mattresses
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-3273de3 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/mattresses/foam-and-memory-foam/index.html"> Foam and memory foam
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-ae766a0 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/mattresses/mattress-toppers/index.html"> Mattress toppers
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-4b989d7 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/mattresses/spring-mattresses/index.html"> Spring mattresses
-
-																								</a>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-4e2db18" data-id="4e2db18" data-element_type="column">
-																		<div class="elementor-column-wrap elementor-element-populated">
-																			<div class="elementor-widget-wrap">
-																				<div class="elementor-element elementor-element-16d8c3b elementor-widget elementor-widget-heading" data-id="16d8c3b" data-element_type="widget" data-widget_type="heading.default">
-																					<div class="elementor-widget-container">
-																						<h2 class="elementor-heading-title elementor-size-default">Bedding</h2>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-5d6d640 elementor-widget elementor-widget-spacer" data-id="5d6d640" data-element_type="widget" data-widget_type="spacer.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-spacer">
-																							<div class="elementor-spacer-inner"></div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-c5d41c6 elementor-widget elementor-widget-tm-simple-list" data-id="c5d41c6" data-element_type="widget" data-widget_type="tm-simple-list.default">
-																					<div class="elementor-widget-container">
-																						<div class="minimog-simple-list minimog-simple-list--style-03">
-																							<div class="item elementor-repeater-item-9c988d6 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/bedding/bed-linen/index.html"> Bed linen
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-3273de3 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/bedding/bed-skirts/index.html"> Bed skirts
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-ae766a0 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/bedding/bedspreads/index.html"> Bedspreads
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-7fbae5c truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/bedding/comforters-duvet-inserts/index.html"> Comforters &amp; duvet inserts
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-2e6a9a8 truncated">
-																								<a class="link" href="../../product-category/beds-mattresses/bedding/pillows/index.html"> Pillows
-
-																								</a>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb" data-id="877ceeb" data-element_type="column">
-																		<div class="elementor-column-wrap elementor-element-populated">
-																			<div class="elementor-widget-wrap">
-																				<div class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner" data-id="9c6cc46" data-element_type="widget" data-widget_type="tm-banner.default">
-																					<div class="elementor-widget-container">
-																						<a class="minimog-banner minimog-box link-secret" href="../../shop/index.html">
-																							<div class="minimog-image">
-																								<m-background data-background-loading class="image" data-src="../../../../minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/megamenu_bed_banner.jpg">
-																									<img loading="lazy" src="../../../../minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/megamenu_bed_banner.jpg" alt="Lazy background" />
-																								</m-background>
-																							</div>
-																							<div class="content-wrap">
-																								<div class="content-wrap__inner">
-																									<h3 class="title">Leather & faux
-																										leather sofas</h3>
-																								</div>
-																								<div class="content-wrap__bottom">
-																									<div class="tm-button-wrapper">
-																										<div class="tm-button style-bottom-line tm-button-nm">
-																											<div class="button-content-wrapper">
-
-																												<span class="button-text">Shop Now</span>
-
-
-																											</div>
-																										</div>
-																									</div>
-																								</div>
-																							</div>
-																						</a>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</section>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-895 level-1 menu-item-has-icon"><a href="../../product-category/storage-organization/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M17.5 13.8532V6.14673C17.5 6.03583 17.4705 5.92693 17.4145 5.8312C17.3585 5.73547 17.2781 5.65636 17.1814 5.60199L10.3064 1.73481C10.2129 1.68218 10.1073 1.65454 10 1.65454C9.89266 1.65454 9.78714 1.68218 9.69359 1.73481L2.81859 5.60199C2.72193 5.65636 2.64148 5.73547 2.58549 5.8312C2.52951 5.92693 2.5 6.03583 2.5 6.14673V13.8532C2.5 13.9641 2.52951 14.073 2.58549 14.1687C2.64148 14.2644 2.72193 14.3435 2.81859 14.3979L9.69359 18.2651C9.78714 18.3177 9.89266 18.3454 10 18.3454C10.1073 18.3454 10.2129 18.3177 10.3064 18.2651L17.1814 14.3979C17.2781 14.3435 17.3585 14.2644 17.4145 14.1687C17.4705 14.073 17.5 13.9641 17.5 13.8532Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M13.8298 11.9149V7.85242L6.25 3.67188" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M17.4134 5.83025L10.0738 10L2.58618 5.82947" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M10.0738 10L10.0005 18.3454" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Storage &amp; Organization</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-896 level-1 menu-item-has-icon"><a href="../../product-category/working-from-home/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M3.125 13.75V5.625C3.125 5.29348 3.2567 4.97554 3.49112 4.74112C3.72554 4.5067 4.04348 4.375 4.375 4.375H15.625C15.9565 4.375 16.2745 4.5067 16.5089 4.74112C16.7433 4.97554 16.875 5.29348 16.875 5.625V13.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M1.875 13.75H18.125V15C18.125 15.3315 17.9933 15.6495 17.7589 15.8839C17.5245 16.1183 17.2065 16.25 16.875 16.25H3.125C2.79348 16.25 2.47554 16.1183 2.24112 15.8839C2.0067 15.6495 1.875 15.3315 1.875 15V13.75Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M11.25 6.875H8.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Working From Home</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-892 level-1 menu-item-has-icon has-mega-menu"><a href="../../product-category/kitchen-appliances/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M11.4446 7.06955L15.625 11.25C15.625 11.25 10 18.75 1.875 16.875L15.4576 2.95761C15.6027 2.81245 15.775 2.69729 15.9646 2.61871C16.1542 2.54013 16.3574 2.49966 16.5626 2.49963C16.7678 2.4996 16.9711 2.54 17.1607 2.61853C17.3503 2.69705 17.5226 2.81216 17.6677 2.95728C17.8128 3.1024 17.9279 3.27468 18.0064 3.4643C18.085 3.65391 18.1254 3.85714 18.1253 4.06237C18.1253 4.2676 18.0848 4.47081 18.0063 4.6604C17.9277 4.84999 17.8125 5.02224 17.6674 5.16732L13.7325 9.35836" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Kitchen &amp; Appliances</span><span class="toggle-sub-menu"> </span></div>
-								</a>
-								<ul class="sub-menu children mega-menu">
-									<li class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1126">
-										<div class="mega-menu-content">
-											<div data-elementor-type="wp-post" data-elementor-id="1123" class="elementor elementor-1123">
-												<div class="elementor-inner">
-													<div class="elementor-section-wrap">
-														<section class="elementor-section elementor-top-section elementor-element elementor-element-7cc588e elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch" data-id="7cc588e" data-element_type="section">
-															<div class="elementor-container elementor-column-gap-extended">
-																<div class="elementor-row">
-																	<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-f9677f8" data-id="f9677f8" data-element_type="column">
-																		<div class="elementor-column-wrap elementor-element-populated">
-																			<div class="elementor-widget-wrap">
-																				<div class="elementor-element elementor-element-bbf2370 elementor-widget elementor-widget-heading" data-id="bbf2370" data-element_type="widget" data-widget_type="heading.default">
-																					<div class="elementor-widget-container">
-																						<h2 class="elementor-heading-title elementor-size-default">Appliances</h2>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-61705b6 elementor-widget elementor-widget-spacer" data-id="61705b6" data-element_type="widget" data-widget_type="spacer.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-spacer">
-																							<div class="elementor-spacer-inner"></div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-6cacaf4 elementor-widget elementor-widget-image" data-id="6cacaf4" data-element_type="widget" data-widget_type="image.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-image">
-																							<img width="300" height="150" src="../../../../minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/mega-cat-kitchen-1.jpg" class="attachment-full size-full wp-image-1130" alt="" srcset="https://minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/mega-cat-kitchen-1.jpg 300w, https://minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/mega-cat-kitchen-1-150x75.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" />
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-835ac1b elementor-widget elementor-widget-spacer" data-id="835ac1b" data-element_type="widget" data-widget_type="spacer.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-spacer">
-																							<div class="elementor-spacer-inner"></div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-512418d elementor-widget elementor-widget-tm-simple-list" data-id="512418d" data-element_type="widget" data-widget_type="tm-simple-list.default">
-																					<div class="elementor-widget-container">
-																						<div class="minimog-simple-list minimog-simple-list--style-03">
-																							<div class="item elementor-repeater-item-9c988d6 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/appliances/cooktops/index.html"> Cooktops
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-3273de3 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/appliances/dishwashers/index.html"> Dishwashers
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-ae766a0 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/appliances/microwaves/index.html"> Microwaves
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-6be6940 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/appliances/ovens/index.html"> Ovens
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-f3b149c truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/appliances/range-hoods/index.html"> Range hoods
-
-																								</a>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-9226a10" data-id="9226a10" data-element_type="column">
-																		<div class="elementor-column-wrap elementor-element-populated">
-																			<div class="elementor-widget-wrap">
-																				<div class="elementor-element elementor-element-b6a0ed3 elementor-widget elementor-widget-heading" data-id="b6a0ed3" data-element_type="widget" data-widget_type="heading.default">
-																					<div class="elementor-widget-container">
-																						<h2 class="elementor-heading-title elementor-size-default">Kitchen cabinets</h2>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-6132948 elementor-widget elementor-widget-spacer" data-id="6132948" data-element_type="widget" data-widget_type="spacer.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-spacer">
-																							<div class="elementor-spacer-inner"></div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-49f1493 elementor-widget elementor-widget-image" data-id="49f1493" data-element_type="widget" data-widget_type="image.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-image">
-																							<img width="300" height="150" src="../../../../minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/mega-cat-kitchen-2.jpg" class="attachment-full size-full wp-image-1131" alt="" srcset="https://minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/mega-cat-kitchen-2.jpg 300w, https://minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/mega-cat-kitchen-2-150x75.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" />
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-1e65c06 elementor-widget elementor-widget-spacer" data-id="1e65c06" data-element_type="widget" data-widget_type="spacer.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-spacer">
-																							<div class="elementor-spacer-inner"></div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-ea326f7 elementor-widget elementor-widget-tm-simple-list" data-id="ea326f7" data-element_type="widget" data-widget_type="tm-simple-list.default">
-																					<div class="elementor-widget-container">
-																						<div class="minimog-simple-list minimog-simple-list--style-03">
-																							<div class="item elementor-repeater-item-9c988d6 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/kitchen-cabinets/base-cabinets/index.html"> Base cabinets
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-3273de3 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/kitchen-cabinets/cabinets-for-built-in-appliances/index.html"> Cabinets for built-in appliances
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-ae766a0 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/kitchen-cabinets/wall-cabinets/index.html"> Wall cabinets
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-4b989d7 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/kitchen-cabinets/high-cabinets/index.html"> High cabinets
-
-																								</a>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-e219b76" data-id="e219b76" data-element_type="column">
-																		<div class="elementor-column-wrap elementor-element-populated">
-																			<div class="elementor-widget-wrap">
-																				<div class="elementor-element elementor-element-6e21993 elementor-widget elementor-widget-heading" data-id="6e21993" data-element_type="widget" data-widget_type="heading.default">
-																					<div class="elementor-widget-container">
-																						<h2 class="elementor-heading-title elementor-size-default">Faucets & sinks</h2>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-999d482 elementor-widget elementor-widget-spacer" data-id="999d482" data-element_type="widget" data-widget_type="spacer.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-spacer">
-																							<div class="elementor-spacer-inner"></div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-071e85e elementor-widget elementor-widget-image" data-id="071e85e" data-element_type="widget" data-widget_type="image.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-image">
-																							<img width="300" height="150" src="../../../../minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/mega-cat-kitchen-3.jpg" class="attachment-full size-full wp-image-1132" alt="" srcset="https://minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/mega-cat-kitchen-3.jpg 300w, https://minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/mega-cat-kitchen-3-150x75.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" />
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-7e247fc elementor-widget elementor-widget-spacer" data-id="7e247fc" data-element_type="widget" data-widget_type="spacer.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-spacer">
-																							<div class="elementor-spacer-inner"></div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-ac69b3a elementor-widget elementor-widget-tm-simple-list" data-id="ac69b3a" data-element_type="widget" data-widget_type="tm-simple-list.default">
-																					<div class="elementor-widget-container">
-																						<div class="minimog-simple-list minimog-simple-list--style-03">
-																							<div class="item elementor-repeater-item-9c988d6 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/kitchen-faucets-sinks/kitchen-faucets/index.html"> Kitchen faucets
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-3273de3 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/kitchen-faucets-sinks/kitchen-sinks/index.html"> Kitchen sinks
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-ae766a0 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/kitchen-faucets-sinks/sink-parts/index.html"> Sink parts
-
-																								</a>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-57f8ca3" data-id="57f8ca3" data-element_type="column">
-																		<div class="elementor-column-wrap elementor-element-populated">
-																			<div class="elementor-widget-wrap">
-																				<div class="elementor-element elementor-element-fb5c440 elementor-widget elementor-widget-heading" data-id="fb5c440" data-element_type="widget" data-widget_type="heading.default">
-																					<div class="elementor-widget-container">
-																						<h2 class="elementor-heading-title elementor-size-default">Other</h2>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-f2fc56b elementor-widget elementor-widget-spacer" data-id="f2fc56b" data-element_type="widget" data-widget_type="spacer.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-spacer">
-																							<div class="elementor-spacer-inner"></div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-2d30f84 elementor-widget elementor-widget-image" data-id="2d30f84" data-element_type="widget" data-widget_type="image.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-image">
-																							<img loading="lazy" width="300" height="150" src="../../../../minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/mega-cat-kitchen-4.jpg" class="attachment-full size-full wp-image-1133" alt="" srcset="https://minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/mega-cat-kitchen-4.jpg 300w, https://minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/mega-cat-kitchen-4-150x75.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" />
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-b99b78c elementor-widget elementor-widget-spacer" data-id="b99b78c" data-element_type="widget" data-widget_type="spacer.default">
-																					<div class="elementor-widget-container">
-																						<div class="elementor-spacer">
-																							<div class="elementor-spacer-inner"></div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="elementor-element elementor-element-435bcda elementor-widget elementor-widget-tm-simple-list" data-id="435bcda" data-element_type="widget" data-widget_type="tm-simple-list.default">
-																					<div class="elementor-widget-container">
-																						<div class="minimog-simple-list minimog-simple-list--style-03">
-																							<div class="item elementor-repeater-item-9c988d6 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/other/drawer-dividers/index.html"> Drawer dividers
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-3273de3 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/other/kitchen-lighting/index.html"> Kitchen lighting
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-ae766a0 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/other/knobs-handles-pulls/index.html"> Knobs, handles, &amp; pulls
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-6be6940 truncated">
-																								<a class="link" href="../../product-category/kitchen-appliances/other/modular-kitchen-cabinets-mini-kitchens/index.html"> Mini kitchens
-
-																								</a>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</section>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-884 level-1 menu-item-has-icon"><a href="../../product-category/baby-kids/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M10 17.5C14.1421 17.5 17.5 14.1421 17.5 10C17.5 5.85786 14.1421 2.5 10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 14.1421 5.85786 17.5 10 17.5Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M7.1875 10.7812C7.61897 10.7812 7.96875 10.4315 7.96875 10C7.96875 9.56853 7.61897 9.21875 7.1875 9.21875C6.75603 9.21875 6.40625 9.56853 6.40625 10C6.40625 10.4315 6.75603 10.7812 7.1875 10.7812Z" fill="black" />
-												<path d="M12.8125 10.7812C13.244 10.7812 13.5938 10.4315 13.5938 10C13.5938 9.56853 13.244 9.21875 12.8125 9.21875C12.381 9.21875 12.0312 9.56853 12.0312 10C12.0312 10.4315 12.381 10.7812 12.8125 10.7812Z" fill="black" />
-												<path d="M12.0729 13.1252C11.4582 13.5327 10.7371 13.75 9.99964 13.75C9.26219 13.7501 8.54108 13.5328 7.92639 13.1253" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M10 2.5C8.75 4.0625 8.75 5.625 8.75 5.625C8.75 5.95652 8.8817 6.27446 9.11612 6.50888C9.35054 6.7433 9.66848 6.875 10 6.875C10.3315 6.875 10.6495 6.7433 10.8839 6.50888C11.1183 6.27446 11.25 5.95652 11.25 5.625" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Baby &amp; Kids</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-product-ancestor menu-item-has-children menu-item-891 level-1 menu-item-has-icon has-mega-menu"><a href="../../product-category/home-textiles/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M3.125 5.62491C3.125 5.62491 6.25 3.1249 10 5.62491C13.75 8.12491 16.875 5.62491 16.875 5.62491" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M3.125 9.99991C3.125 9.99991 6.25 7.4999 10 9.99991C13.75 12.4999 16.875 9.99991 16.875 9.99991" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M3.125 14.3749C3.125 14.3749 6.25 11.8749 10 14.3749C13.75 16.8749 16.875 14.3749 16.875 14.3749" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Home Textiles</span><span class="toggle-sub-menu"> </span></div>
-								</a>
-								<ul class="sub-menu children mega-menu">
-									<li class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1409">
-										<div class="mega-menu-content">
-											<div data-elementor-type="wp-post" data-elementor-id="1395" class="elementor elementor-1395">
-												<div class="elementor-inner">
-													<div class="elementor-section-wrap">
-														<section class="elementor-section elementor-top-section elementor-element elementor-element-cec808d elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch" data-id="cec808d" data-element_type="section">
-															<div class="elementor-container elementor-column-gap-extended">
-																<div class="elementor-row">
-																	<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6b97972" data-id="6b97972" data-element_type="column">
-																		<div class="elementor-column-wrap elementor-element-populated">
-																			<div class="elementor-widget-wrap">
-																				<div class="elementor-element elementor-element-0555b4d elementor-widget elementor-widget-tm-simple-list" data-id="0555b4d" data-element_type="widget" data-widget_type="tm-simple-list.default">
-																					<div class="elementor-widget-container">
-																						<div class="minimog-simple-list minimog-simple-list--style-03">
-																							<div class="item elementor-repeater-item-9c988d6 truncated">
-																								<a class="link" href="../../product-category/home-textiles/bathroom-textiles/index.html"> Bathroom textiles
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-3273de3 truncated">
-																								<a class="link" href="../../product-category/home-textiles/bedding-home-textiles/index.html"> Bedding
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-ae766a0 truncated">
-																								<a class="link" href="../../product-category/home-textiles/cushion-covers/index.html"> Cushion covers
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-6be6940 truncated">
-																								<a class="link" href="../../product-category/home-textiles/fabrics-sewing/index.html"> Fabrics &amp; sewing
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-f3b149c truncated">
-																								<a class="link" href="../../product-category/home-textiles/outdoor-cushions/index.html"> Outdoor cushions
-
-																								</a>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-d2e70ce" data-id="d2e70ce" data-element_type="column">
-																		<div class="elementor-column-wrap elementor-element-populated">
-																			<div class="elementor-widget-wrap">
-																				<div class="elementor-element elementor-element-ff19485 elementor-widget elementor-widget-tm-simple-list" data-id="ff19485" data-element_type="widget" data-widget_type="tm-simple-list.default">
-																					<div class="elementor-widget-container">
-																						<div class="minimog-simple-list minimog-simple-list--style-03">
-																							<div class="item elementor-repeater-item-3273de3 truncated">
-																								<a class="link" href="../../product-category/home-textiles/table-linens/index.html"> Table linens
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-ae766a0 truncated">
-																								<a class="link" href="../../product-category/home-textiles/textiles-for-kids/index.html"> Textiles for kids
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-6be6940 truncated">
-																								<a class="link" href="../../product-category/home-textiles/throw-blankets/index.html"> Throw blankets
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-f3b149c truncated">
-																								<a class="link" href="../../product-category/home-textiles/window-treatments/index.html"> Window treatments
-
-																								</a>
-																							</div>
-																							<div class="item elementor-repeater-item-a11d008 truncated">
-																								<a class="link" href="../../product-category/home-textiles/baby-textiles/index.html"> Baby textiles
-
-																								</a>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-b37ade1" data-id="b37ade1" data-element_type="column">
-																		<div class="elementor-column-wrap elementor-element-populated">
-																			<div class="elementor-widget-wrap">
-																				<div class="elementor-element elementor-element-002464f minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner" data-id="002464f" data-element_type="widget" data-widget_type="tm-banner.default">
-																					<div class="elementor-widget-container">
-																						<a class="minimog-banner minimog-box link-secret" href="../../shop/index.html">
-																							<div class="minimog-image">
-																								<m-background data-background-loading class="image" data-src="../../../../minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/megamenu_textiles_banner.jpg">
-																									<img loading="lazy" src="../../../../minimog-4437.kxcdn.com/megamog/wp-content/uploads/sites/3/2022/03/megamenu_textiles_banner.jpg" alt="Lazy background" />
-																								</m-background>
-																							</div>
-																							<div class="content-wrap">
-																								<div class="content-wrap__inner">
-																									<div class="sub-title">Come and get it !</div>
-																									<h3 class="title">Save up <br>
-																										to 10 - 40%</h3>
-																								</div>
-																								<div class="content-wrap__bottom">
-																									<div class="tm-button-wrapper">
-																										<div class="tm-button style-flat tm-button-nm">
-																											<div class="button-content-wrapper">
-
-																												<span class="button-text">Shop Now</span>
-
-
-																											</div>
-																										</div>
-																									</div>
-																								</div>
-																							</div>
-																						</a>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</section>
-														<section class="elementor-section elementor-top-section elementor-element elementor-element-ce043c2 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch" data-id="ce043c2" data-element_type="section">
-															<div class="elementor-container elementor-column-gap-extended">
-																<div class="elementor-row">
-																	<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-03c48b9" data-id="03c48b9" data-element_type="column">
-																		<div class="elementor-column-wrap">
-																			<div class="elementor-widget-wrap">
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</section>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-890 level-1 menu-item-has-icon"><a href="../../product-category/home-decor/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M13.75 14.375V13.125C13.75 12.1304 13.3549 11.1766 12.6517 10.4733C11.9484 9.77009 10.9946 9.375 10 9.375C9.00544 9.375 8.05161 9.77009 7.34835 10.4733C6.64509 11.1766 6.25 12.1304 6.25 13.125V14.375" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M16.25 14.375V13.125C16.25 11.4674 15.5915 9.87769 14.4194 8.70558C13.2473 7.53348 11.6576 6.875 10 6.875C8.3424 6.875 6.75269 7.53348 5.58058 8.70558C4.40848 9.87769 3.75 11.4674 3.75 13.125V14.375" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M18.75 14.375V13.125C18.75 10.8044 17.8281 8.57876 16.1872 6.93782C14.5462 5.29687 12.3206 4.375 10 4.375C7.67936 4.375 5.45376 5.29687 3.81282 6.93782C2.17187 8.57876 1.25 10.8044 1.25 13.125V14.375" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Home Decor</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-893 level-1 menu-item-has-icon"><a href="../../product-category/lighting/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M5.41259 3.125H14.5883C14.7107 3.125 14.8303 3.16089 14.9324 3.22822C15.0345 3.29556 15.1146 3.39138 15.1628 3.5038L18.3771 11.0038C18.4178 11.0989 18.4343 11.2026 18.4252 11.3056C18.416 11.4086 18.3813 11.5077 18.3244 11.5941C18.2675 11.6804 18.19 11.7513 18.0989 11.8003C18.0079 11.8493 17.9061 11.875 17.8026 11.875H2.1983C2.09488 11.875 1.99307 11.8493 1.902 11.8003C1.81094 11.7513 1.73346 11.6804 1.67653 11.5941C1.61959 11.5077 1.58497 11.4086 1.57578 11.3056C1.56658 11.2026 1.5831 11.0989 1.62384 11.0038L4.83812 3.5038C4.88631 3.39138 4.96642 3.29556 5.06853 3.22822C5.17065 3.16089 5.29027 3.125 5.41259 3.125V3.125Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M10 11.875V16.875" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M7.5 16.875H12.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M15.625 11.875V15" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Lighting</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-887 level-1 menu-item-has-icon"><a href="../../product-category/cookware-tableware/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M7.5 1.25V3.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M10 1.25V3.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M12.5 1.25V3.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M3.75 6.25H16.25C16.4158 6.25 16.5747 6.31585 16.6919 6.43306C16.8092 6.55027 16.875 6.70924 16.875 6.875V14.375C16.875 14.8723 16.6775 15.3492 16.3258 15.7008C15.9742 16.0525 15.4973 16.25 15 16.25H5C4.50272 16.25 4.02581 16.0525 3.67417 15.7008C3.32254 15.3492 3.125 14.8723 3.125 14.375V6.875C3.125 6.70924 3.19085 6.55027 3.30806 6.43306C3.42527 6.31585 3.58424 6.25 3.75 6.25Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M19.375 7.5L16.875 9.375" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M0.625 7.5L3.125 9.375" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Cookware &amp; Tableware</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-885 level-1 menu-item-has-icon"><a href="../../product-category/bathroom/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M4.6875 18.5938C5.11897 18.5938 5.46875 18.244 5.46875 17.8125C5.46875 17.381 5.11897 17.0312 4.6875 17.0312C4.25603 17.0312 3.90625 17.381 3.90625 17.8125C3.90625 18.244 4.25603 18.5938 4.6875 18.5938Z" fill="black" />
-												<path d="M6.875 16.4062C7.30647 16.4062 7.65625 16.0565 7.65625 15.625C7.65625 15.1935 7.30647 14.8438 6.875 14.8438C6.44353 14.8438 6.09375 15.1935 6.09375 15.625C6.09375 16.0565 6.44353 16.4062 6.875 16.4062Z" fill="black" />
-												<path d="M2.1875 16.0938C2.61897 16.0938 2.96875 15.744 2.96875 15.3125C2.96875 14.881 2.61897 14.5312 2.1875 14.5312C1.75603 14.5312 1.40625 14.881 1.40625 15.3125C1.40625 15.744 1.75603 16.0938 2.1875 16.0938Z" fill="black" />
-												<path d="M4.375 13.9062C4.80647 13.9062 5.15625 13.5565 5.15625 13.125C5.15625 12.6935 4.80647 12.3438 4.375 12.3438C3.94353 12.3438 3.59375 12.6935 3.59375 13.125C3.59375 13.5565 3.94353 13.9062 4.375 13.9062Z" fill="black" />
-												<path d="M19.3748 3.125H17.1337C17.0516 3.125 16.9704 3.14117 16.8945 3.17258C16.8187 3.20398 16.7498 3.25002 16.6918 3.30806L14.3748 5.625L4.32279 7.30034C4.20951 7.31922 4.10363 7.36894 4.01676 7.44405C3.92989 7.51915 3.8654 7.61674 3.83035 7.7261C3.79531 7.83546 3.79107 7.95235 3.8181 8.06396C3.84513 8.17557 3.90239 8.27757 3.9836 8.35878L11.641 16.0162C11.7222 16.0974 11.8242 16.1547 11.9359 16.1817C12.0475 16.2087 12.1644 16.2045 12.2737 16.1695C12.3831 16.1344 12.4807 16.0699 12.5558 15.9831C12.6309 15.8962 12.6806 15.7903 12.6995 15.677L14.3748 5.625" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Bathroom</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-894 level-1 menu-item-has-icon"><a href="../../product-category/pet-accessories/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M10 15V16.875" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M7.1875 11.7188C7.61897 11.7188 7.96875 11.369 7.96875 10.9375C7.96875 10.506 7.61897 10.1562 7.1875 10.1562C6.75603 10.1562 6.40625 10.506 6.40625 10.9375C6.40625 11.369 6.75603 11.7188 7.1875 11.7188Z" fill="black" />
-												<path d="M12.8125 11.7188C13.244 11.7188 13.5938 11.369 13.5938 10.9375C13.5938 10.506 13.244 10.1562 12.8125 10.1562C12.381 10.1562 12.0312 10.506 12.0312 10.9375C12.0312 11.369 12.381 11.7188 12.8125 11.7188Z" fill="black" />
-												<path d="M11.25 13.75L10 15L8.75 13.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M11.875 3.75009L16.2314 2.66099C16.3141 2.64033 16.4001 2.63678 16.4842 2.65058C16.5683 2.66438 16.6486 2.69522 16.7204 2.74122C16.7921 2.78723 16.8537 2.84741 16.9013 2.91808C16.9489 2.98874 16.9816 3.0684 16.9973 3.15215L18.28 9.99324C18.4004 10.6358 17.5781 11.0086 17.1742 10.4946L11.875 3.75009Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M8.12545 3.74997L3.76907 2.66087C3.6864 2.64021 3.60038 2.63666 3.51629 2.65046C3.4322 2.66425 3.35182 2.6951 3.28009 2.7411C3.20836 2.7871 3.14679 2.84729 3.09917 2.91795C3.05155 2.98862 3.01889 3.06828 3.00319 3.15203L1.72049 9.99311C1.6 10.6357 2.42231 11.0085 2.82623 10.4944L8.12545 3.74997Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M8.125 3.75H11.875" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M16.25 9.31824V14.3751C16.25 15.0381 15.9866 15.674 15.5178 16.1428C15.0489 16.6117 14.413 16.8751 13.75 16.8751H6.25C5.58696 16.8751 4.95107 16.6117 4.48223 16.1428C4.01339 15.674 3.75 15.0381 3.75 14.3751V9.31824" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Pet Accessories</span></div>
-								</a></li>
-							<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-889 level-1 menu-item-has-icon"><a href="../../product-category/garden-outdoor/index.html">
-									<div class="menu-item-wrap"><span class="menu-item-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M10 1.25L3.75 9.375H6.875L2.5 15H17.5L13.125 9.375H16.25L10 1.25Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M10 15V18.75" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</span><span class="menu-item-title">Garden &amp; Outdoor</span></div>
-								</a></li>
-						</ul>
+				</a>
+				<a href="{{ route('theproducts') }}" class="mobile-tab-link" aria-label="Shop">
+					<div class="icon">
+						<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 4.125V17.875C1 18.3958 1.18229 18.8385 1.54688 19.2031C1.91146 19.5677 2.35417 19.75 2.875 19.75H19.125C19.6458 19.75 20.0885 19.5677 20.4531 19.2031C20.8177 18.8385 21 18.3958 21 17.875V4.125C21 3.60417 20.8177 3.16146 20.4531 2.79688C20.0885 2.43229 19.6458 2.25 19.125 2.25H2.875C2.35417 2.25 1.91146 2.43229 1.54688 2.79688C1.18229 3.16146 1 3.60417 1 4.125ZM10.0625 4.125V10.0625H2.875V4.35938C2.875 4.30729 2.90104 4.25521 2.95312 4.20312C3.00521 4.15104 3.05729 4.125 3.10938 4.125H10.0625ZM2.875 11.9375H10.0625V17.875H3.10938C3.05729 17.875 3.00521 17.849 2.95312 17.7969C2.90104 17.7448 2.875 17.6927 2.875 17.6406V11.9375ZM11.9375 17.875V11.9375H19.125V17.6406C19.125 17.6927 19.099 17.7448 19.0469 17.7969C18.9948 17.849 18.9427 17.875 18.8906 17.875H11.9375ZM19.125 10.0625H11.9375V4.125H18.8906C18.9427 4.125 18.9948 4.15104 19.0469 4.20312C19.099 4.25521 19.125 4.30729 19.125 4.35938V10.0625Z" fill="black" />
+						</svg>
 					</div>
-				</div>
-
-				<div class="mobile-menu-components">
-
-					<div class="mobile-menu-my-account">
-						<span class="button-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M14.5156 12.875C15.9479 12.875 17.1719 13.3958 18.1875 14.4375C19.2292 15.4531 19.75 16.6771 19.75 18.1094V19.125C19.75 19.6458 19.5677 20.0885 19.2031 20.4531C18.8385 20.8177 18.3958 21 17.875 21H4.125C3.60417 21 3.16146 20.8177 2.79688 20.4531C2.43229 20.0885 2.25 19.6458 2.25 19.125V18.1094C2.25 16.6771 2.75781 15.4531 3.77344 14.4375C4.8151 13.3958 6.05208 12.875 7.48438 12.875C7.82292 12.875 8.31771 12.9792 8.96875 13.1875C9.64583 13.3958 10.3229 13.5 11 13.5C11.6771 13.5 12.3542 13.3958 13.0312 13.1875C13.7083 12.9792 14.2031 12.875 14.5156 12.875ZM17.875 19.125V18.1094C17.875 17.1979 17.5365 16.4167 16.8594 15.7656C16.2083 15.0885 15.4271 14.75 14.5156 14.75C14.4375 14.75 14.0208 14.8542 13.2656 15.0625C12.5365 15.2708 11.7812 15.375 11 15.375C10.2188 15.375 9.45052 15.2708 8.69531 15.0625C7.96615 14.8542 7.5625 14.75 7.48438 14.75C6.57292 14.75 5.77865 15.0885 5.10156 15.7656C4.45052 16.4167 4.125 17.1979 4.125 18.1094V19.125H17.875ZM14.9844 10.6094C13.8906 11.7031 12.5625 12.25 11 12.25C9.4375 12.25 8.10938 11.7031 7.01562 10.6094C5.92188 9.51562 5.375 8.1875 5.375 6.625C5.375 5.0625 5.92188 3.73438 7.01562 2.64062C8.10938 1.54688 9.4375 1 11 1C12.5625 1 13.8906 1.54688 14.9844 2.64062C16.0781 3.73438 16.625 5.0625 16.625 6.625C16.625 8.1875 16.0781 9.51562 14.9844 10.6094ZM13.6562 3.96875C12.9271 3.23958 12.0417 2.875 11 2.875C9.95833 2.875 9.07292 3.23958 8.34375 3.96875C7.61458 4.69792 7.25 5.58333 7.25 6.625C7.25 7.66667 7.61458 8.55208 8.34375 9.28125C9.07292 10.0104 9.95833 10.375 11 10.375C12.0417 10.375 12.9271 10.0104 13.6562 9.28125C14.3854 8.55208 14.75 7.66667 14.75 6.625C14.75 5.58333 14.3854 4.69792 13.6562 3.96875Z" fill="#000000" />
-							</svg></span>
-						<span class="button-text">My Account</span>
-					</div>
-					<div class="tm-button-wrapper mobile-menu-login-btn"> <a class="tm-button style-flat tm-button-sm tm-button-full-wide  open-modal-login" href="#">
-							<div class="button-content-wrapper">
-
-
-								<span class="button-text">Log in</span>
-
-
-							</div>
-						</a> </div>
-					<div class="tm-button-wrapper"> <a class="tm-button style-border tm-button-sm tm-button-full-wide  open-modal-register" href="#">
-							<div class="button-content-wrapper">
+				</a>
+				<a href="{{ route('wishlist') }}" class="mobile-tab-link has-badge wishlist-link" aria-label="Wishlist">
+                <div class="icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.425 7.71875C20.9458 7.77083 21.2844 8.04427 21.4406 8.53906C21.5969 9.03385 21.4927 9.46354 21.1281 9.82812L16.9875 13.8516L17.9641 19.5547C18.0422 20.0495 17.8729 20.4401 17.4562 20.7266C17.0396 21.0391 16.6099 21.0781 16.1672 20.8438L11.05 18.1875L5.93281 20.8438C5.4901 21.1042 5.06042 21.0781 4.64375 20.7656C4.22708 20.4531 4.05781 20.0495 4.13594 19.5547L5.1125 13.8516L0.971875 9.82812C0.607292 9.46354 0.503125 9.03385 0.659375 8.53906C0.815625 8.04427 1.15417 7.77083 1.675 7.71875L7.37812 6.85938L9.91719 1.70312C10.1516 1.23438 10.5292 1 11.05 1C11.5708 1 11.9484 1.23438 12.1828 1.70312L14.7219 6.85938L20.425 7.71875ZM14.9953 13.1875L18.9016 9.35938L13.4719 8.57812L11.05 3.65625L8.62812 8.57812L3.19844 9.35938L7.10469 13.1875L6.20625 18.6172L11.05 16.0391L15.8937 18.6172L14.9953 13.1875Z" fill="#000000" />
+                    </svg> 
+                    @php
+                    if(session()->has('wishlist')) {
+                    $wishlist = session()->get('wishlist');
+                    $count = count($wishlist);
+                    }
+                    @endphp
+                    
+                    @php
+                    if(session()->has('cart')) {
+                    $cart = session()->get('cart');
+                    $countcart = count($cart);
+                    }
+                    @endphp
 
 
-								<span class="button-text">Register</span>
-
-
-							</div>
-						</a> </div>
-
-
-
-
-				</div>
+                    @if (session()->has('wishlist'))
+                    <span class="icon-badge" data-count="0">{{ $count}}</span>
+                    @else
+                    <span class="icon-badge" data-count="0">0</span>
+                    @endif
+                </div>
+            </a>
+            <a href="{{ route('cart') }}" class="mini-cart__button has-badge mobile-tab-link" aria-label="Cart">
+                <div class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z" fill="#000000" />
+                    </svg>
+                    @if (session()->has('cart'))
+                    <div class="icon-badge mini-cart-badge" data-count="">{{ $countcart}}</div>
+                    @else
+                    <div class="icon-badge mini-cart-badge" data-count="0">0</div>
+                    @endif
+                </div>
+            </a>
+			
 			</div>
 		</div>
-	</div>
-	<div id="page-mobile-tabs" class="page-mobile-tabs">
-		<div class="tabs">
+		<div id="popup-fly-cart" class="popup-fly-cart">
+			<div class="inner">
+				<a href="#" id="btn-close-fly-cart"
+					class="btn-close-fly-cart hint--bounce hint--bottom-left"
+					aria-label="Close Cart">
+					<i class="fal fa-times"></i>
+				</a>
 
-			<a href="../../index.html" class="mobile-tab-link" aria-label="Home">
-				<div class="icon">
-					<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M21.779 10.6767L12.369 2.94569C11.9843 2.62539 11.4995 2.45 10.999 2.45C10.4984 2.45 10.0136 2.62539 9.62892 2.94569L0.218899 10.6767C0.157352 10.7282 0.106553 10.7913 0.0694048 10.8625C0.0322563 10.9336 0.00948516 11.0114 0.00239165 11.0913C-0.00470186 11.1712 0.00402122 11.2518 0.0280628 11.3284C0.0521044 11.405 0.0909935 11.476 0.14251 11.5376L0.533623 12.0074C0.637642 12.1316 0.786713 12.2094 0.948074 12.2237C1.10943 12.238 1.26988 12.1877 1.39415 12.0838L2.44336 11.2221V18.3381C2.44426 18.662 2.57333 18.9724 2.80234 19.2014C3.03136 19.4304 3.34171 19.5595 3.66559 19.5604H8.55451C8.87838 19.5595 9.18873 19.4304 9.41775 19.2014C9.64677 18.9724 9.77583 18.662 9.77674 18.3381V14.3659H12.2212V18.3381C12.2221 18.662 12.3512 18.9724 12.5802 19.2014C12.8092 19.4304 13.1195 19.5595 13.4434 19.5604H18.3323C18.6547 19.5597 18.9638 19.4319 19.1926 19.2049C19.4214 18.9778 19.5515 18.6697 19.5546 18.3473V11.2213L20.6061 12.0853C20.7303 12.1892 20.8908 12.2395 21.0521 12.2252C21.2135 12.2109 21.3626 12.1331 21.4666 12.0089L21.8573 11.5395C21.909 11.4778 21.948 11.4065 21.9721 11.3296C21.9961 11.2528 22.0048 11.172 21.9975 11.0918C21.9902 11.0116 21.9672 10.9337 21.9297 10.8624C21.8922 10.7912 21.841 10.7281 21.779 10.6767V10.6767ZM17.7155 17.727H14.0545V13.7548C14.0536 13.4309 13.9246 13.1206 13.6956 12.8915C13.4665 12.6625 13.1562 12.5335 12.8323 12.5326H9.16562C8.84174 12.5335 8.53139 12.6625 8.30238 12.8915C8.07336 13.1206 7.9443 13.4309 7.94339 13.7548V17.727H4.2767V9.71646L10.999 4.19274L17.7212 9.71417L17.7155 17.727Z" fill="black" />
-					</svg>
-				</div>
-			</a>
-			<a href="../../shop/index.html" class="mobile-tab-link" aria-label="Shop">
-				<div class="icon">
-					<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 4.125V17.875C1 18.3958 1.18229 18.8385 1.54688 19.2031C1.91146 19.5677 2.35417 19.75 2.875 19.75H19.125C19.6458 19.75 20.0885 19.5677 20.4531 19.2031C20.8177 18.8385 21 18.3958 21 17.875V4.125C21 3.60417 20.8177 3.16146 20.4531 2.79688C20.0885 2.43229 19.6458 2.25 19.125 2.25H2.875C2.35417 2.25 1.91146 2.43229 1.54688 2.79688C1.18229 3.16146 1 3.60417 1 4.125ZM10.0625 4.125V10.0625H2.875V4.35938C2.875 4.30729 2.90104 4.25521 2.95312 4.20312C3.00521 4.15104 3.05729 4.125 3.10938 4.125H10.0625ZM2.875 11.9375H10.0625V17.875H3.10938C3.05729 17.875 3.00521 17.849 2.95312 17.7969C2.90104 17.7448 2.875 17.6927 2.875 17.6406V11.9375ZM11.9375 17.875V11.9375H19.125V17.6406C19.125 17.6927 19.099 17.7448 19.0469 17.7969C18.9948 17.849 18.9427 17.875 18.8906 17.875H11.9375ZM19.125 10.0625H11.9375V4.125H18.8906C18.9427 4.125 18.9948 4.15104 19.0469 4.20312C19.099 4.25521 19.125 4.30729 19.125 4.35938V10.0625Z" fill="black" />
-					</svg>
-				</div>
-			</a>
-			<a href="{{ route('wishlist') }}" class="mobile-tab-link has-badge wishlist-link" aria-label="Wishlist">
-				<div class="icon">
-					<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M20.425 7.71875C20.9458 7.77083 21.2844 8.04427 21.4406 8.53906C21.5969 9.03385 21.4927 9.46354 21.1281 9.82812L16.9875 13.8516L17.9641 19.5547C18.0422 20.0495 17.8729 20.4401 17.4562 20.7266C17.0396 21.0391 16.6099 21.0781 16.1672 20.8438L11.05 18.1875L5.93281 20.8438C5.4901 21.1042 5.06042 21.0781 4.64375 20.7656C4.22708 20.4531 4.05781 20.0495 4.13594 19.5547L5.1125 13.8516L0.971875 9.82812C0.607292 9.46354 0.503125 9.03385 0.659375 8.53906C0.815625 8.04427 1.15417 7.77083 1.675 7.71875L7.37812 6.85938L9.91719 1.70312C10.1516 1.23438 10.5292 1 11.05 1C11.5708 1 11.9484 1.23438 12.1828 1.70312L14.7219 6.85938L20.425 7.71875ZM14.9953 13.1875L18.9016 9.35938L13.4719 8.57812L11.05 3.65625L8.62812 8.57812L3.19844 9.35938L7.10469 13.1875L6.20625 18.6172L11.05 16.0391L15.8937 18.6172L14.9953 13.1875Z" fill="#000000" />
-					</svg>
-					@php
-					if(session()->has('wishlist')) {
-					$wishlist = session()->get('wishlist');
-					$count = count($wishlist);
-					}
-					@endphp
-					@if (session()->has('wishlist'))
-					<span class="icon-badge" data-count="0">{{ $count}}</span>
-					@else
-					<span class="icon-badge" data-count="0">0</span>
-					@endif
-				</div>
-			</a>
-			<a href="../../cart/index.html" class="mini-cart__button has-badge mobile-tab-link" aria-label="Cart">
-				<div class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z" fill="#000000" />
-					</svg>
-					<div class="icon-badge mini-cart-badge" data-count="10">10</div>
-				</div>
-			</a>
-			<a href="../../index1919.html?s=" class="page-open-popup-search mobile-tab-link" aria-label="Search">
-				<div class="icon">
-					<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M20.8438 19.3203C21.0781 19.5286 21.0781 19.75 20.8438 19.9844L19.9844 20.8438C19.75 21.0781 19.5286 21.0781 19.3203 20.8438L14.5938 16.1172C14.4896 16.013 14.4375 15.9089 14.4375 15.8047V15.2578C12.901 16.5859 11.1302 17.25 9.125 17.25C6.88542 17.25 4.97135 16.4557 3.38281 14.8672C1.79427 13.2786 1 11.3646 1 9.125C1 6.88542 1.79427 4.97135 3.38281 3.38281C4.97135 1.79427 6.88542 1 9.125 1C11.3646 1 13.2786 1.79427 14.8672 3.38281C16.4557 4.97135 17.25 6.88542 17.25 9.125C17.25 11.1302 16.5859 12.901 15.2578 14.4375H15.8047C15.9349 14.4375 16.0391 14.4896 16.1172 14.5938L20.8438 19.3203ZM4.71094 13.5391C5.9349 14.763 7.40625 15.375 9.125 15.375C10.8438 15.375 12.3151 14.763 13.5391 13.5391C14.763 12.3151 15.375 10.8438 15.375 9.125C15.375 7.40625 14.763 5.9349 13.5391 4.71094C12.3151 3.48698 10.8438 2.875 9.125 2.875C7.40625 2.875 5.9349 3.48698 4.71094 4.71094C3.48698 5.9349 2.875 7.40625 2.875 9.125C2.875 10.8438 3.48698 12.3151 4.71094 13.5391Z" fill="#000000" />
-					</svg>
-				</div>
-			</a>
+				<livewire:elmohnds.cart-modal>
 
-		</div>
-	</div>
-	<div id="popup-fly-cart" class="popup-fly-cart">
-		<div class="inner">
-			<a href="#" id="btn-close-fly-cart"
-				class="btn-close-fly-cart hint--bounce hint--bottom-left"
-				aria-label="Close Cart">
-				<i class="fal fa-times"></i>
-			</a>
-			<div class="fly-cart-wrap scroll-y">
-				<div class="fly-cart-content">
-					<div class="fly-cart-header">
+					<div id="fly-cart-modal-coupon"
+						class="fly-cart-addon-modal modal-coupon"
+						data-minimog-template="fly-cart-modal-coupon"></div>
 
-						<h3 class="fly-cart-title">Shopping Cart</h3>
-						<div class="cart-data-js">
-							<div data-value="{&quot;count&quot;:10,&quot;free_shipping_class_only&quot;:0}" class="cart-data-info"></div>
-						</div>
-
-						<div class="cart-countdown-timer"
-							data-countdown="{&quot;loop&quot;:true,&quot;length&quot;:5,&quot;message&quot;:&quot;\ud83d\udd25 These products are limited, checkout within &lt;div class=\&quot;timer\&quot;&gt;00m 00s&lt;\/div&gt;&quot;,&quot;expired_message&quot;:&quot;You&#039;re out of time! Checkout now to avoid losing your order!&quot;,&quot;formatter&quot;:{&quot;day&quot;:&quot;d&quot;,&quot;hour&quot;:&quot;h&quot;,&quot;minute&quot;:&quot;m&quot;,&quot;second&quot;:&quot;s&quot;}}">
-							<div class="inner">
-								<div class="cart-countdown-message">🔥 These products are limited, checkout within <div class="timer">00m 00s</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="cart-goal-wrap">
-							<div class="cart-goal cart-goal-done">
-								<div class="cart-goal-text">
-									Congrats! You are eligible for <strong>FREE Shipping</strong> <input type="hidden" name="cart-goal-percent" value="100"
-										class="cart-goal-percent" />
-								</div>
-
-
-
-								<div class="cart-goal-progress minimog-progress">
-									<div class="progress-bar-wrap">
-										<div class="progress-bar"
-											role="progressbar"
-											aria-label="Cart goal"
-											style="width: 100%"
-											aria-valuenow="100" aria-valuemin="0"
-											aria-valuemax="100">
-											<div class="progress-value">
-												<!-- fas-star -->
-												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-													<path
-														d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-												</svg>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-					<div class="fly-cart-body scroll-y">
-						<div class="fly-cart-body-content">
-							<div class="fly-cart-messages"></div>
-							<div class="widget_shopping_cart_content"></div>
-						</div>
-					</div>
-					<div class="fly-cart-footer">
-						<div class="cart-footer-actions">
-							<a href="#" class="fly-cart-addon-modal-toggle"
-								data-target="#fly-cart-modal-order-notes">
-								<span class="icon">
-									<svg class="w-[20px] h-[20px]" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 19 19">
-										<path fill="currentColor"
-											d="M17.3672 2.21875c.4453.44531.668.98437.668 1.61719 0 .60937-.2227 1.13672-.668 1.58203L4.99219 17.793l-4.007815.457H.878906c-.257812 0-.46875-.0938-.632812-.2812-.164063-.1876-.234375-.4102-.210938-.668l.457032-4.0078L12.8672.917969C13.3125.472656 13.8398.25 14.4492.25c.6328 0 1.1719.222656 1.6172.667969l1.3008 1.300781zM4.46484 16.7383l9.28126-9.28127-2.918-2.91797-9.28122 9.28124-.35157 3.2695 3.26953-.3515zM16.5938 4.60938c.2109-.21094.3164-.46875.3164-.77344 0-.32813-.1055-.59766-.3164-.8086l-1.336-1.33593c-.2109-.21094-.4805-.31641-.8086-.31641-.3047 0-.5625.10547-.7734.31641l-2.0391 2.03906 2.918 2.91797 2.0391-2.03906z"></path>
-									</svg>
-								</span>
-								<span>Note</span>
-							</a>
-
-							<a href="#" class="fly-cart-addon-modal-toggle"
-								data-target="#fly-cart-modal-shipping-calculator">
-								<span class="icon">
-									<svg class="w-[22px] h-[22px]" fill="currentColor" stroke="currentColor"
-										xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-										<path
-											d="M280 192c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240zm352 192h-24V275.9c0-16.8-6.8-33.3-18.8-45.2l-83.9-83.9c-11.8-12-28.3-18.8-45.2-18.8H416V78.6c0-25.7-22.2-46.6-49.4-46.6H113.4C86.2 32 64 52.9 64 78.6V96H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H96V78.6c0-8.1 7.8-14.6 17.4-14.6h253.2c9.6 0 17.4 6.5 17.4 14.6V384H207.6C193 364.7 170 352 144 352c-18.1 0-34.6 6.2-48 16.4V288H64v144c0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16h195.2c-1.1 5.2-1.6 10.5-1.6 16 0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H632c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm-488 96c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm272-320h44.1c8.4 0 16.7 3.4 22.6 9.4l83.9 83.9c.8.8 1.1 1.9 1.8 2.8H416V160zm80 320c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-96h-16.4C545 364.7 522 352 496 352s-49 12.7-63.6 32H416v-96h160v96zM256 248v-16c0-4.4-3.6-8-8-8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8z"></path>
-									</svg>
-								</span>
-								<span>Shipping</span>
-							</a>
-
-							<a href="#" class="fly-cart-addon-modal-toggle"
-								data-target="#fly-cart-modal-coupon">
-								<span class="icon">
-									<svg class="w-[22px] h-[22px]" fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 21 14">
-										<path fill="currentColor"
-											d="M15.2812 3.875c.2344 0 .4336.08203.5977.24609.1641.16407.2461.36328.2461.59766v5.0625c0 .23435-.082.43355-.2461.59765-.1641.1641-.3633.2461-.5977.2461H5.71875c-.23437 0-.43359-.082-.59766-.2461-.16406-.1641-.24609-.3633-.24609-.59765v-5.0625c0-.23438.08203-.43359.24609-.59766.16407-.16406.36329-.24609.59766-.24609h9.56245zM15 9.5V5H6v4.5h9zm4.5-3.375c-.3047 0-.5742.11719-.8086.35156-.2109.21094-.3164.46875-.3164.77344s.1055.57422.3164.80859c.2344.21094.5039.31641.8086.31641h1.125v3.9375c0 .4687-.1641.8672-.4922 1.1953-.3281.3281-.7266.4922-1.1953.4922H2.0625c-.46875 0-.86719-.1641-1.195312-.4922C.539062 13.1797.375 12.7812.375 12.3125V8.375H1.5c.30469 0 .5625-.10547.77344-.31641.23437-.23437.35156-.5039.35156-.80859s-.11719-.5625-.35156-.77344C2.0625 6.24219 1.80469 6.125 1.5 6.125H.375V2.1875c0-.46875.164062-.86719.492188-1.195312C1.19531.664063 1.59375.5 2.0625.5h16.875c.4687 0 .8672.164063 1.1953.492188.3281.328122.4922.726562.4922 1.195312V6.125H19.5zm0 3.375c-.6094 0-1.1367-.22266-1.582-.66797-.4453-.44531-.668-.97265-.668-1.58203s.2227-1.13672.668-1.58203C18.3633 5.22266 18.8906 5 19.5 5V2.1875c0-.16406-.0586-.29297-.1758-.38672-.0937-.11719-.2226-.17578-.3867-.17578H2.0625c-.16406 0-.30469.05859-.42188.17578-.09374.09375-.14062.22266-.14062.38672V5c.60938 0 1.13672.22266 1.58203.66797.44531.44531.66797.97265.66797 1.58203s-.22266 1.13672-.66797 1.58203C2.63672 9.27734 2.10938 9.5 1.5 9.5v2.8125c0 .1641.04688.3047.14062.4219.11719.0937.25782.1406.42188.1406h16.875c.1641 0 .293-.0469.3867-.1406.1172-.1172.1758-.2578.1758-.4219V9.5z"></path>
-									</svg>
-								</span>
-								<span>Coupon</span>
-							</a>
-						</div>
-
-						<table class="cart-totals-table">
-							<tfoot>
-								<tr class="cart-totals-row cart-subtotal">
-									<th class="cart-totals-label">Subtotal</th>
-									<td class="cart-totals-value"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&pound;</span>261.38</bdi></span></td>
-								</tr>
-
-
-
-								<tr class="cart-totals-row cart-shipping woocommerce-shipping-totals shipping">
-									<th class="cart-totals-label">Shipping</th>
-									<td class="cart-totals-value">
-										<ul id="shipping_method" class="woocommerce-shipping-methods">
-											<li>
-												<input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_free_shipping2" value="free_shipping:2" class="shipping_method" /><label for="shipping_method_0_free_shipping2">Free shipping</label>
-											</li>
-											<li>
-												<input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_flat_rate1" value="flat_rate:1" class="shipping_method" checked='checked' /><label for="shipping_method_0_flat_rate1">Flat rate: <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&pound;</span>7.60</bdi></span></label>
-											</li>
-										</ul>
-									</td>
-								</tr>
-
-
-
-
-
-								<tr class="cart-totals-row order-total">
-									<th class="cart-totals-label">Total</th>
-									<td class="cart-totals-value"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&pound;</span>268.96</bdi></span></strong> </td>
-								</tr>
-
-							</tfoot>
-						</table>
-
-
-						<div class="woocommerce-mini-cart__buttons buttons">
-							<a href="../../checkout/index.html" class="button checkout wc-forward">Checkout</a> <a class="tm-button style-bottom-line tm-button-nm view-cart" href="../../cart/index.html">
-								<div class="button-content-wrapper">
-
-
-									<span class="button-text">View cart</span>
-
-
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div id="fly-cart-modal-coupon"
-				class="fly-cart-addon-modal modal-coupon"
-				data-minimog-template="fly-cart-modal-coupon"></div>
-
-			<div id="fly-cart-modal-order-notes" class="fly-cart-addon-modal modal-order-notes">
-				<form class="form-fly-cart-order-notes" method="POST">
-					<label class="fly-cart-modal-title"
-						for="fly-cart-order-notes">Add note for seller</label>
-					<div class="fly-cart-modal-content">
-						<textarea name="order_comments" id="fly-cart-order-notes"
-							placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
-					</div>
-
-					<div class="fly-cart-modal-actions">
-						<button type="submit" class="button"><span>Save</span>
-						</button>
-						<a class="tm-button style-text tm-button-nm tm-button-full-wide btn-close-fly-cart-modal" href="#">
-							<div class="button-content-wrapper">
-
-
-								<span class="button-text">Cancel</span>
-
-
-							</div>
-						</a>
-					</div>
-				</form>
-			</div>
-
-			<div id="fly-cart-modal-shipping-calculator"
-				class="fly-cart-addon-modal modal-shipping-calculator"
-				data-minimog-template="fly-cart-modal-shipping-calculator"></div>
-		</div>
-	</div>
-	<div class="minimog-modal modal-product-share" id="modal-product-share" aria-hidden="true" role="dialog" hidden>
-		<div class="modal-overlay"></div>
-		<div class="modal-content">
-			<div class="button-close-modal" role="button" aria-label="Close"></div>
-			<div class="modal-content-wrap">
-				<div class="modal-content-inner">
-					<div class="product-share">
-						<div class="form-item">
-							<label for="product-share-url">
-								Copy link </label>
-							<div class="form-control hint--top" style="width: 100%"
-								aria-label="Click to copy"
-								data-copy="Click to copy"
-								data-copied="Copied">
-								<input id="product-share-url" type="text" readonly
-									value="{{ url()->current() }}">
-							</div>
-						</div>
-						<div class="product-share-list">
-							<label>
-								Share </label>
-							<div class="share-list">
-								<a class=" hint--bounce hint--top-right hint-- facebook"
-									target="_blank"
-									aria-label="Facebook"
-									href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fminimog.thememove.com%2Fmegamog%2Fproduct%2Fdvala-sheet-set%2F">
-									<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-											<path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
-										</svg></span> </a>
-								<a class=" hint--bounce hint--top-right hint-- twitter"
-									target="_blank"
-									aria-label="Twitter"
-									href="https://twitter.com/share?text=Cotton%20is%20a%20soft%2C%20natural%20material%20that%20breathes%2C%20absorbs%20moisture%20and%20feels%20comfortable%20against%20your%20skin.%20Also%2C%20our%20cotton%20is%20sustainably%20grown%20so%20you%20can%20sleep%20well%20%E2%80%93%20with%20a%20clean%20conscience.&amp;url=https%3A%2F%2Fminimog.thememove.com%2Fmegamog%2Fproduct%2Fdvala-sheet-set%2F">
-									<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
-											<path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
-										</svg></span> </a>
-								<a class=" hint--bounce hint--top-right hint-- linkedin"
-									target="_blank"
-									aria-label="Linkedin"
-									href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fminimog.thememove.com%2Fmegamog%2Fproduct%2Fdvala-sheet-set%2F&amp;title=Dvala%20Sheet%20set&amp;summary=Cotton%20is%20a%20soft%2C%20natural%20material%20that%20breathes%2C%20absorbs%20moisture%20and%20feels%20comfortable%20against%20your%20skin.%20Also%2C%20our%20cotton%20is%20sustainably%20grown%20so%20you%20can%20sleep%20well%20%E2%80%93%20with%20a%20clean%20conscience.&amp;source=https%3A%2F%2Fminimog.thememove.com%2Fmegamog%2Fproduct%2Fdvala-sheet-set%2F">
-									<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-											<path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
-										</svg></span> </a>
-								<a class=" hint--bounce hint--top-right hint-- tumblr"
-									target="_blank"
-									aria-label="Tumblr"
-									href="https://tumblr.com/share/link?url=https%3A%2F%2Fminimog.thememove.com%2Fmegamog%2Fproduct%2Fdvala-sheet-set%2F">
-									<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-											<path d="M309.8 480.3c-13.6 14.5-50 31.7-97.4 31.7-120.8 0-147-88.8-147-140.6v-144H17.9c-5.5 0-10-4.5-10-10v-68c0-7.2 4.5-13.6 11.3-16 62-21.8 81.5-76 84.3-117.1.8-11 6.5-16.3 16.1-16.3h70.9c5.5 0 10 4.5 10 10v115.2h83c5.5 0 10 4.4 10 9.9v81.7c0 5.5-4.5 10-10 10h-83.4V360c0 34.2 23.7 53.6 68 35.8 4.8-1.9 9-3.2 12.7-2.2 3.5.9 5.8 3.4 7.4 7.9l22 64.3c1.8 5 3.3 10.6-.4 14.5z" />
-										</svg></span> </a>
-								<a class=" hint--bounce hint--top-right hint-- email"
-									target="_blank"
-									aria-label="Email"
-									href="mailto:?subject=Dvala%20Sheet%20set&amp;body=https%3A%2F%2Fminimog.thememove.com%2Fmegamog%2Fproduct%2Fdvala-sheet-set%2F">
-									<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-											<path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z" />
-										</svg></span> </a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="minimog-modal modal-product-question" id="modal-product-question"
-		data-question-title="Ask a Question"
-		data-reply-title="Reply to {comment_author_name}" aria-hidden="true" role="dialog" hidden>
-		<div class="modal-overlay"></div>
-		<div class="modal-content">
-			<div class="button-close-modal" role="button" aria-label="Close"></div>
-			<div class="modal-content-wrap">
-				<div class="modal-content-inner">
-					<div class="modal-content-header">
-						<h4 class="modal-title">Ask a Question</h4>
-					</div>
-					<div class="question-form-wrapper">
-						<form method="post" id="question-form" class="question-form">
-							<div class="question-form-author">
-								<label for="q-author">Your Name<span class="required">*</span></label>
-								<input type="text" name="author" value="" id="q-author" aria-required='true' placeholder="Your Name*">
-							</div>
-							<div class="question-form-email">
-								<label for="q-email">Your Email<span class="required">*</span></label>
-								<input type="email" name="email" value="" id="q-email" aria-required='true' placeholder="Your Email*">
+					<div id="fly-cart-modal-order-notes" class="fly-cart-addon-modal modal-order-notes">
+						<form class="form-fly-cart-order-notes" method="POST">
+							<label class="fly-cart-modal-title"
+								for="fly-cart-order-notes">Add note for seller</label>
+							<div class="fly-cart-modal-content">
+								<textarea name="order_comments" id="fly-cart-order-notes"
+									placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
 							</div>
 
-							<div class="question-form-question">
-								<label for="question">Your Message<span class="required">*</span></label>
-								<textarea id="question" name="question" cols="45" rows="8" aria-required="true"
-									placeholder="Your Message*"></textarea>
-							</div>
-							<div class="question-form-submit form-submit">
-								<button type="submit" name="submit"
-									class="submit"><span>Submit Now</span></button>
-								<input type="hidden" name="post_id" value="1144">
-								<input type="hidden" name="question_parent_id" value="0">
-								<input type="hidden" name="action" value="minimog_add_comment">
-								<input type="hidden" id="product_question_nonce" name="product_question_nonce" value="916722088c" /><input type="hidden" name="_wp_http_referer" value="/megamog/product/dvala-sheet-set/" />
-							</div>
-
-							<div class="question-form-message-box"></div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<livewire:elmohnds.addcomment>
-	
-	<div class="minimog-modal modal-user-login" id="modal-user-login" aria-hidden="true" role="dialog" hidden>
-		<div class="modal-overlay"></div>
-		<div class="modal-content">
-			<div class="button-close-modal" role="button" aria-label="Close"></div>
-			<div class="modal-content-wrap">
-				<div class="modal-content-inner">
-
-					<div class="modal-content-header">
-						<h3 class="modal-title">Sign In</h3>
-						<p class="modal-description">
-							Don&#039;t have an account yet? <a href="#" class="open-modal-register link-transition-01"> Sign up </a> for free </p>
-					</div>
-
-					<div class="modal-content-body">
-
-
-						<form id="minimog-login-form" class="minimog-login-form" method="post">
-
-
-							<div class="form-group">
-								<label for="ip_user_login"
-									class="form-label">Username or email</label>
-								<input type="text" id="ip_user_login" class="form-control form-input" name="user_login"
-									placeholder="Your username or email">
-							</div>
-
-							<div class="form-group">
-								<label for="ip_password"
-									class="form-label">Password</label>
-								<div class="form-input-group form-input-password">
-									<input type="password" id="ip_password" class="form-control form-input" name="password"
-										placeholder="Password" autocomplete="off">
-									<button type="button" class="btn-pw-toggle" data-toggle="0"
-										aria-label="Show password">
-									</button>
-								</div>
-							</div>
-
-							<div class="form-group row-flex row-middle">
-								<div class="col-grow">
-									<label
-										class="form-label form-label-checkbox" for="ip_rememberme">
-										<input class="form-checkbox" name="rememberme"
-											type="checkbox" id="ip_rememberme" value="forever" />
-										<span>Stay signed in</span>
-									</label>
-								</div>
-								<div class="col-shrink">
-									<div class="forgot-password">
-										<a href="../../my-account/lost-password/index.html"
-											class="open-modal-lost-password forgot-password-link link-transition-01">Forgot your password?</a>
-									</div>
-								</div>
-							</div>
-
-
-							<div class="form-response-messages"></div>
-
-
-							<div class="form-group form-submit-wrap">
-								<input type="hidden" id="user_login_nonce" name="user_login_nonce" value="400cc9556d" /><input type="hidden" name="_wp_http_referer" value="/megamog/product/dvala-sheet-set/" /> <input type="hidden" name="action" value="minimog_user_login">
-								<button type="submit"
-									class="button form-submit"><span>Log In</span></button>
-							</div>
-
-						</form>
-
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="minimog-modal modal-lost-password" id="modal-user-lost-password"
-		data-template="template-parts/modal/modal-content-lost-password" aria-hidden="true" role="dialog" hidden>
-		<div class="modal-overlay"></div>
-		<div class="modal-content">
-			<div class="button-close-modal" role="button" aria-label="Close"></div>
-			<div class="modal-content-wrap">
-				<div class="modal-content-inner">
-					<div class="modal-content-header">
-						<h3 class="modal-title">Lost your password?</h3>
-						<p class="modal-description">
-							Please enter your username or email address. You will receive a link to create a new password via email. Remember now? <a href="#" class="open-modal-login link-transition-01">Back to login</a> </p>
-					</div>
-
-					<div class="modal-content-body">
-						<form id="minimog-lost-password-form" class="minimog-lost-password-form" method="post">
-
-
-							<div class="form-group">
-								<label for="lost_password_user_login"
-									class="form-label">Username or email</label>
-								<input type="text" id="lost_password_user_login" class="form-control form-input"
-									name="user_login"
-									placeholder="Your username or email" required />
-							</div>
-
-
-							<div class="form-response-messages"></div>
-
-							<div class="form-group form-submit-wrap">
-								<input type="hidden" id="user_reset_password_nonce" name="user_reset_password_nonce" value="5c3f6b21c2" /><input type="hidden" name="_wp_http_referer" value="/megamog/product/dvala-sheet-set/" /> <input type="hidden" name="action" value="minimog_user_reset_password">
-								<button type="submit"
-									class="button form-submit"><span>Reset password</span></button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="minimog-modal modal-user-register" id="modal-user-register"
-		data-template="template-parts/modal/modal-content-register" aria-hidden="true" role="dialog" hidden>
-		<div class="modal-overlay"></div>
-		<div class="modal-content">
-			<div class="button-close-modal" role="button" aria-label="Close"></div>
-			<div class="modal-content-wrap">
-				<div class="modal-content-inner">
-					<div class="modal-content-header">
-						<h3 class="modal-title">Sign Up</h3>
-						<p class="modal-description">
-							Already have an account? <a href="#" class="open-modal-login link-transition-01"> Log in </a> </p>
-					</div>
-
-					<div class="modal-content-body">
-
-
-						<form id="minimog-register-form" class="minimog-register-form" method="post">
-
-
-							<div class="row">
-								<div class="form-group col-sm-6">
-									<label for="ip_reg_first_name" class="form-label">
-										First name </label>
-									<input type="text" id="ip_reg_first_name" class="form-control form-input"
-										name="fname" placeholder="First name"
-										required />
-								</div>
-								<div class="form-group col-sm-6">
-									<label for="ip_reg_last_name" class="form-label">
-										Last name </label>
-									<input type="text" id="ip_reg_last_name" class="form-control form-input"
-										name="lname" placeholder="Last name"
-										required />
-								</div>
-							</div>
-
-
-							<div class="form-group">
-								<label for="ip_reg_email"
-									class="form-label">Email</label>
-								<input type="email" id="ip_reg_email" class="form-control form-input"
-									name="email" placeholder="Your Email" required />
-							</div>
-
-							<div class="form-group">
-								<label for="ip_reg_password"
-									class="form-label">Password</label>
-								<div class="form-input-group form-input-password">
-									<input type="password" id="ip_reg_password" class="form-control form-input"
-										name="password" placeholder="Password"
-										required autocomplete="off" />
-									<button type="button" class="btn-pw-toggle" data-toggle="0"
-										aria-label="Show password">
-									</button>
-								</div>
-							</div>
-
-							<div class="form-group form-user-role form-radio-inline">
-								<label for="ip_reg_role_customer" class="form-label-radio">
-									<input type="radio" name="role" value="customer" checked
-										id="ip_reg_role_customer" />I am a customer </label>
-								<label for="ip_reg_role_seller" class="form-label-radio">
-									<input type="radio" name="role" value="seller"
-										id="ip_reg_role_seller" />I am a vendor </label>
-							</div>
-
-							<div class="form-group show-if-seller display-none">
-								<label for="ip_reg_company_name" class="form-label">Shop Name</label>
-								<input type="text" class="form-control form-input" name="shopname" id="ip_reg_company_name"
-									required="required"
-									placeholder="Shop Name" />
-							</div>
-
-							<div class="form-group show-if-seller display-none">
-								<label for="ip_reg_seller_url" class="form-label">Shop URL</label>
-								<input type="text" class="form-control form-input" name="shopurl" id="ip_reg_seller_url"
-									placeholder="Shop URL"
-									required="required" />
-								<small>https://minimog.thememove.com/megamog/store/<strong id="ip_reg-url-alart"></strong></small>
-							</div>
-
-							<div class="form-group show-if-seller display-none">
-								<label for="ip_reg_shop_phone" class="form-label">Phone Number</label>
-								<input type="text" class="form-control form-input" name="phone" id="ip_reg_shop_phone"
-									required="required"
-									placeholder="Phone Number" />
-							</div>
-
-							<div class="form-group accept-account">
-								<label class="form-label form-label-checkbox" for="ip_accept_account">
-									<input type="checkbox" id="ip_accept_account" class="form-control"
-										name="accept_account" value="1" />Yes, I agree with Privacy Policy and Terms of Use </label>
-							</div>
-
-							<div class="form-response-messages"></div>
-
-
-							<div class="form-group form-submit-wrap">
-								<input type="hidden" id="user_register_nonce" name="user_register_nonce" value="d881a8d677" /><input type="hidden" name="_wp_http_referer" value="/megamog/product/dvala-sheet-set/" /><input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="5eb7bd34a2" /><input type="hidden" name="_wp_http_referer" value="/megamog/product/dvala-sheet-set/" /> <input type="hidden" name="action" value="minimog_user_register" />
-								<button type="submit"
-									class="button form-submit"><span>Sign Up</span>
+							<div class="fly-cart-modal-actions">
+								<button type="submit" class="button"><span>Save</span>
 								</button>
+								<a class="tm-button style-text tm-button-nm tm-button-full-wide btn-close-fly-cart-modal" href="#">
+									<div class="button-content-wrapper">
+
+
+										<span class="button-text">Cancel</span>
+
+
+									</div>
+								</a>
 							</div>
-
 						</form>
+					</div>
 
-
+					<div id="fly-cart-modal-shipping-calculator"
+						class="fly-cart-addon-modal modal-shipping-calculator"
+						data-minimog-template="fly-cart-modal-shipping-calculator"></div>
+			</div>
+		</div>
+		<div class="minimog-modal modal-product-share" id="modal-product-share" aria-hidden="true" role="dialog" hidden>
+			<div class="modal-overlay"></div>
+			<div class="modal-content">
+				<div class="button-close-modal" role="button" aria-label="Close"></div>
+				<div class="modal-content-wrap">
+					<div class="modal-content-inner">
+						<div class="product-share">
+							<div class="form-item">
+								<label for="product-share-url">
+									Copy link </label>
+								<div class="form-control hint--top" style="width: 100%"
+									aria-label="Click to copy"
+									data-copy="Click to copy"
+									data-copied="Copied">
+									<input id="product-share-url" type="text" readonly
+										value="{{ url()->current() }}">
+								</div>
+							</div>
+							<div class="product-share-list">
+								<label>
+									Share </label>
+								<div class="share-list">
+									<a class=" hint--bounce hint--top-right hint-- facebook"
+										target="_blank"
+										aria-label="Facebook"
+										href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fminimog.thememove.com%2Fmegamog%2Fproduct%2Fdvala-sheet-set%2F">
+										<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+												<path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
+											</svg></span> </a>
+									<a class=" hint--bounce hint--top-right hint-- twitter"
+										target="_blank"
+										aria-label="Twitter"
+										href="https://twitter.com/share?text=Cotton%20is%20a%20soft%2C%20natural%20material%20that%20breathes%2C%20absorbs%20moisture%20and%20feels%20comfortable%20against%20your%20skin.%20Also%2C%20our%20cotton%20is%20sustainably%20grown%20so%20you%20can%20sleep%20well%20%E2%80%93%20with%20a%20clean%20conscience.&amp;url=https%3A%2F%2Fminimog.thememove.com%2Fmegamog%2Fproduct%2Fdvala-sheet-set%2F">
+										<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+												<path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+											</svg></span> </a>
+									<a class=" hint--bounce hint--top-right hint-- linkedin"
+										target="_blank"
+										aria-label="Linkedin"
+										href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fminimog.thememove.com%2Fmegamog%2Fproduct%2Fdvala-sheet-set%2F&amp;title=Dvala%20Sheet%20set&amp;summary=Cotton%20is%20a%20soft%2C%20natural%20material%20that%20breathes%2C%20absorbs%20moisture%20and%20feels%20comfortable%20against%20your%20skin.%20Also%2C%20our%20cotton%20is%20sustainably%20grown%20so%20you%20can%20sleep%20well%20%E2%80%93%20with%20a%20clean%20conscience.&amp;source=https%3A%2F%2Fminimog.thememove.com%2Fmegamog%2Fproduct%2Fdvala-sheet-set%2F">
+										<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+												<path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+											</svg></span> </a>
+									<a class=" hint--bounce hint--top-right hint-- tumblr"
+										target="_blank"
+										aria-label="Tumblr"
+										href="https://tumblr.com/share/link?url=https%3A%2F%2Fminimog.thememove.com%2Fmegamog%2Fproduct%2Fdvala-sheet-set%2F">
+										<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+												<path d="M309.8 480.3c-13.6 14.5-50 31.7-97.4 31.7-120.8 0-147-88.8-147-140.6v-144H17.9c-5.5 0-10-4.5-10-10v-68c0-7.2 4.5-13.6 11.3-16 62-21.8 81.5-76 84.3-117.1.8-11 6.5-16.3 16.1-16.3h70.9c5.5 0 10 4.5 10 10v115.2h83c5.5 0 10 4.4 10 9.9v81.7c0 5.5-4.5 10-10 10h-83.4V360c0 34.2 23.7 53.6 68 35.8 4.8-1.9 9-3.2 12.7-2.2 3.5.9 5.8 3.4 7.4 7.9l22 64.3c1.8 5 3.3 10.6-.4 14.5z" />
+											</svg></span> </a>
+									<a class=" hint--bounce hint--top-right hint-- email"
+										target="_blank"
+										aria-label="Email"
+										href="mailto:?subject=Dvala%20Sheet%20set&amp;body=https%3A%2F%2Fminimog.thememove.com%2Fmegamog%2Fproduct%2Fdvala-sheet-set%2F">
+										<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+												<path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z" />
+											</svg></span> </a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<script defer src="data:text/javascript;base64,CgkJCQljb25zdCBsYXp5bG9hZFJ1bk9ic2VydmVyID0gKCkgPT4gewoJCQkJCWNvbnN0IGRhdGFBdHRyaWJ1dGUgPSAnZGF0YS1lLWJnLWxhenlsb2FkJzsKCQkJCQljb25zdCBsYXp5bG9hZEJhY2tncm91bmRzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCggYFskeyBkYXRhQXR0cmlidXRlIH1dOm5vdCgubGF6eWxvYWRlZClgICk7CgkJCQkJY29uc3QgbGF6eWxvYWRCYWNrZ3JvdW5kT2JzZXJ2ZXIgPSBuZXcgSW50ZXJzZWN0aW9uT2JzZXJ2ZXIoICggZW50cmllcyApID0+IHsKCQkJCQllbnRyaWVzLmZvckVhY2goICggZW50cnkgKSA9PiB7CgkJCQkJCWlmICggZW50cnkuaXNJbnRlcnNlY3RpbmcgKSB7CgkJCQkJCQlsZXQgbGF6eWxvYWRCYWNrZ3JvdW5kID0gZW50cnkudGFyZ2V0OwoJCQkJCQkJY29uc3QgbGF6eWxvYWRTZWxlY3RvciA9IGxhenlsb2FkQmFja2dyb3VuZC5nZXRBdHRyaWJ1dGUoIGRhdGFBdHRyaWJ1dGUgKTsKCQkJCQkJCWlmICggbGF6eWxvYWRTZWxlY3RvciApIHsKCQkJCQkJCQlsYXp5bG9hZEJhY2tncm91bmQgPSBlbnRyeS50YXJnZXQucXVlcnlTZWxlY3RvciggbGF6eWxvYWRTZWxlY3RvciApOwoJCQkJCQkJfQoJCQkJCQkJaWYoIGxhenlsb2FkQmFja2dyb3VuZCApIHsKCQkJCQkJCQlsYXp5bG9hZEJhY2tncm91bmQuY2xhc3NMaXN0LmFkZCggJ2xhenlsb2FkZWQnICk7CgkJCQkJCQl9CgkJCQkJCQlsYXp5bG9hZEJhY2tncm91bmRPYnNlcnZlci51bm9ic2VydmUoIGVudHJ5LnRhcmdldCApOwoJCQkJCQl9CgkJCQkJfSk7CgkJCQkJfSwgeyByb290TWFyZ2luOiAnMTAwcHggMHB4IDEwMHB4IDBweCcgfSApOwoJCQkJCWxhenlsb2FkQmFja2dyb3VuZHMuZm9yRWFjaCggKCBsYXp5bG9hZEJhY2tncm91bmQgKSA9PiB7CgkJCQkJCWxhenlsb2FkQmFja2dyb3VuZE9ic2VydmVyLm9ic2VydmUoIGxhenlsb2FkQmFja2dyb3VuZCApOwoJCQkJCX0gKTsKCQkJCX07CgkJCQljb25zdCBldmVudHMgPSBbCgkJCQkJJ0RPTUNvbnRlbnRMb2FkZWQnLAoJCQkJCSdlbGVtZW50b3IvbGF6eWxvYWQvb2JzZXJ2ZScsCgkJCQldOwoJCQkJZXZlbnRzLmZvckVhY2goICggZXZlbnQgKSA9PiB7CgkJCQkJZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lciggZXZlbnQsIGxhenlsb2FkUnVuT2JzZXJ2ZXIgKTsKCQkJCX0gKTsKCQkJ"></script>
-	<link rel='stylesheet' id='wc-blocks-style-css' href="{{asset('assets/wp-content/cache/autoptimize/3/css/autoptimize_single_0dccf79e4ae955b32dea554e34e5a5618fea.css?ver=11.8.0-dev')}}" media='all' />
-	<link rel='stylesheet' id='elementor-post-1298-css' href="{{asset('assets/wp-content/cache/autoptimize/3/css/autoptimize_single_c3affa97b2b8c444b69e4a0bea591ed69d75.css?ver=1705635090')}}" media='all' />
-	<link rel='stylesheet' id='elementor-post-1123-css' href="{{asset('assets/wp-content/cache/autoptimize/3/css/autoptimize_single_c1ed1a4e4a88dbb07ab1feae8588eb63f349.css?ver=1705635091')}}" media='all' />
-	<link rel='stylesheet' id='elementor-post-1395-css' href="{{asset('assets/wp-content/cache/autoptimize/3/css/autoptimize_single_180306e03aaf58a44078d94ceaeae424f349.css?ver=1705635091')}}" media='all' />
-	<script defer id="isw-frontend-js-extra" src="data:text/javascript;base64,CnZhciBpc3dfdmFycyA9IHsiYWpheCI6Imh0dHBzOlwvXC9taW5pbW9nLnRoZW1lbW92ZS5jb21cL21lZ2Ftb2dcL3dwLWFkbWluXC9hZG1pbi1hamF4LnBocCIsIm5vbmNlIjoiOWQ0NDM1MmNhMyIsInByb2R1Y3Rfc2VsZWN0b3IiOiIucHJvZHVjdCIsInByaWNlX3NlbGVjdG9yIjoiLnByaWNlIiwibG9jYWxpemF0aW9uIjp7ImFkZF90b19jYXJ0X3RleHQiOiJBZGQgdG8gY2FydCIsInJlYWRfbW9yZV90ZXh0IjoiUmVhZCBtb3JlIiwic2VsZWN0X29wdGlvbnNfdGV4dCI6IlNlbGVjdCBvcHRpb25zIn19Owo="></script>
-	<script defer src="{{asset('assets/wp-content/plugins/insight-swatches/assets/js/frontend.min7d4c.js?ver=1.7.0')}}" id="isw-frontend-js"></script>
-	<script defer src="{{asset('assets/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min2ff6.js?ver=8.5.1')}}" id="sourcebuster-js-js"></script>
-	<script defer id="wc-order-attribution-js-extra" src="data:text/javascript;base64,CnZhciB3Y19vcmRlcl9hdHRyaWJ1dGlvbiA9IHsicGFyYW1zIjp7ImxpZmV0aW1lIjoxLjAwMDAwMDAwMDAwMDAwMDFlLTUsInNlc3Npb24iOjMwLCJhamF4dXJsIjoiaHR0cHM6XC9cL21pbmltb2cudGhlbWVtb3ZlLmNvbVwvbWVnYW1vZ1wvd3AtYWRtaW5cL2FkbWluLWFqYXgucGhwIiwicHJlZml4Ijoid2Nfb3JkZXJfYXR0cmlidXRpb25fIiwiYWxsb3dUcmFja2luZyI6InllcyJ9fTsK"></script>
-	<script defer src="{{asset('assets/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min2ff6.js?ver=8.5.1')}}" id="wc-order-attribution-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/vendor/wp-polyfill-inert.min0226.js?ver=3.1.2')}}" id="wp-polyfill-inert-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/vendor/regenerator-runtime.min6c85.js?ver=0.14.0')}}" id="regenerator-runtime-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/vendor/wp-polyfill.min2c7c.js?ver=3.15.0')}}" id="wp-polyfill-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/vendor/react.min7a3b.js?ver=18.2.0')}}" id="react-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/hooks.min2ebd.js?ver=c6aec9a8d4e5a5d543a1')}}" id="wp-hooks-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/deprecated.min664b.js?ver=73ad3591e7bc95f4777a')}}" id="wp-deprecated-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/dom.minbac8.js?ver=49ff2869626fbeaacc23')}}" id="wp-dom-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/vendor/react-dom.min7a3b.js?ver=18.2.0')}}" id="react-dom-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/escape-html.min0311.js?ver=03e27a7b6ae14f7afaa6')}}" id="wp-escape-html-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/element.min0eb1.js?ver=ed1c7604880e8b574b40')}}" id="wp-element-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/is-shallow-equal.mincc0f.js?ver=20c2b06ecf04afb14fee')}}" id="wp-is-shallow-equal-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/i18n.minf92f.js?ver=7701b0c3857f914212ef')}}" id="wp-i18n-js"></script>
-	<script defer id="wp-i18n-js-after" src="data:text/javascript;base64,CndwLmkxOG4uc2V0TG9jYWxlRGF0YSggeyAndGV4dCBkaXJlY3Rpb25cdTAwMDRsdHInOiBbICdsdHInIF0gfSApOwo="></script>
-	<script src="{{asset('assets/wp-includes/js/dist/keycodes.min3d5f.js?ver=3460bd0fac9859d6886c')}}" id="wp-keycodes-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/priority-queue.mind972.js?ver=422e19e9d48b269c5219')}}" id="wp-priority-queue-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/compose.min3e86.js?ver=3189b344ff39fef940b7')}}" id="wp-compose-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/private-apis.min3089.js?ver=11cb2ebaa70a9f1f0ab5')}}" id="wp-private-apis-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/redux-routine.min9528.js?ver=0be1b2a6a79703e28531')}}" id="wp-redux-routine-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/data.min23f6.js?ver=dc5f255634f3da29c8d5')}}" id="wp-data-js"></script>
-	<script defer id="wp-data-js-after" src="data:text/javascript;base64,CiggZnVuY3Rpb24oKSB7Cgl2YXIgdXNlcklkID0gMDsKCXZhciBzdG9yYWdlS2V5ID0gIldQX0RBVEFfVVNFUl8iICsgdXNlcklkOwoJd3AuZGF0YQoJCS51c2UoIHdwLmRhdGEucGx1Z2lucy5wZXJzaXN0ZW5jZSwgeyBzdG9yYWdlS2V5OiBzdG9yYWdlS2V5IH0gKTsKfSApKCk7Cg=="></script>
-	<script src="{{asset('assets/wp-includes/js/dist/vendor/lodash.minf492.js?ver=4.17.19')}}" id="lodash-js"></script>
-	<script defer id="lodash-js-after" src="data:text/javascript;base64,CndpbmRvdy5sb2Rhc2ggPSBfLm5vQ29uZmxpY3QoKTsK"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_36878700722ad5c1f9c12d4c1c5439778d1b.js?ver=1c879273bd5c193cad0a')}}" id="wc-blocks-registry-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/url.min7dc0.js?ver=b4979979018b684be209')}}" id="wp-url-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/api-fetch.min471f.js?ver=0fa4dabf8bf2c7adf21a')}}" id="wp-api-fetch-js"></script>
-	<script defer id="wp-api-fetch-js-after" src="data:text/javascript;base64,CndwLmFwaUZldGNoLnVzZSggd3AuYXBpRmV0Y2guY3JlYXRlUm9vdFVSTE1pZGRsZXdhcmUoICJodHRwczovL21pbmltb2cudGhlbWVtb3ZlLmNvbS9tZWdhbW9nL3dwLWpzb24vIiApICk7CndwLmFwaUZldGNoLm5vbmNlTWlkZGxld2FyZSA9IHdwLmFwaUZldGNoLmNyZWF0ZU5vbmNlTWlkZGxld2FyZSggImE5ZmNkZTY4MmQiICk7CndwLmFwaUZldGNoLnVzZSggd3AuYXBpRmV0Y2gubm9uY2VNaWRkbGV3YXJlICk7CndwLmFwaUZldGNoLnVzZSggd3AuYXBpRmV0Y2gubWVkaWFVcGxvYWRNaWRkbGV3YXJlICk7CndwLmFwaUZldGNoLm5vbmNlRW5kcG9pbnQgPSAiaHR0cHM6Ly9taW5pbW9nLnRoZW1lbW92ZS5jb20vbWVnYW1vZy93cC1hZG1pbi9hZG1pbi1hamF4LnBocD9hY3Rpb249cmVzdC1ub25jZSI7Cg=="></script>
-	<script defer id="wc-settings-js-before" src="data:text/javascript;base64,CnZhciB3Y1NldHRpbmdzID0gd2NTZXR0aW5ncyB8fCBKU09OLnBhcnNlKCBkZWNvZGVVUklDb21wb25lbnQoICclN0IlMjJzaGlwcGluZ0Nvc3RSZXF1aXJlc0FkZHJlc3MlMjIlM0FmYWxzZSUyQyUyMmFkbWluVXJsJTIyJTNBJTIyaHR0cHMlM0ElNUMlMkYlNUMlMkZtaW5pbW9nLnRoZW1lbW92ZS5jb20lNUMlMkZtZWdhbW9nJTVDJTJGd3AtYWRtaW4lNUMlMkYlMjIlMkMlMjJjb3VudHJpZXMlMjIlM0ElN0IlMjJBRiUyMiUzQSUyMkFmZ2hhbmlzdGFuJTIyJTJDJTIyQVglMjIlM0ElMjIlNUN1MDBjNWxhbmQlMjBJc2xhbmRzJTIyJTJDJTIyQUwlMjIlM0ElMjJBbGJhbmlhJTIyJTJDJTIyRFolMjIlM0ElMjJBbGdlcmlhJTIyJTJDJTIyQVMlMjIlM0ElMjJBbWVyaWNhbiUyMFNhbW9hJTIyJTJDJTIyQUQlMjIlM0ElMjJBbmRvcnJhJTIyJTJDJTIyQU8lMjIlM0ElMjJBbmdvbGElMjIlMkMlMjJBSSUyMiUzQSUyMkFuZ3VpbGxhJTIyJTJDJTIyQVElMjIlM0ElMjJBbnRhcmN0aWNhJTIyJTJDJTIyQUclMjIlM0ElMjJBbnRpZ3VhJTIwYW5kJTIwQmFyYnVkYSUyMiUyQyUyMkFSJTIyJTNBJTIyQXJnZW50aW5hJTIyJTJDJTIyQU0lMjIlM0ElMjJBcm1lbmlhJTIyJTJDJTIyQVclMjIlM0ElMjJBcnViYSUyMiUyQyUyMkFVJTIyJTNBJTIyQXVzdHJhbGlhJTIyJTJDJTIyQVQlMjIlM0ElMjJBdXN0cmlhJTIyJTJDJTIyQVolMjIlM0ElMjJBemVyYmFpamFuJTIyJTJDJTIyQlMlMjIlM0ElMjJCYWhhbWFzJTIyJTJDJTIyQkglMjIlM0ElMjJCYWhyYWluJTIyJTJDJTIyQkQlMjIlM0ElMjJCYW5nbGFkZXNoJTIyJTJDJTIyQkIlMjIlM0ElMjJCYXJiYWRvcyUyMiUyQyUyMkJZJTIyJTNBJTIyQmVsYXJ1cyUyMiUyQyUyMlBXJTIyJTNBJTIyQmVsYXUlMjIlMkMlMjJCRSUyMiUzQSUyMkJlbGdpdW0lMjIlMkMlMjJCWiUyMiUzQSUyMkJlbGl6ZSUyMiUyQyUyMkJKJTIyJTNBJTIyQmVuaW4lMjIlMkMlMjJCTSUyMiUzQSUyMkJlcm11ZGElMjIlMkMlMjJCVCUyMiUzQSUyMkJodXRhbiUyMiUyQyUyMkJPJTIyJTNBJTIyQm9saXZpYSUyMiUyQyUyMkJRJTIyJTNBJTIyQm9uYWlyZSUyQyUyMFNhaW50JTIwRXVzdGF0aXVzJTIwYW5kJTIwU2FiYSUyMiUyQyUyMkJBJTIyJTNBJTIyQm9zbmlhJTIwYW5kJTIwSGVyemVnb3ZpbmElMjIlMkMlMjJCVyUyMiUzQSUyMkJvdHN3YW5hJTIyJTJDJTIyQlYlMjIlM0ElMjJCb3V2ZXQlMjBJc2xhbmQlMjIlMkMlMjJCUiUyMiUzQSUyMkJyYXppbCUyMiUyQyUyMklPJTIyJTNBJTIyQnJpdGlzaCUyMEluZGlhbiUyME9jZWFuJTIwVGVycml0b3J5JTIyJTJDJTIyQk4lMjIlM0ElMjJCcnVuZWklMjIlMkMlMjJCRyUyMiUzQSUyMkJ1bGdhcmlhJTIyJTJDJTIyQkYlMjIlM0ElMjJCdXJraW5hJTIwRmFzbyUyMiUyQyUyMkJJJTIyJTNBJTIyQnVydW5kaSUyMiUyQyUyMktIJTIyJTNBJTIyQ2FtYm9kaWElMjIlMkMlMjJDTSUyMiUzQSUyMkNhbWVyb29uJTIyJTJDJTIyQ0ElMjIlM0ElMjJDYW5hZGElMjIlMkMlMjJDViUyMiUzQSUyMkNhcGUlMjBWZXJkZSUyMiUyQyUyMktZJTIyJTNBJTIyQ2F5bWFuJTIwSXNsYW5kcyUyMiUyQyUyMkNGJTIyJTNBJTIyQ2VudHJhbCUyMEFmcmljYW4lMjBSZXB1YmxpYyUyMiUyQyUyMlREJTIyJTNBJTIyQ2hhZCUyMiUyQyUyMkNMJTIyJTNBJTIyQ2hpbGUlMjIlMkMlMjJDTiUyMiUzQSUyMkNoaW5hJTIyJTJDJTIyQ1glMjIlM0ElMjJDaHJpc3RtYXMlMjBJc2xhbmQlMjIlMkMlMjJDQyUyMiUzQSUyMkNvY29zJTIwJTI4S2VlbGluZyUyOSUyMElzbGFuZHMlMjIlMkMlMjJDTyUyMiUzQSUyMkNvbG9tYmlhJTIyJTJDJTIyS00lMjIlM0ElMjJDb21vcm9zJTIyJTJDJTIyQ0clMjIlM0ElMjJDb25nbyUyMCUyOEJyYXp6YXZpbGxlJTI5JTIyJTJDJTIyQ0QlMjIlM0ElMjJDb25nbyUyMCUyOEtpbnNoYXNhJTI5JTIyJTJDJTIyQ0slMjIlM0ElMjJDb29rJTIwSXNsYW5kcyUyMiUyQyUyMkNSJTIyJTNBJTIyQ29zdGElMjBSaWNhJTIyJTJDJTIySFIlMjIlM0ElMjJDcm9hdGlhJTIyJTJDJTIyQ1UlMjIlM0ElMjJDdWJhJTIyJTJDJTIyQ1clMjIlM0ElMjJDdXJhJTI2Y2NlZGlsJTNCYW8lMjIlMkMlMjJDWSUyMiUzQSUyMkN5cHJ1cyUyMiUyQyUyMkNaJTIyJTNBJTIyQ3plY2glMjBSZXB1YmxpYyUyMiUyQyUyMkRLJTIyJTNBJTIyRGVubWFyayUyMiUyQyUyMkRKJTIyJTNBJTIyRGppYm91dGklMjIlMkMlMjJETSUyMiUzQSUyMkRvbWluaWNhJTIyJTJDJTIyRE8lMjIlM0ElMjJEb21pbmljYW4lMjBSZXB1YmxpYyUyMiUyQyUyMkVDJTIyJTNBJTIyRWN1YWRvciUyMiUyQyUyMkVHJTIyJTNBJTIyRWd5cHQlMjIlMkMlMjJTViUyMiUzQSUyMkVsJTIwU2FsdmFkb3IlMjIlMkMlMjJHUSUyMiUzQSUyMkVxdWF0b3JpYWwlMjBHdWluZWElMjIlMkMlMjJFUiUyMiUzQSUyMkVyaXRyZWElMjIlMkMlMjJFRSUyMiUzQSUyMkVzdG9uaWElMjIlMkMlMjJTWiUyMiUzQSUyMkVzd2F0aW5pJTIyJTJDJTIyRVQlMjIlM0ElMjJFdGhpb3BpYSUyMiUyQyUyMkZLJTIyJTNBJTIyRmFsa2xhbmQlMjBJc2xhbmRzJTIyJTJDJTIyRk8lMjIlM0ElMjJGYXJvZSUyMElzbGFuZHMlMjIlMkMlMjJGSiUyMiUzQSUyMkZpamklMjIlMkMlMjJGSSUyMiUzQSUyMkZpbmxhbmQlMjIlMkMlMjJGUiUyMiUzQSUyMkZyYW5jZSUyMiUyQyUyMkdGJTIyJTNBJTIyRnJlbmNoJTIwR3VpYW5hJTIyJTJDJTIyUEYlMjIlM0ElMjJGcmVuY2glMjBQb2x5bmVzaWElMjIlMkMlMjJURiUyMiUzQSUyMkZyZW5jaCUyMFNvdXRoZXJuJTIwVGVycml0b3JpZXMlMjIlMkMlMjJHQSUyMiUzQSUyMkdhYm9uJTIyJTJDJTIyR00lMjIlM0ElMjJHYW1iaWElMjIlMkMlMjJHRSUyMiUzQSUyMkdlb3JnaWElMjIlMkMlMjJERSUyMiUzQSUyMkdlcm1hbnklMjIlMkMlMjJHSCUyMiUzQSUyMkdoYW5hJTIyJTJDJTIyR0klMjIlM0ElMjJHaWJyYWx0YXIlMjIlMkMlMjJHUiUyMiUzQSUyMkdyZWVjZSUyMiUyQyUyMkdMJTIyJTNBJTIyR3JlZW5sYW5kJTIyJTJDJTIyR0QlMjIlM0ElMjJHcmVuYWRhJTIyJTJDJTIyR1AlMjIlM0ElMjJHdWFkZWxvdXBlJTIyJTJDJTIyR1UlMjIlM0ElMjJHdWFtJTIyJTJDJTIyR1QlMjIlM0ElMjJHdWF0ZW1hbGElMjIlMkMlMjJHRyUyMiUzQSUyMkd1ZXJuc2V5JTIyJTJDJTIyR04lMjIlM0ElMjJHdWluZWElMjIlMkMlMjJHVyUyMiUzQSUyMkd1aW5lYS1CaXNzYXUlMjIlMkMlMjJHWSUyMiUzQSUyMkd1eWFuYSUyMiUyQyUyMkhUJTIyJTNBJTIySGFpdGklMjIlMkMlMjJITSUyMiUzQSUyMkhlYXJkJTIwSXNsYW5kJTIwYW5kJTIwTWNEb25hbGQlMjBJc2xhbmRzJTIyJTJDJTIySE4lMjIlM0ElMjJIb25kdXJhcyUyMiUyQyUyMkhLJTIyJTNBJTIySG9uZyUyMEtvbmclMjIlMkMlMjJIVSUyMiUzQSUyMkh1bmdhcnklMjIlMkMlMjJJUyUyMiUzQSUyMkljZWxhbmQlMjIlMkMlMjJJTiUyMiUzQSUyMkluZGlhJTIyJTJDJTIySUQlMjIlM0ElMjJJbmRvbmVzaWElMjIlMkMlMjJJUiUyMiUzQSUyMklyYW4lMjIlMkMlMjJJUSUyMiUzQSUyMklyYXElMjIlMkMlMjJJRSUyMiUzQSUyMklyZWxhbmQlMjIlMkMlMjJJTSUyMiUzQSUyMklzbGUlMjBvZiUyME1hbiUyMiUyQyUyMklMJTIyJTNBJTIySXNyYWVsJTIyJTJDJTIySVQlMjIlM0ElMjJJdGFseSUyMiUyQyUyMkNJJTIyJTNBJTIySXZvcnklMjBDb2FzdCUyMiUyQyUyMkpNJTIyJTNBJTIySmFtYWljYSUyMiUyQyUyMkpQJTIyJTNBJTIySmFwYW4lMjIlMkMlMjJKRSUyMiUzQSUyMkplcnNleSUyMiUyQyUyMkpPJTIyJTNBJTIySm9yZGFuJTIyJTJDJTIyS1olMjIlM0ElMjJLYXpha2hzdGFuJTIyJTJDJTIyS0UlMjIlM0ElMjJLZW55YSUyMiUyQyUyMktJJTIyJTNBJTIyS2lyaWJhdGklMjIlMkMlMjJLVyUyMiUzQSUyMkt1d2FpdCUyMiUyQyUyMktHJTIyJTNBJTIyS3lyZ3l6c3RhbiUyMiUyQyUyMkxBJTIyJTNBJTIyTGFvcyUyMiUyQyUyMkxWJTIyJTNBJTIyTGF0dmlhJTIyJTJDJTIyTEIlMjIlM0ElMjJMZWJhbm9uJTIyJTJDJTIyTFMlMjIlM0ElMjJMZXNvdGhvJTIyJTJDJTIyTFIlMjIlM0ElMjJMaWJlcmlhJTIyJTJDJTIyTFklMjIlM0ElMjJMaWJ5YSUyMiUyQyUyMkxJJTIyJTNBJTIyTGllY2h0ZW5zdGVpbiUyMiUyQyUyMkxUJTIyJTNBJTIyTGl0aHVhbmlhJTIyJTJDJTIyTFUlMjIlM0ElMjJMdXhlbWJvdXJnJTIyJTJDJTIyTU8lMjIlM0ElMjJNYWNhbyUyMiUyQyUyMk1HJTIyJTNBJTIyTWFkYWdhc2NhciUyMiUyQyUyMk1XJTIyJTNBJTIyTWFsYXdpJTIyJTJDJTIyTVklMjIlM0ElMjJNYWxheXNpYSUyMiUyQyUyMk1WJTIyJTNBJTIyTWFsZGl2ZXMlMjIlMkMlMjJNTCUyMiUzQSUyMk1hbGklMjIlMkMlMjJNVCUyMiUzQSUyMk1hbHRhJTIyJTJDJTIyTUglMjIlM0ElMjJNYXJzaGFsbCUyMElzbGFuZHMlMjIlMkMlMjJNUSUyMiUzQSUyMk1hcnRpbmlxdWUlMjIlMkMlMjJNUiUyMiUzQSUyMk1hdXJpdGFuaWElMjIlMkMlMjJNVSUyMiUzQSUyMk1hdXJpdGl1cyUyMiUyQyUyMllUJTIyJTNBJTIyTWF5b3R0ZSUyMiUyQyUyMk1YJTIyJTNBJTIyTWV4aWNvJTIyJTJDJTIyRk0lMjIlM0ElMjJNaWNyb25lc2lhJTIyJTJDJTIyTUQlMjIlM0ElMjJNb2xkb3ZhJTIyJTJDJTIyTUMlMjIlM0ElMjJNb25hY28lMjIlMkMlMjJNTiUyMiUzQSUyMk1vbmdvbGlhJTIyJTJDJTIyTUUlMjIlM0ElMjJNb250ZW5lZ3JvJTIyJTJDJTIyTVMlMjIlM0ElMjJNb250c2VycmF0JTIyJTJDJTIyTUElMjIlM0ElMjJNb3JvY2NvJTIyJTJDJTIyTVolMjIlM0ElMjJNb3phbWJpcXVlJTIyJTJDJTIyTU0lMjIlM0ElMjJNeWFubWFyJTIyJTJDJTIyTkElMjIlM0ElMjJOYW1pYmlhJTIyJTJDJTIyTlIlMjIlM0ElMjJOYXVydSUyMiUyQyUyMk5QJTIyJTNBJTIyTmVwYWwlMjIlMkMlMjJOTCUyMiUzQSUyMk5ldGhlcmxhbmRzJTIyJTJDJTIyTkMlMjIlM0ElMjJOZXclMjBDYWxlZG9uaWElMjIlMkMlMjJOWiUyMiUzQSUyMk5ldyUyMFplYWxhbmQlMjIlMkMlMjJOSSUyMiUzQSUyMk5pY2FyYWd1YSUyMiUyQyUyMk5FJTIyJTNBJTIyTmlnZXIlMjIlMkMlMjJORyUyMiUzQSUyMk5pZ2VyaWElMjIlMkMlMjJOVSUyMiUzQSUyMk5pdWUlMjIlMkMlMjJORiUyMiUzQSUyMk5vcmZvbGslMjBJc2xhbmQlMjIlMkMlMjJLUCUyMiUzQSUyMk5vcnRoJTIwS29yZWElMjIlMkMlMjJNSyUyMiUzQSUyMk5vcnRoJTIwTWFjZWRvbmlhJTIyJTJDJTIyTVAlMjIlM0ElMjJOb3J0aGVybiUyME1hcmlhbmElMjBJc2xhbmRzJTIyJTJDJTIyTk8lMjIlM0ElMjJOb3J3YXklMjIlMkMlMjJPTSUyMiUzQSUyMk9tYW4lMjIlMkMlMjJQSyUyMiUzQSUyMlBha2lzdGFuJTIyJTJDJTIyUFMlMjIlM0ElMjJQYWxlc3RpbmlhbiUyMFRlcnJpdG9yeSUyMiUyQyUyMlBBJTIyJTNBJTIyUGFuYW1hJTIyJTJDJTIyUEclMjIlM0ElMjJQYXB1YSUyME5ldyUyMEd1aW5lYSUyMiUyQyUyMlBZJTIyJTNBJTIyUGFyYWd1YXklMjIlMkMlMjJQRSUyMiUzQSUyMlBlcnUlMjIlMkMlMjJQSCUyMiUzQSUyMlBoaWxpcHBpbmVzJTIyJTJDJTIyUE4lMjIlM0ElMjJQaXRjYWlybiUyMiUyQyUyMlBMJTIyJTNBJTIyUG9sYW5kJTIyJTJDJTIyUFQlMjIlM0ElMjJQb3J0dWdhbCUyMiUyQyUyMlBSJTIyJTNBJTIyUHVlcnRvJTIwUmljbyUyMiUyQyUyMlFBJTIyJTNBJTIyUWF0YXIlMjIlMkMlMjJSRSUyMiUzQSUyMlJldW5pb24lMjIlMkMlMjJSTyUyMiUzQSUyMlJvbWFuaWElMjIlMkMlMjJSVSUyMiUzQSUyMlJ1c3NpYSUyMiUyQyUyMlJXJTIyJTNBJTIyUndhbmRhJTIyJTJDJTIyU1QlMjIlM0ElMjJTJTI2YXRpbGRlJTNCbyUyMFRvbSUyNmVhY3V0ZSUzQiUyMGFuZCUyMFByJTI2aWFjdXRlJTNCbmNpcGUlMjIlMkMlMjJCTCUyMiUzQSUyMlNhaW50JTIwQmFydGglMjZlYWN1dGUlM0JsZW15JTIyJTJDJTIyU0glMjIlM0ElMjJTYWludCUyMEhlbGVuYSUyMiUyQyUyMktOJTIyJTNBJTIyU2FpbnQlMjBLaXR0cyUyMGFuZCUyME5ldmlzJTIyJTJDJTIyTEMlMjIlM0ElMjJTYWludCUyMEx1Y2lhJTIyJTJDJTIyU1glMjIlM0ElMjJTYWludCUyME1hcnRpbiUyMCUyOER1dGNoJTIwcGFydCUyOSUyMiUyQyUyMk1GJTIyJTNBJTIyU2FpbnQlMjBNYXJ0aW4lMjAlMjhGcmVuY2glMjBwYXJ0JTI5JTIyJTJDJTIyUE0lMjIlM0ElMjJTYWludCUyMFBpZXJyZSUyMGFuZCUyME1pcXVlbG9uJTIyJTJDJTIyVkMlMjIlM0ElMjJTYWludCUyMFZpbmNlbnQlMjBhbmQlMjB0aGUlMjBHcmVuYWRpbmVzJTIyJTJDJTIyV1MlMjIlM0ElMjJTYW1vYSUyMiUyQyUyMlNNJTIyJTNBJTIyU2FuJTIwTWFyaW5vJTIyJTJDJTIyU0ElMjIlM0ElMjJTYXVkaSUyMEFyYWJpYSUyMiUyQyUyMlNOJTIyJTNBJTIyU2VuZWdhbCUyMiUyQyUyMlJTJTIyJTNBJTIyU2VyYmlhJTIyJTJDJTIyU0MlMjIlM0ElMjJTZXljaGVsbGVzJTIyJTJDJTIyU0wlMjIlM0ElMjJTaWVycmElMjBMZW9uZSUyMiUyQyUyMlNHJTIyJTNBJTIyU2luZ2Fwb3JlJTIyJTJDJTIyU0slMjIlM0ElMjJTbG92YWtpYSUyMiUyQyUyMlNJJTIyJTNBJTIyU2xvdmVuaWElMjIlMkMlMjJTQiUyMiUzQSUyMlNvbG9tb24lMjBJc2xhbmRzJTIyJTJDJTIyU08lMjIlM0ElMjJTb21hbGlhJTIyJTJDJTIyWkElMjIlM0ElMjJTb3V0aCUyMEFmcmljYSUyMiUyQyUyMkdTJTIyJTNBJTIyU291dGglMjBHZW9yZ2lhJTVDJTJGU2FuZHdpY2glMjBJc2xhbmRzJTIyJTJDJTIyS1IlMjIlM0ElMjJTb3V0aCUyMEtvcmVhJTIyJTJDJTIyU1MlMjIlM0ElMjJTb3V0aCUyMFN1ZGFuJTIyJTJDJTIyRVMlMjIlM0ElMjJTcGFpbiUyMiUyQyUyMkxLJTIyJTNBJTIyU3JpJTIwTGFua2ElMjIlMkMlMjJTRCUyMiUzQSUyMlN1ZGFuJTIyJTJDJTIyU1IlMjIlM0ElMjJTdXJpbmFtZSUyMiUyQyUyMlNKJTIyJTNBJTIyU3ZhbGJhcmQlMjBhbmQlMjBKYW4lMjBNYXllbiUyMiUyQyUyMlNFJTIyJTNBJTIyU3dlZGVuJTIyJTJDJTIyQ0glMjIlM0ElMjJTd2l0emVybGFuZCUyMiUyQyUyMlNZJTIyJTNBJTIyU3lyaWElMjIlMkMlMjJUVyUyMiUzQSUyMlRhaXdhbiUyMiUyQyUyMlRKJTIyJTNBJTIyVGFqaWtpc3RhbiUyMiUyQyUyMlRaJTIyJTNBJTIyVGFuemFuaWElMjIlMkMlMjJUSCUyMiUzQSUyMlRoYWlsYW5kJTIyJTJDJTIyVEwlMjIlM0ElMjJUaW1vci1MZXN0ZSUyMiUyQyUyMlRHJTIyJTNBJTIyVG9nbyUyMiUyQyUyMlRLJTIyJTNBJTIyVG9rZWxhdSUyMiUyQyUyMlRPJTIyJTNBJTIyVG9uZ2ElMjIlMkMlMjJUVCUyMiUzQSUyMlRyaW5pZGFkJTIwYW5kJTIwVG9iYWdvJTIyJTJDJTIyVE4lMjIlM0ElMjJUdW5pc2lhJTIyJTJDJTIyVFIlMjIlM0ElMjJUdXJrZXklMjIlMkMlMjJUTSUyMiUzQSUyMlR1cmttZW5pc3RhbiUyMiUyQyUyMlRDJTIyJTNBJTIyVHVya3MlMjBhbmQlMjBDYWljb3MlMjBJc2xhbmRzJTIyJTJDJTIyVFYlMjIlM0ElMjJUdXZhbHUlMjIlMkMlMjJVRyUyMiUzQSUyMlVnYW5kYSUyMiUyQyUyMlVBJTIyJTNBJTIyVWtyYWluZSUyMiUyQyUyMkFFJTIyJTNBJTIyVW5pdGVkJTIwQXJhYiUyMEVtaXJhdGVzJTIyJTJDJTIyR0IlMjIlM0ElMjJVbml0ZWQlMjBLaW5nZG9tJTIwJTI4VUslMjklMjIlMkMlMjJVUyUyMiUzQSUyMlVuaXRlZCUyMFN0YXRlcyUyMCUyOFVTJTI5JTIyJTJDJTIyVU0lMjIlM0ElMjJVbml0ZWQlMjBTdGF0ZXMlMjAlMjhVUyUyOSUyME1pbm9yJTIwT3V0bHlpbmclMjBJc2xhbmRzJTIyJTJDJTIyVVklMjIlM0ElMjJVcnVndWF5JTIyJTJDJTIyVVolMjIlM0ElMjJVemJla2lzdGFuJTIyJTJDJTIyVlUlMjIlM0ElMjJWYW51YXR1JTIyJTJDJTIyVkElMjIlM0ElMjJWYXRpY2FuJTIyJTJDJTIyVkUlMjIlM0ElMjJWZW5lenVlbGElMjIlMkMlMjJWTiUyMiUzQSUyMlZpZXRuYW0lMjIlMkMlMjJWRyUyMiUzQSUyMlZpcmdpbiUyMElzbGFuZHMlMjAlMjhCcml0aXNoJTI5JTIyJTJDJTIyVkklMjIlM0ElMjJWaXJnaW4lMjBJc2xhbmRzJTIwJTI4VVMlMjklMjIlMkMlMjJXRiUyMiUzQSUyMldhbGxpcyUyMGFuZCUyMEZ1dHVuYSUyMiUyQyUyMkVIJTIyJTNBJTIyV2VzdGVybiUyMFNhaGFyYSUyMiUyQyUyMllFJTIyJTNBJTIyWWVtZW4lMjIlMkMlMjJaTSUyMiUzQSUyMlphbWJpYSUyMiUyQyUyMlpXJTIyJTNBJTIyWmltYmFid2UlMjIlN0QlMkMlMjJjdXJyZW5jeSUyMiUzQSU3QiUyMmNvZGUlMjIlM0ElMjJHQlAlMjIlMkMlMjJwcmVjaXNpb24lMjIlM0EyJTJDJTIyc3ltYm9sJTIyJTNBJTIyJTVDdTAwYTMlMjIlMkMlMjJzeW1ib2xQb3NpdGlvbiUyMiUzQSUyMmxlZnQlMjIlMkMlMjJkZWNpbWFsU2VwYXJhdG9yJTIyJTNBJTIyLiUyMiUyQyUyMnRob3VzYW5kU2VwYXJhdG9yJTIyJTNBJTIyJTJDJTIyJTJDJTIycHJpY2VGb3JtYXQlMjIlM0ElMjIlMjUxJTI0cyUyNTIlMjRzJTIyJTdEJTJDJTIyY3VycmVudFVzZXJJZCUyMiUzQTAlMkMlMjJjdXJyZW50VXNlcklzQWRtaW4lMjIlM0FmYWxzZSUyQyUyMmRhdGVGb3JtYXQlMjIlM0ElMjJGJTIwaiUyQyUyMFklMjIlMkMlMjJob21lVXJsJTIyJTNBJTIyaHR0cHMlM0ElNUMlMkYlNUMlMkZtaW5pbW9nLnRoZW1lbW92ZS5jb20lNUMlMkZtZWdhbW9nJTVDJTJGJTIyJTJDJTIybG9jYWxlJTIyJTNBJTdCJTIyc2l0ZUxvY2FsZSUyMiUzQSUyMmVuX1VTJTIyJTJDJTIydXNlckxvY2FsZSUyMiUzQSUyMmVuX1VTJTIyJTJDJTIyd2Vla2RheXNTaG9ydCUyMiUzQSU1QiUyMlN1biUyMiUyQyUyMk1vbiUyMiUyQyUyMlR1ZSUyMiUyQyUyMldlZCUyMiUyQyUyMlRodSUyMiUyQyUyMkZyaSUyMiUyQyUyMlNhdCUyMiU1RCU3RCUyQyUyMmRhc2hib2FyZFVybCUyMiUzQSUyMmh0dHBzJTNBJTVDJTJGJTVDJTJGbWluaW1vZy50aGVtZW1vdmUuY29tJTVDJTJGbWVnYW1vZyU1QyUyRm15LWFjY291bnQlNUMlMkYlMjIlMkMlMjJvcmRlclN0YXR1c2VzJTIyJTNBJTdCJTIycGVuZGluZyUyMiUzQSUyMlBlbmRpbmclMjBwYXltZW50JTIyJTJDJTIycHJvY2Vzc2luZyUyMiUzQSUyMlByb2Nlc3NpbmclMjIlMkMlMjJvbi1ob2xkJTIyJTNBJTIyT24lMjBob2xkJTIyJTJDJTIyY29tcGxldGVkJTIyJTNBJTIyQ29tcGxldGVkJTIyJTJDJTIyY2FuY2VsbGVkJTIyJTNBJTIyQ2FuY2VsbGVkJTIyJTJDJTIycmVmdW5kZWQlMjIlM0ElMjJSZWZ1bmRlZCUyMiUyQyUyMmZhaWxlZCUyMiUzQSUyMkZhaWxlZCUyMiUyQyUyMmNoZWNrb3V0LWRyYWZ0JTIyJTNBJTIyRHJhZnQlMjIlN0QlMkMlMjJwbGFjZWhvbGRlckltZ1NyYyUyMiUzQSUyMmh0dHBzJTNBJTVDJTJGJTVDJTJGbWluaW1vZy50aGVtZW1vdmUuY29tJTVDJTJGbWVnYW1vZyU1QyUyRndwLWNvbnRlbnQlNUMlMkZ1cGxvYWRzJTVDJTJGc2l0ZXMlNUMlMkYzJTVDJTJGd29vY29tbWVyY2UtcGxhY2Vob2xkZXIucG5nJTIyJTJDJTIycHJvZHVjdHNTZXR0aW5ncyUyMiUzQSU3QiUyMmNhcnRSZWRpcmVjdEFmdGVyQWRkJTIyJTNBZmFsc2UlN0QlMkMlMjJzaXRlVGl0bGUlMjIlM0ElMjJNZWdhbW9nJTIyJTJDJTIyc3RvcmVQYWdlcyUyMiUzQSU3QiUyMm15YWNjb3VudCUyMiUzQSU3QiUyMmlkJTIyJTNBOSUyQyUyMnRpdGxlJTIyJTNBJTIyTXklMjBhY2NvdW50JTIyJTJDJTIycGVybWFsaW5rJTIyJTNBJTIyaHR0cHMlM0ElNUMlMkYlNUMlMkZtaW5pbW9nLnRoZW1lbW92ZS5jb20lNUMlMkZtZWdhbW9nJTVDJTJGbXktYWNjb3VudCU1QyUyRiUyMiU3RCUyQyUyMnNob3AlMjIlM0ElN0IlMjJpZCUyMiUzQTYlMkMlMjJ0aXRsZSUyMiUzQSUyMlNob3AlMjIlMkMlMjJwZXJtYWxpbmslMjIlM0ElMjJodHRwcyUzQSU1QyUyRiU1QyUyRm1pbmltb2cudGhlbWVtb3ZlLmNvbSU1QyUyRm1lZ2Ftb2clNUMlMkZzaG9wJTVDJTJGJTIyJTdEJTJDJTIyY2FydCUyMiUzQSU3QiUyMmlkJTIyJTNBNyUyQyUyMnRpdGxlJTIyJTNBJTIyQ2FydCUyMiUyQyUyMnBlcm1hbGluayUyMiUzQSUyMmh0dHBzJTNBJTVDJTJGJTVDJTJGbWluaW1vZy50aGVtZW1vdmUuY29tJTVDJTJGbWVnYW1vZyU1QyUyRmNhcnQlNUMlMkYlMjIlN0QlMkMlMjJjaGVja291dCUyMiUzQSU3QiUyMmlkJTIyJTNBOCUyQyUyMnRpdGxlJTIyJTNBJTIyQ2hlY2tvdXQlMjIlMkMlMjJwZXJtYWxpbmslMjIlM0ElMjJodHRwcyUzQSU1QyUyRiU1QyUyRm1pbmltb2cudGhlbWVtb3ZlLmNvbSU1QyUyRm1lZ2Ftb2clNUMlMkZjaGVja291dCU1QyUyRiUyMiU3RCUyQyUyMnByaXZhY3klMjIlM0ElN0IlMjJpZCUyMiUzQTAlMkMlMjJ0aXRsZSUyMiUzQSUyMiUyMiUyQyUyMnBlcm1hbGluayUyMiUzQWZhbHNlJTdEJTJDJTIydGVybXMlMjIlM0ElN0IlMjJpZCUyMiUzQTAlMkMlMjJ0aXRsZSUyMiUzQSUyMiUyMiUyQyUyMnBlcm1hbGluayUyMiUzQWZhbHNlJTdEJTdEJTJDJTIyd2NBc3NldFVybCUyMiUzQSUyMmh0dHBzJTNBJTVDJTJGJTVDJTJGbWluaW1vZy50aGVtZW1vdmUuY29tJTVDJTJGbWVnYW1vZyU1QyUyRndwLWNvbnRlbnQlNUMlMkZwbHVnaW5zJTVDJTJGd29vY29tbWVyY2UlNUMlMkZhc3NldHMlNUMlMkYlMjIlMkMlMjJ3Y1ZlcnNpb24lMjIlM0ElMjI4LjUuMSUyMiUyQyUyMndwTG9naW5VcmwlMjIlM0ElMjJodHRwcyUzQSU1QyUyRiU1QyUyRm1pbmltb2cudGhlbWVtb3ZlLmNvbSU1QyUyRm1lZ2Ftb2clNUMlMkZ3cC1sb2dpbi5waHAlMjIlMkMlMjJ3cFZlcnNpb24lMjIlM0ElMjI2LjQuNSUyMiUyQyUyMmNvbGxlY3RhYmxlTWV0aG9kSWRzJTIyJTNBJTVCJTVEJTJDJTIyYWRtaW4lMjIlM0ElN0IlMjJ3Y2NvbUhlbHBlciUyMiUzQSU3QiUyMmlzQ29ubmVjdGVkJTIyJTNBZmFsc2UlMkMlMjJjb25uZWN0VVJMJTIyJTNBJTIyaHR0cHMlM0ElNUMlMkYlNUMlMkZtaW5pbW9nLnRoZW1lbW92ZS5jb20lNUMlMkZtZWdhbW9nJTVDJTJGd3AtYWRtaW4lNUMlMkZhZG1pbi5waHAlM0ZwYWdlJTNEd2MtYWRkb25zJTI2c2VjdGlvbiUzRGhlbHBlciUyNndjLWhlbHBlci1jb25uZWN0JTNEMSUyNndjLWhlbHBlci1ub25jZSUzRGYxNmQ2ZmM3ZjMlMjIlMkMlMjJ1c2VyRW1haWwlMjIlM0ElMjIlMjIlMkMlMjJ1c2VyQXZhdGFyJTIyJTNBJTIyaHR0cHMlM0ElNUMlMkYlNUMlMkZzZWN1cmUuZ3JhdmF0YXIuY29tJTVDJTJGYXZhdGFyJTVDJTJGJTNGcyUzRDQ4JTI2ZCUzRG1tJTI2ciUzRGclMjIlMkMlMjJzdG9yZUNvdW50cnklMjIlM0ElMjJVUyUyMiUyQyUyMmluQXBwUHVyY2hhc2VVUkxQYXJhbXMlMjIlM0ElN0IlMjJ3Y2NvbS1zaXRlJTIyJTNBJTIyaHR0cHMlM0ElNUMlMkYlNUMlMkZtaW5pbW9nLnRoZW1lbW92ZS5jb20lNUMlMkZtZWdhbW9nJTIyJTJDJTIyd2Njb20tYmFjayUyMiUzQSUyMiUyNTJGbWVnYW1vZyUyNTJGcHJvZHVjdCUyNTJGZHZhbGEtc2hlZXQtc2V0JTI1MkYlMjIlMkMlMjJ3Y2NvbS13b28tdmVyc2lvbiUyMiUzQSUyMjguNS4xJTIyJTJDJTIyd2Njb20tY29ubmVjdC1ub25jZSUyMiUzQSUyMmYxNmQ2ZmM3ZjMlMjIlN0QlN0QlMkMlMjJfZmVhdHVyZV9ub25jZSUyMiUzQSUyMjNhOWQwYzgwNWIlMjIlMkMlMjJhbGVydENvdW50JTIyJTNBJTIyMSUyMiUyQyUyMnZpc2libGVUYXNrTGlzdElkcyUyMiUzQSU1QiUyMnNldHVwJTIyJTVEJTdEJTdEJyApICk7Cg=="></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_178f4d3163b38b06e6b4a00d28fbb5668edc.js?ver=07c2f0675ddd247d2325')}}" id="wc-settings-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/data-controls.min0740.js?ver=fe4ccc8a1782ea8e2cb1')}}" id="wp-data-controls-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/html-entities.min68f0.js?ver=36a4a255da7dd2e1bf8e')}}" id="wp-html-entities-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/notices.min380b.js?ver=38e88f4b627cf873edd0')}}" id="wp-notices-js"></script>
-	<script defer id="wc-blocks-middleware-js-before" src="data:text/javascript;base64,CgkJCXZhciB3Y0Jsb2Nrc01pZGRsZXdhcmVDb25maWcgPSB7CgkJCQlzdG9yZUFwaU5vbmNlOiAnOGQxMWZjZWFiNicsCgkJCQl3Y1N0b3JlQXBpTm9uY2VUaW1lc3RhbXA6ICcxNzM1MDc0MjQ5JwoJCQl9OwoJCQkK"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_bdc1e466fc436dc223abbd653674f2adce2b.js?ver=ca04183222edaf8a26be')}}" id="wc-blocks-middleware-js"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_d362db0897dcd4f234bab878252648ae997f.js?ver=c96aba0171b12e03b8a6')}}" id="wc-blocks-data-store-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/dom-ready.minded6.js?ver=392bdd43726760d1f3ca')}}" id="wp-dom-ready-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/a11y.min866e.js?ver=7032343a947cfccf5608')}}" id="wp-a11y-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/primitives.minfde7.js?ver=6984e6eb5d6157c4fe44')}}" id="wp-primitives-js"></script>
-	<script src="{{asset('assets/wp-includes/js/dist/warning.minb0b0.js?ver=122829a085511691f14d')}}" id="wp-warning-js"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_32eebd049df2f836e758e968164ef6fef69d.js?ver=b165bb2bd213326d7f31')}}" id="wc-blocks-components-js"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_da81d17da809a68f4d7dab3e8e0e1326297b.js?ver=9f469ef17beaf7c51576')}}" id="wc-blocks-checkout-js"></script>
-	<script defer src="{{asset('assets/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution-blocks.min2ff6.js?ver=8.5.1')}}" id="wc-order-attribution-blocks-js"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_e62aa30bcc0e150f64afc20a97388ce9b7d5.js?ver=6.1.9')}}" id="print-js"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_c67adc1d2b17eba3ab3a7859a140c1f5b7d5.js?ver=6.1.9')}}" id="table-head-fixer-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/perfect-scrollbar.min5b75.js?ver=3.0.2')}}" id="perfect-scrollbar-js"></script>
-	<script defer src="{{asset('assets/wp-includes/js/jquery/ui/core.min3f14.js?ver=1.13.2')}}" id="jquery-ui-core-js"></script>
-	<script defer src="{{asset('assets/wp-includes/js/jquery/ui/mouse.min3f14.js?ver=1.13.2')}}" id="jquery-ui-mouse-js"></script>
-	<script defer src="{{asset('assets/wp-includes/js/jquery/ui/sortable.min3f14.js?ver=1.13.2')}}" id="jquery-ui-sortable-js"></script>
-	<script defer id="woosc-frontend-js-extra" src="data:text/javascript;base64,CnZhciB3b29zY192YXJzID0geyJhamF4X3VybCI6Imh0dHBzOlwvXC9taW5pbW9nLnRoZW1lbW92ZS5jb21cL21lZ2Ftb2dcL3dwLWFkbWluXC9hZG1pbi1hamF4LnBocCIsIm5vbmNlIjoiMjk1MmY5OWZkMSIsImhhc2giOiJkYXBtIiwidXNlcl9pZCI6IjBjZGI2NGZhYjMyYTA1YmQzOTNiMjBjOGMzNTFkZTlmIiwicGFnZV91cmwiOiIjIiwib3Blbl9idXR0b24iOiIiLCJoaWRlX2VtcHR5X3JvdyI6InllcyIsInZhcmlhdGlvbnMiOiJ5ZXMiLCJvcGVuX2J1dHRvbl9hY3Rpb24iOiJvcGVuX3BvcHVwIiwibWVudV9hY3Rpb24iOiJvcGVuX3BvcHVwIiwiYnV0dG9uX2FjdGlvbiI6InNob3dfdGFibGUiLCJzaWRlYmFyX3Bvc2l0aW9uIjoicmlnaHQiLCJtZXNzYWdlX3Bvc2l0aW9uIjoicmlnaHQtdG9wIiwibWVzc2FnZV9hZGRlZCI6IntuYW1lfSBoYXMgYmVlbiBhZGRlZCB0byBDb21wYXJlIGxpc3QuIiwibWVzc2FnZV9yZW1vdmVkIjoie25hbWV9IGhhcyBiZWVuIHJlbW92ZWQgZnJvbSB0aGUgQ29tcGFyZSBsaXN0LiIsIm1lc3NhZ2VfZXhpc3RzIjoie25hbWV9IGlzIGFscmVhZHkgaW4gdGhlIENvbXBhcmUgbGlzdC4iLCJvcGVuX2JhciI6Im5vIiwiYmFyX2J1YmJsZSI6Im5vIiwiYWRkaW5nIjoicHJlcGVuZCIsImNsaWNrX2FnYWluIjoibm8iLCJoaWRlX2VtcHR5Ijoibm8iLCJjbGlja19vdXRzaWRlIjoieWVzIiwiZnJlZXplX2NvbHVtbiI6InllcyIsImZyZWV6ZV9yb3ciOiJ5ZXMiLCJzY3JvbGxiYXIiOiJ5ZXMiLCJsaW1pdCI6IjEwMCIsInJlbW92ZV9hbGwiOiJEbyB5b3Ugd2FudCB0byByZW1vdmUgYWxsIHByb2R1Y3RzIGZyb20gdGhlIGNvbXBhcmU/IiwibGltaXRfbm90aWNlIjoiWW91IGNhbiBhZGQgYSBtYXhpbXVtIG9mIHtsaW1pdH0gcHJvZHVjdHMgdG8gdGhlIGNvbXBhcmlzb24gdGFibGUuIiwiY29waWVkX3RleHQiOiJTaGFyZSBsaW5rICVzIHdhcyBjb3BpZWQgdG8gY2xpcGJvYXJkISIsImJ1dHRvbl90ZXh0IjoiQ29tcGFyZSIsImJ1dHRvbl90ZXh0X2FkZGVkIjoiQ29tcGFyZSIsImJ1dHRvbl9ub3JtYWxfaWNvbiI6Indvb3NjLWljb24tMSIsImJ1dHRvbl9hZGRlZF9pY29uIjoid29vc2MtaWNvbi03NCJ9Owo="></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_9ade3e9bf381b566c5d8761bc84701deb7d5.js?ver=6.1.9')}}" id="woosc-frontend-js"></script>
-	<script defer id="woosw-frontend-js-extra" src="data:text/javascript;base64,CnZhciB3b29zd192YXJzID0geyJhamF4X3VybCI6Imh0dHBzOlwvXC9taW5pbW9nLnRoZW1lbW92ZS5jb21cL21lZ2Ftb2dcL3dwLWFkbWluXC9hZG1pbi1hamF4LnBocCIsIm5vbmNlIjoiMWY4ZTQ4NTMxYiIsIm1lbnVfYWN0aW9uIjoib3Blbl9wYWdlIiwicGVyZmVjdF9zY3JvbGxiYXIiOiJ5ZXMiLCJ3aXNobGlzdF91cmwiOiJodHRwczpcL1wvbWluaW1vZy50aGVtZW1vdmUuY29tXC9tZWdhbW9nXC93aXNobGlzdFwvIiwiYnV0dG9uX2FjdGlvbiI6Imxpc3QiLCJtZXNzYWdlX3Bvc2l0aW9uIjoicmlnaHQtdG9wIiwiYnV0dG9uX2FjdGlvbl9hZGRlZCI6InBvcHVwIiwiZW1wdHlfY29uZmlybSI6IlRoaXMgYWN0aW9uIGNhbm5vdCBiZSB1bmRvbmUuIEFyZSB5b3Ugc3VyZT8iLCJkZWxldGVfY29uZmlybSI6IlRoaXMgYWN0aW9uIGNhbm5vdCBiZSB1bmRvbmUuIEFyZSB5b3Ugc3VyZT8iLCJjb3BpZWRfdGV4dCI6IkNvcGllZCB0aGUgd2lzaGxpc3QgbGluazoiLCJtZW51X3RleHQiOiJXaXNobGlzdCIsImJ1dHRvbl90ZXh0IjoiQWRkIHRvIHdpc2hsaXN0IiwiYnV0dG9uX3RleHRfYWRkZWQiOiJCcm93c2Ugd2lzaGxpc3QiLCJidXR0b25fbm9ybWFsX2ljb24iOiJ3b29zdy1pY29uLTUiLCJidXR0b25fYWRkZWRfaWNvbiI6Indvb3N3LWljb24tOCIsImJ1dHRvbl9sb2FkaW5nX2ljb24iOiJ3b29zdy1pY29uLTQifTsK"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_9402fc7d07010eff0b8ed90e852f3449287d.js?ver=4.8.0')}}" id="woosw-frontend-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/modal.min5b75.js?ver=3.0.2')}}" id="minimog-modal-js"></script>
-	<script defer id="minimog-script-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZyA9IHsiYWpheHVybCI6Imh0dHBzOlwvXC9taW5pbW9nLnRoZW1lbW92ZS5jb21cL21lZ2Ftb2dcL3dwLWFkbWluXC9hZG1pbi1hamF4LnBocCIsIm1pbmltb2dfYWpheF91cmwiOiJcL21lZ2Ftb2dcLz9taW5pbW9nLWFqYXg9JSVlbmRwb2ludCUlIiwibm9uY2UiOiIxOWIxMjNmNDNjIiwiaGVhZGVyX3N0aWNreV9lbmFibGUiOiIxIiwibGlnaHRfZ2FsbGVyeV9hdXRvX3BsYXkiOiIiLCJsaWdodF9nYWxsZXJ5X2Rvd25sb2FkIjoiMSIsImxpZ2h0X2dhbGxlcnlfZnVsbF9zY3JlZW4iOiIxIiwibGlnaHRfZ2FsbGVyeV96b29tIjoiMSIsImxpZ2h0X2dhbGxlcnlfdGh1bWJuYWlsIjoiIiwibGlnaHRfZ2FsbGVyeV9zaGFyZSI6IjEiLCJtb2JpbGVfbWVudV9icmVha3BvaW50IjoiMTE5OSIsImlzU2luZ2xlIjoiMSIsInBvc3RJRCI6IjExNDQiLCJwb3N0VHlwZSI6InByb2R1Y3QiLCJzZWFyY2giOnsiYWpheF9kaXNhYmxlIjpmYWxzZSwiZGVsYXkiOiIifSwiaTE4bCI6eyJub01hdGNoZXNGb3VuZCI6Ik5vIG1hdGNoZXMgZm91bmQiLCJhbGwiOiJBbGwgJXMifX07Cg=="></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/main.min5b75.js?ver=3.0.2')}}" id="minimog-script-js"></script>
-	<script defer id="minimog-promo-popup-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZ1BvcHVwID0geyJvbkxvYWQiOnsiZW5hYmxlIjoiMSIsImRlbGF5IjowfSwib25TY3JvbGxpbmciOnsiZW5hYmxlIjoiMCIsImRpcmVjdGlvbiI6ImRvd24iLCJvZmZzZXQiOjUwfSwib25DbGljayI6eyJlbmFibGUiOiIwIiwiY2xpY2tUaW1lcyI6IjEifSwicnVsZXMiOnsiYnlUaW1lcyI6eyJlbmFibGUiOiIxIiwidGltZXMiOiIxIn0sImJ5UGFnZVZpZXdzIjp7ImVuYWJsZSI6IjAiLCJyZWFjaCI6IjMifX19Owo="></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/promo-popup.min5b75.js?ver=3.0.2')}}" id="minimog-promo-popup-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/m-image.min5b75.js?ver=3.0.2')}}" id="minimog-image-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/libs/swiper/js/swiper.minc225.js?ver=5.4.1')}}" id="swiper-js"></script>
-	<script defer id="minimog-swiper-wrapper-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZ1N3aXBlciA9IHsicHJldlRleHQiOiJQcmV2IiwibmV4dFRleHQiOiJOZXh0In07Cg=="></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/swiper-wrapper.min5b75.js?ver=3.0.2')}}" id="minimog-swiper-wrapper-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/libs/smartmenus/jquery.smartmenus.minc64e.js?ver=1.1.1')}}" id="smartmenus-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/wishlist.min5b75.js?ver=3.0.2')}}" id="minimog-wc-wishlist-js"></script>
-	<script defer id="wc-add-to-cart-variation-js-extra" src="data:text/javascript;base64,CnZhciB3Y19hZGRfdG9fY2FydF92YXJpYXRpb25fcGFyYW1zID0geyJ3Y19hamF4X3VybCI6IlwvbWVnYW1vZ1wvP3djLWFqYXg9JSVlbmRwb2ludCUlIiwiaTE4bl9ub19tYXRjaGluZ192YXJpYXRpb25zX3RleHQiOiJTb3JyeSwgbm8gcHJvZHVjdHMgbWF0Y2hlZCB5b3VyIHNlbGVjdGlvbi4gUGxlYXNlIGNob29zZSBhIGRpZmZlcmVudCBjb21iaW5hdGlvbi4iLCJpMThuX21ha2VfYV9zZWxlY3Rpb25fdGV4dCI6IlBsZWFzZSBzZWxlY3Qgc29tZSBwcm9kdWN0IG9wdGlvbnMgYmVmb3JlIGFkZGluZyB0aGlzIHByb2R1Y3QgdG8geW91ciBjYXJ0LiIsImkxOG5fdW5hdmFpbGFibGVfdGV4dCI6IlNvcnJ5LCB0aGlzIHByb2R1Y3QgaXMgdW5hdmFpbGFibGUuIFBsZWFzZSBjaG9vc2UgYSBkaWZmZXJlbnQgY29tYmluYXRpb24uIn07Cg=="></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/add-to-cart-variation.min2ff6.js?ver=8.5.1')}}" id="wc-add-to-cart-variation-js" data-wp-strategy="defer"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/quantity-button.min5b75.js?ver=3.0.2')}}" id="minimog-quantity-button-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/nice-select.min5b75.js?ver=3.0.2')}}" id="minimog-nice-select-js"></script>
-	<script defer id="minimog-wc-general-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZ1dvbyA9IHsid2NfYWpheF91cmwiOiJcL21lZ2Ftb2dcLz93Yy1hamF4PSUlZW5kcG9pbnQlJSIsImFwcGx5X2NvdXBvbl9ub25jZSI6IjIwNDZiNmY1MzkiLCJyZW1vdmVfY291cG9uX25vbmNlIjoiNmUwYjc1NDg4ZCIsImlzX2NoZWNrb3V0IjoiIiwiYWRkX3RvX2NhcnRfYmVoYXZpb3VyIjoib3Blbl9jYXJ0X2RyYXdlciJ9Owo="></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/general.min5b75.js?ver=3.0.2')}}" id="minimog-wc-general-js"></script>
-	<script defer id="wc-cart-fragments-js-extra" src="data:text/javascript;base64,CnZhciB3Y19jYXJ0X2ZyYWdtZW50c19wYXJhbXMgPSB7ImFqYXhfdXJsIjoiXC9tZWdhbW9nXC93cC1hZG1pblwvYWRtaW4tYWpheC5waHAiLCJ3Y19hamF4X3VybCI6IlwvbWVnYW1vZ1wvP3djLWFqYXg9JSVlbmRwb2ludCUlIiwiY2FydF9oYXNoX2tleSI6IndjX2NhcnRfaGFzaF8xOTZiMzFhN2JjM2JhZjM2NmEyYTQ0MDNjZmVmMTI4ZCIsImZyYWdtZW50X25hbWUiOiJ3Y19mcmFnbWVudHNfMTk2YjMxYTdiYzNiYWYzNjZhMmE0NDAzY2ZlZjEyOGQiLCJyZXF1ZXN0X3RpbWVvdXQiOiI1MDAwIn07Cg=="></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/cart-fragments.min2ff6.js?ver=8.5.1')}}" id="wc-cart-fragments-js" data-wp-strategy="defer"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/countdown-timer.min5b75.js?ver=3.0.2')}}" id="minimog-countdown-timer-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/coupon.min5b75.js?ver=3.0.2')}}" id="minimog-wc-coupon-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/fly-cart.min5b75.js?ver=3.0.2')}}" id="minimog-wc-fly-cart-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/libs/lightGallery/js/lightgallery-all.mind203.js?ver=1.6.12')}}" id="lightgallery-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/tab-panel.min5b75.js?ver=3.0.2')}}" id="minimog-tab-panel-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/libs/spritespin/spritespin.min5b75.js?ver=3.0.2')}}" id="spritespin-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/libs/readmore/readmore.min6e0e.js?ver=3.0.0')}}" id="readmore-js"></script>
-	<script defer id="minimog-wc-product-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZ1Byb2R1Y3RTaW5nbGUgPSB7ImZlYXR1cmVTdHlsZSI6InNsaWRlciIsInNpbmdsZVByb2R1Y3RTdGlja3lCYXIiOiIwIiwiaTE4biI6eyJmaWxlc1NlbGVjdGVkIjoie2NvdW50fSBmaWxlcyBzZWxlY3RlZCIsInJlYWRNb3JlIjoiUmVhZCBtb3JlIiwicmVhZExlc3MiOiJSZWFkIGxlc3MifX07Cg=="></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/single.min5b75.js?ver=3.0.2')}}" id="minimog-wc-product-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/product-questions.min5b75.js?ver=3.0.2')}}" id="minimog-wc-questions-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/hc-sticky.min5b75.js?ver=3.0.2')}}" id="hc-sticky-js"></script>
-	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_lQl7ix2cmCXnkpYWn1mpgsyQDKjFcTM&amp;ver=3.4.2" id="dokan-maps-js"></script>
+		<div class="minimog-modal modal-product-question" id="modal-product-question"
+			data-question-title="Ask a Question"
+			data-reply-title="Reply to {comment_author_name}" aria-hidden="true" role="dialog" hidden>
+			<div class="modal-overlay"></div>
+			<div class="modal-content">
+				<div class="button-close-modal" role="button" aria-label="Close"></div>
+				<div class="modal-content-wrap">
+					<div class="modal-content-inner">
+						<div class="modal-content-header">
+							<h4 class="modal-title">Ask a Question</h4>
+						</div>
+						<div class="question-form-wrapper">
+							<form method="post" id="question-form" class="question-form">
+								<div class="question-form-author">
+									<label for="q-author">Your Name<span class="required">*</span></label>
+									<input type="text" name="author" value="" id="q-author" aria-required='true' placeholder="Your Name*">
+								</div>
+								<div class="question-form-email">
+									<label for="q-email">Your Email<span class="required">*</span></label>
+									<input type="email" name="email" value="" id="q-email" aria-required='true' placeholder="Your Email*">
+								</div>
+
+								<div class="question-form-question">
+									<label for="question">Your Message<span class="required">*</span></label>
+									<textarea id="question" name="question" cols="45" rows="8" aria-required="true"
+										placeholder="Your Message*"></textarea>
+								</div>
+								<div class="question-form-submit form-submit">
+									<button type="submit" name="submit"
+										class="submit"><span>Submit Now</span></button>
+									<input type="hidden" name="post_id" value="1144">
+									<input type="hidden" name="question_parent_id" value="0">
+									<input type="hidden" name="action" value="minimog_add_comment">
+									<input type="hidden" id="product_question_nonce" name="product_question_nonce" value="916722088c" /><input type="hidden" name="_wp_http_referer" value="/megamog/product/dvala-sheet-set/" />
+								</div>
+
+								<div class="question-form-message-box"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<livewire:elmohnds.addcomment>
+
+			<div class="minimog-modal modal-user-login" id="modal-user-login" aria-hidden="true" role="dialog" hidden>
+				<div class="modal-overlay"></div>
+				<div class="modal-content">
+					<div class="button-close-modal" role="button" aria-label="Close"></div>
+					<div class="modal-content-wrap">
+						<div class="modal-content-inner">
+
+							<div class="modal-content-header">
+								<h3 class="modal-title">Sign In</h3>
+								<p class="modal-description">
+									Don&#039;t have an account yet? <a href="#" class="open-modal-register link-transition-01"> Sign up </a> for free </p>
+							</div>
+
+							<div class="modal-content-body">
+
+
+								<form id="minimog-login-form" class="minimog-login-form" method="post">
+
+
+									<div class="form-group">
+										<label for="ip_user_login"
+											class="form-label">Username or email</label>
+										<input type="text" id="ip_user_login" class="form-control form-input" name="user_login"
+											placeholder="Your username or email">
+									</div>
+
+									<div class="form-group">
+										<label for="ip_password"
+											class="form-label">Password</label>
+										<div class="form-input-group form-input-password">
+											<input type="password" id="ip_password" class="form-control form-input" name="password"
+												placeholder="Password" autocomplete="off">
+											<button type="button" class="btn-pw-toggle" data-toggle="0"
+												aria-label="Show password">
+											</button>
+										</div>
+									</div>
+
+									<div class="form-group row-flex row-middle">
+										<div class="col-grow">
+											<label
+												class="form-label form-label-checkbox" for="ip_rememberme">
+												<input class="form-checkbox" name="rememberme"
+													type="checkbox" id="ip_rememberme" value="forever" />
+												<span>Stay signed in</span>
+											</label>
+										</div>
+										<div class="col-shrink">
+											<div class="forgot-password">
+												<a href="../../my-account/lost-password/index.html"
+													class="open-modal-lost-password forgot-password-link link-transition-01">Forgot your password?</a>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="form-response-messages"></div>
+
+
+									<div class="form-group form-submit-wrap">
+										<input type="hidden" id="user_login_nonce" name="user_login_nonce" value="400cc9556d" /><input type="hidden" name="_wp_http_referer" value="/megamog/product/dvala-sheet-set/" /> <input type="hidden" name="action" value="minimog_user_login">
+										<button type="submit"
+											class="button form-submit"><span>Log In</span></button>
+									</div>
+
+								</form>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="minimog-modal modal-lost-password" id="modal-user-lost-password"
+				data-template="template-parts/modal/modal-content-lost-password" aria-hidden="true" role="dialog" hidden>
+				<div class="modal-overlay"></div>
+				<div class="modal-content">
+					<div class="button-close-modal" role="button" aria-label="Close"></div>
+					<div class="modal-content-wrap">
+						<div class="modal-content-inner">
+							<div class="modal-content-header">
+								<h3 class="modal-title">Lost your password?</h3>
+								<p class="modal-description">
+									Please enter your username or email address. You will receive a link to create a new password via email. Remember now? <a href="#" class="open-modal-login link-transition-01">Back to login</a> </p>
+							</div>
+
+							<div class="modal-content-body">
+								<form id="minimog-lost-password-form" class="minimog-lost-password-form" method="post">
+
+
+									<div class="form-group">
+										<label for="lost_password_user_login"
+											class="form-label">Username or email</label>
+										<input type="text" id="lost_password_user_login" class="form-control form-input"
+											name="user_login"
+											placeholder="Your username or email" required />
+									</div>
+
+
+									<div class="form-response-messages"></div>
+
+									<div class="form-group form-submit-wrap">
+										<input type="hidden" id="user_reset_password_nonce" name="user_reset_password_nonce" value="5c3f6b21c2" /><input type="hidden" name="_wp_http_referer" value="/megamog/product/dvala-sheet-set/" /> <input type="hidden" name="action" value="minimog_user_reset_password">
+										<button type="submit"
+											class="button form-submit"><span>Reset password</span></button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="minimog-modal modal-user-register" id="modal-user-register"
+				data-template="template-parts/modal/modal-content-register" aria-hidden="true" role="dialog" hidden>
+				<div class="modal-overlay"></div>
+				<div class="modal-content">
+					<div class="button-close-modal" role="button" aria-label="Close"></div>
+					<div class="modal-content-wrap">
+						<div class="modal-content-inner">
+							<div class="modal-content-header">
+								<h3 class="modal-title">Sign Up</h3>
+								<p class="modal-description">
+									Already have an account? <a href="#" class="open-modal-login link-transition-01"> Log in </a> </p>
+							</div>
+
+							<div class="modal-content-body">
+
+
+								<form id="minimog-register-form" class="minimog-register-form" method="post">
+
+
+									<div class="row">
+										<div class="form-group col-sm-6">
+											<label for="ip_reg_first_name" class="form-label">
+												First name </label>
+											<input type="text" id="ip_reg_first_name" class="form-control form-input"
+												name="fname" placeholder="First name"
+												required />
+										</div>
+										<div class="form-group col-sm-6">
+											<label for="ip_reg_last_name" class="form-label">
+												Last name </label>
+											<input type="text" id="ip_reg_last_name" class="form-control form-input"
+												name="lname" placeholder="Last name"
+												required />
+										</div>
+									</div>
+
+
+									<div class="form-group">
+										<label for="ip_reg_email"
+											class="form-label">Email</label>
+										<input type="email" id="ip_reg_email" class="form-control form-input"
+											name="email" placeholder="Your Email" required />
+									</div>
+
+									<div class="form-group">
+										<label for="ip_reg_password"
+											class="form-label">Password</label>
+										<div class="form-input-group form-input-password">
+											<input type="password" id="ip_reg_password" class="form-control form-input"
+												name="password" placeholder="Password"
+												required autocomplete="off" />
+											<button type="button" class="btn-pw-toggle" data-toggle="0"
+												aria-label="Show password">
+											</button>
+										</div>
+									</div>
+
+									<div class="form-group form-user-role form-radio-inline">
+										<label for="ip_reg_role_customer" class="form-label-radio">
+											<input type="radio" name="role" value="customer" checked
+												id="ip_reg_role_customer" />I am a customer </label>
+										<label for="ip_reg_role_seller" class="form-label-radio">
+											<input type="radio" name="role" value="seller"
+												id="ip_reg_role_seller" />I am a vendor </label>
+									</div>
+
+									<div class="form-group show-if-seller display-none">
+										<label for="ip_reg_company_name" class="form-label">Shop Name</label>
+										<input type="text" class="form-control form-input" name="shopname" id="ip_reg_company_name"
+											required="required"
+											placeholder="Shop Name" />
+									</div>
+
+									<div class="form-group show-if-seller display-none">
+										<label for="ip_reg_seller_url" class="form-label">Shop URL</label>
+										<input type="text" class="form-control form-input" name="shopurl" id="ip_reg_seller_url"
+											placeholder="Shop URL"
+											required="required" />
+										<small>https://minimog.thememove.com/megamog/store/<strong id="ip_reg-url-alart"></strong></small>
+									</div>
+
+									<div class="form-group show-if-seller display-none">
+										<label for="ip_reg_shop_phone" class="form-label">Phone Number</label>
+										<input type="text" class="form-control form-input" name="phone" id="ip_reg_shop_phone"
+											required="required"
+											placeholder="Phone Number" />
+									</div>
+
+									<div class="form-group accept-account">
+										<label class="form-label form-label-checkbox" for="ip_accept_account">
+											<input type="checkbox" id="ip_accept_account" class="form-control"
+												name="accept_account" value="1" />Yes, I agree with Privacy Policy and Terms of Use </label>
+									</div>
+
+									<div class="form-response-messages"></div>
+
+
+									<div class="form-group form-submit-wrap">
+										<input type="hidden" id="user_register_nonce" name="user_register_nonce" value="d881a8d677" /><input type="hidden" name="_wp_http_referer" value="/megamog/product/dvala-sheet-set/" /><input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="5eb7bd34a2" /><input type="hidden" name="_wp_http_referer" value="/megamog/product/dvala-sheet-set/" /> <input type="hidden" name="action" value="minimog_user_register" />
+										<button type="submit"
+											class="button form-submit"><span>Sign Up</span>
+										</button>
+									</div>
+
+								</form>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script defer src="data:text/javascript;base64,CgkJCQljb25zdCBsYXp5bG9hZFJ1bk9ic2VydmVyID0gKCkgPT4gewoJCQkJCWNvbnN0IGRhdGFBdHRyaWJ1dGUgPSAnZGF0YS1lLWJnLWxhenlsb2FkJzsKCQkJCQljb25zdCBsYXp5bG9hZEJhY2tncm91bmRzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCggYFskeyBkYXRhQXR0cmlidXRlIH1dOm5vdCgubGF6eWxvYWRlZClgICk7CgkJCQkJY29uc3QgbGF6eWxvYWRCYWNrZ3JvdW5kT2JzZXJ2ZXIgPSBuZXcgSW50ZXJzZWN0aW9uT2JzZXJ2ZXIoICggZW50cmllcyApID0+IHsKCQkJCQllbnRyaWVzLmZvckVhY2goICggZW50cnkgKSA9PiB7CgkJCQkJCWlmICggZW50cnkuaXNJbnRlcnNlY3RpbmcgKSB7CgkJCQkJCQlsZXQgbGF6eWxvYWRCYWNrZ3JvdW5kID0gZW50cnkudGFyZ2V0OwoJCQkJCQkJY29uc3QgbGF6eWxvYWRTZWxlY3RvciA9IGxhenlsb2FkQmFja2dyb3VuZC5nZXRBdHRyaWJ1dGUoIGRhdGFBdHRyaWJ1dGUgKTsKCQkJCQkJCWlmICggbGF6eWxvYWRTZWxlY3RvciApIHsKCQkJCQkJCQlsYXp5bG9hZEJhY2tncm91bmQgPSBlbnRyeS50YXJnZXQucXVlcnlTZWxlY3RvciggbGF6eWxvYWRTZWxlY3RvciApOwoJCQkJCQkJfQoJCQkJCQkJaWYoIGxhenlsb2FkQmFja2dyb3VuZCApIHsKCQkJCQkJCQlsYXp5bG9hZEJhY2tncm91bmQuY2xhc3NMaXN0LmFkZCggJ2xhenlsb2FkZWQnICk7CgkJCQkJCQl9CgkJCQkJCQlsYXp5bG9hZEJhY2tncm91bmRPYnNlcnZlci51bm9ic2VydmUoIGVudHJ5LnRhcmdldCApOwoJCQkJCQl9CgkJCQkJfSk7CgkJCQkJfSwgeyByb290TWFyZ2luOiAnMTAwcHggMHB4IDEwMHB4IDBweCcgfSApOwoJCQkJCWxhenlsb2FkQmFja2dyb3VuZHMuZm9yRWFjaCggKCBsYXp5bG9hZEJhY2tncm91bmQgKSA9PiB7CgkJCQkJCWxhenlsb2FkQmFja2dyb3VuZE9ic2VydmVyLm9ic2VydmUoIGxhenlsb2FkQmFja2dyb3VuZCApOwoJCQkJCX0gKTsKCQkJCX07CgkJCQljb25zdCBldmVudHMgPSBbCgkJCQkJJ0RPTUNvbnRlbnRMb2FkZWQnLAoJCQkJCSdlbGVtZW50b3IvbGF6eWxvYWQvb2JzZXJ2ZScsCgkJCQldOwoJCQkJZXZlbnRzLmZvckVhY2goICggZXZlbnQgKSA9PiB7CgkJCQkJZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lciggZXZlbnQsIGxhenlsb2FkUnVuT2JzZXJ2ZXIgKTsKCQkJCX0gKTsKCQkJ"></script>
+			<link rel='stylesheet' id='wc-blocks-style-css' href="{{asset('assets/wp-content/cache/autoptimize/3/css/autoptimize_single_0dccf79e4ae955b32dea554e34e5a5618fea.css?ver=11.8.0-dev')}}" media='all' />
+			<link rel='stylesheet' id='elementor-post-1298-css' href="{{asset('assets/wp-content/cache/autoptimize/3/css/autoptimize_single_c3affa97b2b8c444b69e4a0bea591ed69d75.css?ver=1705635090')}}" media='all' />
+			<link rel='stylesheet' id='elementor-post-1123-css' href="{{asset('assets/wp-content/cache/autoptimize/3/css/autoptimize_single_c1ed1a4e4a88dbb07ab1feae8588eb63f349.css?ver=1705635091')}}" media='all' />
+			<link rel='stylesheet' id='elementor-post-1395-css' href="{{asset('assets/wp-content/cache/autoptimize/3/css/autoptimize_single_180306e03aaf58a44078d94ceaeae424f349.css?ver=1705635091')}}" media='all' />
+			<script defer id="isw-frontend-js-extra" src="data:text/javascript;base64,CnZhciBpc3dfdmFycyA9IHsiYWpheCI6Imh0dHBzOlwvXC9taW5pbW9nLnRoZW1lbW92ZS5jb21cL21lZ2Ftb2dcL3dwLWFkbWluXC9hZG1pbi1hamF4LnBocCIsIm5vbmNlIjoiOWQ0NDM1MmNhMyIsInByb2R1Y3Rfc2VsZWN0b3IiOiIucHJvZHVjdCIsInByaWNlX3NlbGVjdG9yIjoiLnByaWNlIiwibG9jYWxpemF0aW9uIjp7ImFkZF90b19jYXJ0X3RleHQiOiJBZGQgdG8gY2FydCIsInJlYWRfbW9yZV90ZXh0IjoiUmVhZCBtb3JlIiwic2VsZWN0X29wdGlvbnNfdGV4dCI6IlNlbGVjdCBvcHRpb25zIn19Owo="></script>
+			<script defer src="{{asset('assets/wp-content/plugins/insight-swatches/assets/js/frontend.min7d4c.js?ver=1.7.0')}}" id="isw-frontend-js"></script>
+			<script defer src="{{asset('assets/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min2ff6.js?ver=8.5.1')}}" id="sourcebuster-js-js"></script>
+			<script defer id="wc-order-attribution-js-extra" src="data:text/javascript;base64,CnZhciB3Y19vcmRlcl9hdHRyaWJ1dGlvbiA9IHsicGFyYW1zIjp7ImxpZmV0aW1lIjoxLjAwMDAwMDAwMDAwMDAwMDFlLTUsInNlc3Npb24iOjMwLCJhamF4dXJsIjoiaHR0cHM6XC9cL21pbmltb2cudGhlbWVtb3ZlLmNvbVwvbWVnYW1vZ1wvd3AtYWRtaW5cL2FkbWluLWFqYXgucGhwIiwicHJlZml4Ijoid2Nfb3JkZXJfYXR0cmlidXRpb25fIiwiYWxsb3dUcmFja2luZyI6InllcyJ9fTsK"></script>
+			<script defer src="{{asset('assets/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min2ff6.js?ver=8.5.1')}}" id="wc-order-attribution-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/vendor/wp-polyfill-inert.min0226.js?ver=3.1.2')}}" id="wp-polyfill-inert-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/vendor/regenerator-runtime.min6c85.js?ver=0.14.0')}}" id="regenerator-runtime-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/vendor/wp-polyfill.min2c7c.js?ver=3.15.0')}}" id="wp-polyfill-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/vendor/react.min7a3b.js?ver=18.2.0')}}" id="react-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/hooks.min2ebd.js?ver=c6aec9a8d4e5a5d543a1')}}" id="wp-hooks-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/deprecated.min664b.js?ver=73ad3591e7bc95f4777a')}}" id="wp-deprecated-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/dom.minbac8.js?ver=49ff2869626fbeaacc23')}}" id="wp-dom-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/vendor/react-dom.min7a3b.js?ver=18.2.0')}}" id="react-dom-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/escape-html.min0311.js?ver=03e27a7b6ae14f7afaa6')}}" id="wp-escape-html-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/element.min0eb1.js?ver=ed1c7604880e8b574b40')}}" id="wp-element-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/is-shallow-equal.mincc0f.js?ver=20c2b06ecf04afb14fee')}}" id="wp-is-shallow-equal-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/i18n.minf92f.js?ver=7701b0c3857f914212ef')}}" id="wp-i18n-js"></script>
+			<script defer id="wp-i18n-js-after" src="data:text/javascript;base64,CndwLmkxOG4uc2V0TG9jYWxlRGF0YSggeyAndGV4dCBkaXJlY3Rpb25cdTAwMDRsdHInOiBbICdsdHInIF0gfSApOwo="></script>
+			<script src="{{asset('assets/wp-includes/js/dist/keycodes.min3d5f.js?ver=3460bd0fac9859d6886c')}}" id="wp-keycodes-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/priority-queue.mind972.js?ver=422e19e9d48b269c5219')}}" id="wp-priority-queue-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/compose.min3e86.js?ver=3189b344ff39fef940b7')}}" id="wp-compose-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/private-apis.min3089.js?ver=11cb2ebaa70a9f1f0ab5')}}" id="wp-private-apis-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/redux-routine.min9528.js?ver=0be1b2a6a79703e28531')}}" id="wp-redux-routine-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/data.min23f6.js?ver=dc5f255634f3da29c8d5')}}" id="wp-data-js"></script>
+			<script defer id="wp-data-js-after" src="data:text/javascript;base64,CiggZnVuY3Rpb24oKSB7Cgl2YXIgdXNlcklkID0gMDsKCXZhciBzdG9yYWdlS2V5ID0gIldQX0RBVEFfVVNFUl8iICsgdXNlcklkOwoJd3AuZGF0YQoJCS51c2UoIHdwLmRhdGEucGx1Z2lucy5wZXJzaXN0ZW5jZSwgeyBzdG9yYWdlS2V5OiBzdG9yYWdlS2V5IH0gKTsKfSApKCk7Cg=="></script>
+			<script src="{{asset('assets/wp-includes/js/dist/vendor/lodash.minf492.js?ver=4.17.19')}}" id="lodash-js"></script>
+			<script defer id="lodash-js-after" src="data:text/javascript;base64,CndpbmRvdy5sb2Rhc2ggPSBfLm5vQ29uZmxpY3QoKTsK"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_36878700722ad5c1f9c12d4c1c5439778d1b.js?ver=1c879273bd5c193cad0a')}}" id="wc-blocks-registry-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/url.min7dc0.js?ver=b4979979018b684be209')}}" id="wp-url-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/api-fetch.min471f.js?ver=0fa4dabf8bf2c7adf21a')}}" id="wp-api-fetch-js"></script>
+			<script defer id="wp-api-fetch-js-after" src="data:text/javascript;base64,CndwLmFwaUZldGNoLnVzZSggd3AuYXBpRmV0Y2guY3JlYXRlUm9vdFVSTE1pZGRsZXdhcmUoICJodHRwczovL21pbmltb2cudGhlbWVtb3ZlLmNvbS9tZWdhbW9nL3dwLWpzb24vIiApICk7CndwLmFwaUZldGNoLm5vbmNlTWlkZGxld2FyZSA9IHdwLmFwaUZldGNoLmNyZWF0ZU5vbmNlTWlkZGxld2FyZSggImE5ZmNkZTY4MmQiICk7CndwLmFwaUZldGNoLnVzZSggd3AuYXBpRmV0Y2gubm9uY2VNaWRkbGV3YXJlICk7CndwLmFwaUZldGNoLnVzZSggd3AuYXBpRmV0Y2gubWVkaWFVcGxvYWRNaWRkbGV3YXJlICk7CndwLmFwaUZldGNoLm5vbmNlRW5kcG9pbnQgPSAiaHR0cHM6Ly9taW5pbW9nLnRoZW1lbW92ZS5jb20vbWVnYW1vZy93cC1hZG1pbi9hZG1pbi1hamF4LnBocD9hY3Rpb249cmVzdC1ub25jZSI7Cg=="></script>
+			<script defer id="wc-settings-js-before" src="data:text/javascript;base64,CnZhciB3Y1NldHRpbmdzID0gd2NTZXR0aW5ncyB8fCBKU09OLnBhcnNlKCBkZWNvZGVVUklDb21wb25lbnQoICclN0IlMjJzaGlwcGluZ0Nvc3RSZXF1aXJlc0FkZHJlc3MlMjIlM0FmYWxzZSUyQyUyMmFkbWluVXJsJTIyJTNBJTIyaHR0cHMlM0ElNUMlMkYlNUMlMkZtaW5pbW9nLnRoZW1lbW92ZS5jb20lNUMlMkZtZWdhbW9nJTVDJTJGd3AtYWRtaW4lNUMlMkYlMjIlMkMlMjJjb3VudHJpZXMlMjIlM0ElN0IlMjJBRiUyMiUzQSUyMkFmZ2hhbmlzdGFuJTIyJTJDJTIyQVglMjIlM0ElMjIlNUN1MDBjNWxhbmQlMjBJc2xhbmRzJTIyJTJDJTIyQUwlMjIlM0ElMjJBbGJhbmlhJTIyJTJDJTIyRFolMjIlM0ElMjJBbGdlcmlhJTIyJTJDJTIyQVMlMjIlM0ElMjJBbWVyaWNhbiUyMFNhbW9hJTIyJTJDJTIyQUQlMjIlM0ElMjJBbmRvcnJhJTIyJTJDJTIyQU8lMjIlM0ElMjJBbmdvbGElMjIlMkMlMjJBSSUyMiUzQSUyMkFuZ3VpbGxhJTIyJTJDJTIyQVElMjIlM0ElMjJBbnRhcmN0aWNhJTIyJTJDJTIyQUclMjIlM0ElMjJBbnRpZ3VhJTIwYW5kJTIwQmFyYnVkYSUyMiUyQyUyMkFSJTIyJTNBJTIyQXJnZW50aW5hJTIyJTJDJTIyQU0lMjIlM0ElMjJBcm1lbmlhJTIyJTJDJTIyQVclMjIlM0ElMjJBcnViYSUyMiUyQyUyMkFVJTIyJTNBJTIyQXVzdHJhbGlhJTIyJTJDJTIyQVQlMjIlM0ElMjJBdXN0cmlhJTIyJTJDJTIyQVolMjIlM0ElMjJBemVyYmFpamFuJTIyJTJDJTIyQlMlMjIlM0ElMjJCYWhhbWFzJTIyJTJDJTIyQkglMjIlM0ElMjJCYWhyYWluJTIyJTJDJTIyQkQlMjIlM0ElMjJCYW5nbGFkZXNoJTIyJTJDJTIyQkIlMjIlM0ElMjJCYXJiYWRvcyUyMiUyQyUyMkJZJTIyJTNBJTIyQmVsYXJ1cyUyMiUyQyUyMlBXJTIyJTNBJTIyQmVsYXUlMjIlMkMlMjJCRSUyMiUzQSUyMkJlbGdpdW0lMjIlMkMlMjJCWiUyMiUzQSUyMkJlbGl6ZSUyMiUyQyUyMkJKJTIyJTNBJTIyQmVuaW4lMjIlMkMlMjJCTSUyMiUzQSUyMkJlcm11ZGElMjIlMkMlMjJCVCUyMiUzQSUyMkJodXRhbiUyMiUyQyUyMkJPJTIyJTNBJTIyQm9saXZpYSUyMiUyQyUyMkJRJTIyJTNBJTIyQm9uYWlyZSUyQyUyMFNhaW50JTIwRXVzdGF0aXVzJTIwYW5kJTIwU2FiYSUyMiUyQyUyMkJBJTIyJTNBJTIyQm9zbmlhJTIwYW5kJTIwSGVyemVnb3ZpbmElMjIlMkMlMjJCVyUyMiUzQSUyMkJvdHN3YW5hJTIyJTJDJTIyQlYlMjIlM0ElMjJCb3V2ZXQlMjBJc2xhbmQlMjIlMkMlMjJCUiUyMiUzQSUyMkJyYXppbCUyMiUyQyUyMklPJTIyJTNBJTIyQnJpdGlzaCUyMEluZGlhbiUyME9jZWFuJTIwVGVycml0b3J5JTIyJTJDJTIyQk4lMjIlM0ElMjJCcnVuZWklMjIlMkMlMjJCRyUyMiUzQSUyMkJ1bGdhcmlhJTIyJTJDJTIyQkYlMjIlM0ElMjJCdXJraW5hJTIwRmFzbyUyMiUyQyUyMkJJJTIyJTNBJTIyQnVydW5kaSUyMiUyQyUyMktIJTIyJTNBJTIyQ2FtYm9kaWElMjIlMkMlMjJDTSUyMiUzQSUyMkNhbWVyb29uJTIyJTJDJTIyQ0ElMjIlM0ElMjJDYW5hZGElMjIlMkMlMjJDViUyMiUzQSUyMkNhcGUlMjBWZXJkZSUyMiUyQyUyMktZJTIyJTNBJTIyQ2F5bWFuJTIwSXNsYW5kcyUyMiUyQyUyMkNGJTIyJTNBJTIyQ2VudHJhbCUyMEFmcmljYW4lMjBSZXB1YmxpYyUyMiUyQyUyMlREJTIyJTNBJTIyQ2hhZCUyMiUyQyUyMkNMJTIyJTNBJTIyQ2hpbGUlMjIlMkMlMjJDTiUyMiUzQSUyMkNoaW5hJTIyJTJDJTIyQ1glMjIlM0ElMjJDaHJpc3RtYXMlMjBJc2xhbmQlMjIlMkMlMjJDQyUyMiUzQSUyMkNvY29zJTIwJTI4S2VlbGluZyUyOSUyMElzbGFuZHMlMjIlMkMlMjJDTyUyMiUzQSUyMkNvbG9tYmlhJTIyJTJDJTIyS00lMjIlM0ElMjJDb21vcm9zJTIyJTJDJTIyQ0clMjIlM0ElMjJDb25nbyUyMCUyOEJyYXp6YXZpbGxlJTI5JTIyJTJDJTIyQ0QlMjIlM0ElMjJDb25nbyUyMCUyOEtpbnNoYXNhJTI5JTIyJTJDJTIyQ0slMjIlM0ElMjJDb29rJTIwSXNsYW5kcyUyMiUyQyUyMkNSJTIyJTNBJTIyQ29zdGElMjBSaWNhJTIyJTJDJTIySFIlMjIlM0ElMjJDcm9hdGlhJTIyJTJDJTIyQ1UlMjIlM0ElMjJDdWJhJTIyJTJDJTIyQ1clMjIlM0ElMjJDdXJhJTI2Y2NlZGlsJTNCYW8lMjIlMkMlMjJDWSUyMiUzQSUyMkN5cHJ1cyUyMiUyQyUyMkNaJTIyJTNBJTIyQ3plY2glMjBSZXB1YmxpYyUyMiUyQyUyMkRLJTIyJTNBJTIyRGVubWFyayUyMiUyQyUyMkRKJTIyJTNBJTIyRGppYm91dGklMjIlMkMlMjJETSUyMiUzQSUyMkRvbWluaWNhJTIyJTJDJTIyRE8lMjIlM0ElMjJEb21pbmljYW4lMjBSZXB1YmxpYyUyMiUyQyUyMkVDJTIyJTNBJTIyRWN1YWRvciUyMiUyQyUyMkVHJTIyJTNBJTIyRWd5cHQlMjIlMkMlMjJTViUyMiUzQSUyMkVsJTIwU2FsdmFkb3IlMjIlMkMlMjJHUSUyMiUzQSUyMkVxdWF0b3JpYWwlMjBHdWluZWElMjIlMkMlMjJFUiUyMiUzQSUyMkVyaXRyZWElMjIlMkMlMjJFRSUyMiUzQSUyMkVzdG9uaWElMjIlMkMlMjJTWiUyMiUzQSUyMkVzd2F0aW5pJTIyJTJDJTIyRVQlMjIlM0ElMjJFdGhpb3BpYSUyMiUyQyUyMkZLJTIyJTNBJTIyRmFsa2xhbmQlMjBJc2xhbmRzJTIyJTJDJTIyRk8lMjIlM0ElMjJGYXJvZSUyMElzbGFuZHMlMjIlMkMlMjJGSiUyMiUzQSUyMkZpamklMjIlMkMlMjJGSSUyMiUzQSUyMkZpbmxhbmQlMjIlMkMlMjJGUiUyMiUzQSUyMkZyYW5jZSUyMiUyQyUyMkdGJTIyJTNBJTIyRnJlbmNoJTIwR3VpYW5hJTIyJTJDJTIyUEYlMjIlM0ElMjJGcmVuY2glMjBQb2x5bmVzaWElMjIlMkMlMjJURiUyMiUzQSUyMkZyZW5jaCUyMFNvdXRoZXJuJTIwVGVycml0b3JpZXMlMjIlMkMlMjJHQSUyMiUzQSUyMkdhYm9uJTIyJTJDJTIyR00lMjIlM0ElMjJHYW1iaWElMjIlMkMlMjJHRSUyMiUzQSUyMkdlb3JnaWElMjIlMkMlMjJERSUyMiUzQSUyMkdlcm1hbnklMjIlMkMlMjJHSCUyMiUzQSUyMkdoYW5hJTIyJTJDJTIyR0klMjIlM0ElMjJHaWJyYWx0YXIlMjIlMkMlMjJHUiUyMiUzQSUyMkdyZWVjZSUyMiUyQyUyMkdMJTIyJTNBJTIyR3JlZW5sYW5kJTIyJTJDJTIyR0QlMjIlM0ElMjJHcmVuYWRhJTIyJTJDJTIyR1AlMjIlM0ElMjJHdWFkZWxvdXBlJTIyJTJDJTIyR1UlMjIlM0ElMjJHdWFtJTIyJTJDJTIyR1QlMjIlM0ElMjJHdWF0ZW1hbGElMjIlMkMlMjJHRyUyMiUzQSUyMkd1ZXJuc2V5JTIyJTJDJTIyR04lMjIlM0ElMjJHdWluZWElMjIlMkMlMjJHVyUyMiUzQSUyMkd1aW5lYS1CaXNzYXUlMjIlMkMlMjJHWSUyMiUzQSUyMkd1eWFuYSUyMiUyQyUyMkhUJTIyJTNBJTIySGFpdGklMjIlMkMlMjJITSUyMiUzQSUyMkhlYXJkJTIwSXNsYW5kJTIwYW5kJTIwTWNEb25hbGQlMjBJc2xhbmRzJTIyJTJDJTIySE4lMjIlM0ElMjJIb25kdXJhcyUyMiUyQyUyMkhLJTIyJTNBJTIySG9uZyUyMEtvbmclMjIlMkMlMjJIVSUyMiUzQSUyMkh1bmdhcnklMjIlMkMlMjJJUyUyMiUzQSUyMkljZWxhbmQlMjIlMkMlMjJJTiUyMiUzQSUyMkluZGlhJTIyJTJDJTIySUQlMjIlM0ElMjJJbmRvbmVzaWElMjIlMkMlMjJJUiUyMiUzQSUyMklyYW4lMjIlMkMlMjJJUSUyMiUzQSUyMklyYXElMjIlMkMlMjJJRSUyMiUzQSUyMklyZWxhbmQlMjIlMkMlMjJJTSUyMiUzQSUyMklzbGUlMjBvZiUyME1hbiUyMiUyQyUyMklMJTIyJTNBJTIySXNyYWVsJTIyJTJDJTIySVQlMjIlM0ElMjJJdGFseSUyMiUyQyUyMkNJJTIyJTNBJTIySXZvcnklMjBDb2FzdCUyMiUyQyUyMkpNJTIyJTNBJTIySmFtYWljYSUyMiUyQyUyMkpQJTIyJTNBJTIySmFwYW4lMjIlMkMlMjJKRSUyMiUzQSUyMkplcnNleSUyMiUyQyUyMkpPJTIyJTNBJTIySm9yZGFuJTIyJTJDJTIyS1olMjIlM0ElMjJLYXpha2hzdGFuJTIyJTJDJTIyS0UlMjIlM0ElMjJLZW55YSUyMiUyQyUyMktJJTIyJTNBJTIyS2lyaWJhdGklMjIlMkMlMjJLVyUyMiUzQSUyMkt1d2FpdCUyMiUyQyUyMktHJTIyJTNBJTIyS3lyZ3l6c3RhbiUyMiUyQyUyMkxBJTIyJTNBJTIyTGFvcyUyMiUyQyUyMkxWJTIyJTNBJTIyTGF0dmlhJTIyJTJDJTIyTEIlMjIlM0ElMjJMZWJhbm9uJTIyJTJDJTIyTFMlMjIlM0ElMjJMZXNvdGhvJTIyJTJDJTIyTFIlMjIlM0ElMjJMaWJlcmlhJTIyJTJDJTIyTFklMjIlM0ElMjJMaWJ5YSUyMiUyQyUyMkxJJTIyJTNBJTIyTGllY2h0ZW5zdGVpbiUyMiUyQyUyMkxUJTIyJTNBJTIyTGl0aHVhbmlhJTIyJTJDJTIyTFUlMjIlM0ElMjJMdXhlbWJvdXJnJTIyJTJDJTIyTU8lMjIlM0ElMjJNYWNhbyUyMiUyQyUyMk1HJTIyJTNBJTIyTWFkYWdhc2NhciUyMiUyQyUyMk1XJTIyJTNBJTIyTWFsYXdpJTIyJTJDJTIyTVklMjIlM0ElMjJNYWxheXNpYSUyMiUyQyUyMk1WJTIyJTNBJTIyTWFsZGl2ZXMlMjIlMkMlMjJNTCUyMiUzQSUyMk1hbGklMjIlMkMlMjJNVCUyMiUzQSUyMk1hbHRhJTIyJTJDJTIyTUglMjIlM0ElMjJNYXJzaGFsbCUyMElzbGFuZHMlMjIlMkMlMjJNUSUyMiUzQSUyMk1hcnRpbmlxdWUlMjIlMkMlMjJNUiUyMiUzQSUyMk1hdXJpdGFuaWElMjIlMkMlMjJNVSUyMiUzQSUyMk1hdXJpdGl1cyUyMiUyQyUyMllUJTIyJTNBJTIyTWF5b3R0ZSUyMiUyQyUyMk1YJTIyJTNBJTIyTWV4aWNvJTIyJTJDJTIyRk0lMjIlM0ElMjJNaWNyb25lc2lhJTIyJTJDJTIyTUQlMjIlM0ElMjJNb2xkb3ZhJTIyJTJDJTIyTUMlMjIlM0ElMjJNb25hY28lMjIlMkMlMjJNTiUyMiUzQSUyMk1vbmdvbGlhJTIyJTJDJTIyTUUlMjIlM0ElMjJNb250ZW5lZ3JvJTIyJTJDJTIyTVMlMjIlM0ElMjJNb250c2VycmF0JTIyJTJDJTIyTUElMjIlM0ElMjJNb3JvY2NvJTIyJTJDJTIyTVolMjIlM0ElMjJNb3phbWJpcXVlJTIyJTJDJTIyTU0lMjIlM0ElMjJNeWFubWFyJTIyJTJDJTIyTkElMjIlM0ElMjJOYW1pYmlhJTIyJTJDJTIyTlIlMjIlM0ElMjJOYXVydSUyMiUyQyUyMk5QJTIyJTNBJTIyTmVwYWwlMjIlMkMlMjJOTCUyMiUzQSUyMk5ldGhlcmxhbmRzJTIyJTJDJTIyTkMlMjIlM0ElMjJOZXclMjBDYWxlZG9uaWElMjIlMkMlMjJOWiUyMiUzQSUyMk5ldyUyMFplYWxhbmQlMjIlMkMlMjJOSSUyMiUzQSUyMk5pY2FyYWd1YSUyMiUyQyUyMk5FJTIyJTNBJTIyTmlnZXIlMjIlMkMlMjJORyUyMiUzQSUyMk5pZ2VyaWElMjIlMkMlMjJOVSUyMiUzQSUyMk5pdWUlMjIlMkMlMjJORiUyMiUzQSUyMk5vcmZvbGslMjBJc2xhbmQlMjIlMkMlMjJLUCUyMiUzQSUyMk5vcnRoJTIwS29yZWElMjIlMkMlMjJNSyUyMiUzQSUyMk5vcnRoJTIwTWFjZWRvbmlhJTIyJTJDJTIyTVAlMjIlM0ElMjJOb3J0aGVybiUyME1hcmlhbmElMjBJc2xhbmRzJTIyJTJDJTIyTk8lMjIlM0ElMjJOb3J3YXklMjIlMkMlMjJPTSUyMiUzQSUyMk9tYW4lMjIlMkMlMjJQSyUyMiUzQSUyMlBha2lzdGFuJTIyJTJDJTIyUFMlMjIlM0ElMjJQYWxlc3RpbmlhbiUyMFRlcnJpdG9yeSUyMiUyQyUyMlBBJTIyJTNBJTIyUGFuYW1hJTIyJTJDJTIyUEclMjIlM0ElMjJQYXB1YSUyME5ldyUyMEd1aW5lYSUyMiUyQyUyMlBZJTIyJTNBJTIyUGFyYWd1YXklMjIlMkMlMjJQRSUyMiUzQSUyMlBlcnUlMjIlMkMlMjJQSCUyMiUzQSUyMlBoaWxpcHBpbmVzJTIyJTJDJTIyUE4lMjIlM0ElMjJQaXRjYWlybiUyMiUyQyUyMlBMJTIyJTNBJTIyUG9sYW5kJTIyJTJDJTIyUFQlMjIlM0ElMjJQb3J0dWdhbCUyMiUyQyUyMlBSJTIyJTNBJTIyUHVlcnRvJTIwUmljbyUyMiUyQyUyMlFBJTIyJTNBJTIyUWF0YXIlMjIlMkMlMjJSRSUyMiUzQSUyMlJldW5pb24lMjIlMkMlMjJSTyUyMiUzQSUyMlJvbWFuaWElMjIlMkMlMjJSVSUyMiUzQSUyMlJ1c3NpYSUyMiUyQyUyMlJXJTIyJTNBJTIyUndhbmRhJTIyJTJDJTIyU1QlMjIlM0ElMjJTJTI2YXRpbGRlJTNCbyUyMFRvbSUyNmVhY3V0ZSUzQiUyMGFuZCUyMFByJTI2aWFjdXRlJTNCbmNpcGUlMjIlMkMlMjJCTCUyMiUzQSUyMlNhaW50JTIwQmFydGglMjZlYWN1dGUlM0JsZW15JTIyJTJDJTIyU0glMjIlM0ElMjJTYWludCUyMEhlbGVuYSUyMiUyQyUyMktOJTIyJTNBJTIyU2FpbnQlMjBLaXR0cyUyMGFuZCUyME5ldmlzJTIyJTJDJTIyTEMlMjIlM0ElMjJTYWludCUyMEx1Y2lhJTIyJTJDJTIyU1glMjIlM0ElMjJTYWludCUyME1hcnRpbiUyMCUyOER1dGNoJTIwcGFydCUyOSUyMiUyQyUyMk1GJTIyJTNBJTIyU2FpbnQlMjBNYXJ0aW4lMjAlMjhGcmVuY2glMjBwYXJ0JTI5JTIyJTJDJTIyUE0lMjIlM0ElMjJTYWludCUyMFBpZXJyZSUyMGFuZCUyME1pcXVlbG9uJTIyJTJDJTIyVkMlMjIlM0ElMjJTYWludCUyMFZpbmNlbnQlMjBhbmQlMjB0aGUlMjBHcmVuYWRpbmVzJTIyJTJDJTIyV1MlMjIlM0ElMjJTYW1vYSUyMiUyQyUyMlNNJTIyJTNBJTIyU2FuJTIwTWFyaW5vJTIyJTJDJTIyU0ElMjIlM0ElMjJTYXVkaSUyMEFyYWJpYSUyMiUyQyUyMlNOJTIyJTNBJTIyU2VuZWdhbCUyMiUyQyUyMlJTJTIyJTNBJTIyU2VyYmlhJTIyJTJDJTIyU0MlMjIlM0ElMjJTZXljaGVsbGVzJTIyJTJDJTIyU0wlMjIlM0ElMjJTaWVycmElMjBMZW9uZSUyMiUyQyUyMlNHJTIyJTNBJTIyU2luZ2Fwb3JlJTIyJTJDJTIyU0slMjIlM0ElMjJTbG92YWtpYSUyMiUyQyUyMlNJJTIyJTNBJTIyU2xvdmVuaWElMjIlMkMlMjJTQiUyMiUzQSUyMlNvbG9tb24lMjBJc2xhbmRzJTIyJTJDJTIyU08lMjIlM0ElMjJTb21hbGlhJTIyJTJDJTIyWkElMjIlM0ElMjJTb3V0aCUyMEFmcmljYSUyMiUyQyUyMkdTJTIyJTNBJTIyU291dGglMjBHZW9yZ2lhJTVDJTJGU2FuZHdpY2glMjBJc2xhbmRzJTIyJTJDJTIyS1IlMjIlM0ElMjJTb3V0aCUyMEtvcmVhJTIyJTJDJTIyU1MlMjIlM0ElMjJTb3V0aCUyMFN1ZGFuJTIyJTJDJTIyRVMlMjIlM0ElMjJTcGFpbiUyMiUyQyUyMkxLJTIyJTNBJTIyU3JpJTIwTGFua2ElMjIlMkMlMjJTRCUyMiUzQSUyMlN1ZGFuJTIyJTJDJTIyU1IlMjIlM0ElMjJTdXJpbmFtZSUyMiUyQyUyMlNKJTIyJTNBJTIyU3ZhbGJhcmQlMjBhbmQlMjBKYW4lMjBNYXllbiUyMiUyQyUyMlNFJTIyJTNBJTIyU3dlZGVuJTIyJTJDJTIyQ0glMjIlM0ElMjJTd2l0emVybGFuZCUyMiUyQyUyMlNZJTIyJTNBJTIyU3lyaWElMjIlMkMlMjJUVyUyMiUzQSUyMlRhaXdhbiUyMiUyQyUyMlRKJTIyJTNBJTIyVGFqaWtpc3RhbiUyMiUyQyUyMlRaJTIyJTNBJTIyVGFuemFuaWElMjIlMkMlMjJUSCUyMiUzQSUyMlRoYWlsYW5kJTIyJTJDJTIyVEwlMjIlM0ElMjJUaW1vci1MZXN0ZSUyMiUyQyUyMlRHJTIyJTNBJTIyVG9nbyUyMiUyQyUyMlRLJTIyJTNBJTIyVG9rZWxhdSUyMiUyQyUyMlRPJTIyJTNBJTIyVG9uZ2ElMjIlMkMlMjJUVCUyMiUzQSUyMlRyaW5pZGFkJTIwYW5kJTIwVG9iYWdvJTIyJTJDJTIyVE4lMjIlM0ElMjJUdW5pc2lhJTIyJTJDJTIyVFIlMjIlM0ElMjJUdXJrZXklMjIlMkMlMjJUTSUyMiUzQSUyMlR1cmttZW5pc3RhbiUyMiUyQyUyMlRDJTIyJTNBJTIyVHVya3MlMjBhbmQlMjBDYWljb3MlMjBJc2xhbmRzJTIyJTJDJTIyVFYlMjIlM0ElMjJUdXZhbHUlMjIlMkMlMjJVRyUyMiUzQSUyMlVnYW5kYSUyMiUyQyUyMlVBJTIyJTNBJTIyVWtyYWluZSUyMiUyQyUyMkFFJTIyJTNBJTIyVW5pdGVkJTIwQXJhYiUyMEVtaXJhdGVzJTIyJTJDJTIyR0IlMjIlM0ElMjJVbml0ZWQlMjBLaW5nZG9tJTIwJTI4VUslMjklMjIlMkMlMjJVUyUyMiUzQSUyMlVuaXRlZCUyMFN0YXRlcyUyMCUyOFVTJTI5JTIyJTJDJTIyVU0lMjIlM0ElMjJVbml0ZWQlMjBTdGF0ZXMlMjAlMjhVUyUyOSUyME1pbm9yJTIwT3V0bHlpbmclMjBJc2xhbmRzJTIyJTJDJTIyVVklMjIlM0ElMjJVcnVndWF5JTIyJTJDJTIyVVolMjIlM0ElMjJVemJla2lzdGFuJTIyJTJDJTIyVlUlMjIlM0ElMjJWYW51YXR1JTIyJTJDJTIyVkElMjIlM0ElMjJWYXRpY2FuJTIyJTJDJTIyVkUlMjIlM0ElMjJWZW5lenVlbGElMjIlMkMlMjJWTiUyMiUzQSUyMlZpZXRuYW0lMjIlMkMlMjJWRyUyMiUzQSUyMlZpcmdpbiUyMElzbGFuZHMlMjAlMjhCcml0aXNoJTI5JTIyJTJDJTIyVkklMjIlM0ElMjJWaXJnaW4lMjBJc2xhbmRzJTIwJTI4VVMlMjklMjIlMkMlMjJXRiUyMiUzQSUyMldhbGxpcyUyMGFuZCUyMEZ1dHVuYSUyMiUyQyUyMkVIJTIyJTNBJTIyV2VzdGVybiUyMFNhaGFyYSUyMiUyQyUyMllFJTIyJTNBJTIyWWVtZW4lMjIlMkMlMjJaTSUyMiUzQSUyMlphbWJpYSUyMiUyQyUyMlpXJTIyJTNBJTIyWmltYmFid2UlMjIlN0QlMkMlMjJjdXJyZW5jeSUyMiUzQSU3QiUyMmNvZGUlMjIlM0ElMjJHQlAlMjIlMkMlMjJwcmVjaXNpb24lMjIlM0EyJTJDJTIyc3ltYm9sJTIyJTNBJTIyJTVDdTAwYTMlMjIlMkMlMjJzeW1ib2xQb3NpdGlvbiUyMiUzQSUyMmxlZnQlMjIlMkMlMjJkZWNpbWFsU2VwYXJhdG9yJTIyJTNBJTIyLiUyMiUyQyUyMnRob3VzYW5kU2VwYXJhdG9yJTIyJTNBJTIyJTJDJTIyJTJDJTIycHJpY2VGb3JtYXQlMjIlM0ElMjIlMjUxJTI0cyUyNTIlMjRzJTIyJTdEJTJDJTIyY3VycmVudFVzZXJJZCUyMiUzQTAlMkMlMjJjdXJyZW50VXNlcklzQWRtaW4lMjIlM0FmYWxzZSUyQyUyMmRhdGVGb3JtYXQlMjIlM0ElMjJGJTIwaiUyQyUyMFklMjIlMkMlMjJob21lVXJsJTIyJTNBJTIyaHR0cHMlM0ElNUMlMkYlNUMlMkZtaW5pbW9nLnRoZW1lbW92ZS5jb20lNUMlMkZtZWdhbW9nJTVDJTJGJTIyJTJDJTIybG9jYWxlJTIyJTNBJTdCJTIyc2l0ZUxvY2FsZSUyMiUzQSUyMmVuX1VTJTIyJTJDJTIydXNlckxvY2FsZSUyMiUzQSUyMmVuX1VTJTIyJTJDJTIyd2Vla2RheXNTaG9ydCUyMiUzQSU1QiUyMlN1biUyMiUyQyUyMk1vbiUyMiUyQyUyMlR1ZSUyMiUyQyUyMldlZCUyMiUyQyUyMlRodSUyMiUyQyUyMkZyaSUyMiUyQyUyMlNhdCUyMiU1RCU3RCUyQyUyMmRhc2hib2FyZFVybCUyMiUzQSUyMmh0dHBzJTNBJTVDJTJGJTVDJTJGbWluaW1vZy50aGVtZW1vdmUuY29tJTVDJTJGbWVnYW1vZyU1QyUyRm15LWFjY291bnQlNUMlMkYlMjIlMkMlMjJvcmRlclN0YXR1c2VzJTIyJTNBJTdCJTIycGVuZGluZyUyMiUzQSUyMlBlbmRpbmclMjBwYXltZW50JTIyJTJDJTIycHJvY2Vzc2luZyUyMiUzQSUyMlByb2Nlc3NpbmclMjIlMkMlMjJvbi1ob2xkJTIyJTNBJTIyT24lMjBob2xkJTIyJTJDJTIyY29tcGxldGVkJTIyJTNBJTIyQ29tcGxldGVkJTIyJTJDJTIyY2FuY2VsbGVkJTIyJTNBJTIyQ2FuY2VsbGVkJTIyJTJDJTIycmVmdW5kZWQlMjIlM0ElMjJSZWZ1bmRlZCUyMiUyQyUyMmZhaWxlZCUyMiUzQSUyMkZhaWxlZCUyMiUyQyUyMmNoZWNrb3V0LWRyYWZ0JTIyJTNBJTIyRHJhZnQlMjIlN0QlMkMlMjJwbGFjZWhvbGRlckltZ1NyYyUyMiUzQSUyMmh0dHBzJTNBJTVDJTJGJTVDJTJGbWluaW1vZy50aGVtZW1vdmUuY29tJTVDJTJGbWVnYW1vZyU1QyUyRndwLWNvbnRlbnQlNUMlMkZ1cGxvYWRzJTVDJTJGc2l0ZXMlNUMlMkYzJTVDJTJGd29vY29tbWVyY2UtcGxhY2Vob2xkZXIucG5nJTIyJTJDJTIycHJvZHVjdHNTZXR0aW5ncyUyMiUzQSU3QiUyMmNhcnRSZWRpcmVjdEFmdGVyQWRkJTIyJTNBZmFsc2UlN0QlMkMlMjJzaXRlVGl0bGUlMjIlM0ElMjJNZWdhbW9nJTIyJTJDJTIyc3RvcmVQYWdlcyUyMiUzQSU3QiUyMm15YWNjb3VudCUyMiUzQSU3QiUyMmlkJTIyJTNBOSUyQyUyMnRpdGxlJTIyJTNBJTIyTXklMjBhY2NvdW50JTIyJTJDJTIycGVybWFsaW5rJTIyJTNBJTIyaHR0cHMlM0ElNUMlMkYlNUMlMkZtaW5pbW9nLnRoZW1lbW92ZS5jb20lNUMlMkZtZWdhbW9nJTVDJTJGbXktYWNjb3VudCU1QyUyRiUyMiU3RCUyQyUyMnNob3AlMjIlM0ElN0IlMjJpZCUyMiUzQTYlMkMlMjJ0aXRsZSUyMiUzQSUyMlNob3AlMjIlMkMlMjJwZXJtYWxpbmslMjIlM0ElMjJodHRwcyUzQSU1QyUyRiU1QyUyRm1pbmltb2cudGhlbWVtb3ZlLmNvbSU1QyUyRm1lZ2Ftb2clNUMlMkZzaG9wJTVDJTJGJTIyJTdEJTJDJTIyY2FydCUyMiUzQSU3QiUyMmlkJTIyJTNBNyUyQyUyMnRpdGxlJTIyJTNBJTIyQ2FydCUyMiUyQyUyMnBlcm1hbGluayUyMiUzQSUyMmh0dHBzJTNBJTVDJTJGJTVDJTJGbWluaW1vZy50aGVtZW1vdmUuY29tJTVDJTJGbWVnYW1vZyU1QyUyRmNhcnQlNUMlMkYlMjIlN0QlMkMlMjJjaGVja291dCUyMiUzQSU3QiUyMmlkJTIyJTNBOCUyQyUyMnRpdGxlJTIyJTNBJTIyQ2hlY2tvdXQlMjIlMkMlMjJwZXJtYWxpbmslMjIlM0ElMjJodHRwcyUzQSU1QyUyRiU1QyUyRm1pbmltb2cudGhlbWVtb3ZlLmNvbSU1QyUyRm1lZ2Ftb2clNUMlMkZjaGVja291dCU1QyUyRiUyMiU3RCUyQyUyMnByaXZhY3klMjIlM0ElN0IlMjJpZCUyMiUzQTAlMkMlMjJ0aXRsZSUyMiUzQSUyMiUyMiUyQyUyMnBlcm1hbGluayUyMiUzQWZhbHNlJTdEJTJDJTIydGVybXMlMjIlM0ElN0IlMjJpZCUyMiUzQTAlMkMlMjJ0aXRsZSUyMiUzQSUyMiUyMiUyQyUyMnBlcm1hbGluayUyMiUzQWZhbHNlJTdEJTdEJTJDJTIyd2NBc3NldFVybCUyMiUzQSUyMmh0dHBzJTNBJTVDJTJGJTVDJTJGbWluaW1vZy50aGVtZW1vdmUuY29tJTVDJTJGbWVnYW1vZyU1QyUyRndwLWNvbnRlbnQlNUMlMkZwbHVnaW5zJTVDJTJGd29vY29tbWVyY2UlNUMlMkZhc3NldHMlNUMlMkYlMjIlMkMlMjJ3Y1ZlcnNpb24lMjIlM0ElMjI4LjUuMSUyMiUyQyUyMndwTG9naW5VcmwlMjIlM0ElMjJodHRwcyUzQSU1QyUyRiU1QyUyRm1pbmltb2cudGhlbWVtb3ZlLmNvbSU1QyUyRm1lZ2Ftb2clNUMlMkZ3cC1sb2dpbi5waHAlMjIlMkMlMjJ3cFZlcnNpb24lMjIlM0ElMjI2LjQuNSUyMiUyQyUyMmNvbGxlY3RhYmxlTWV0aG9kSWRzJTIyJTNBJTVCJTVEJTJDJTIyYWRtaW4lMjIlM0ElN0IlMjJ3Y2NvbUhlbHBlciUyMiUzQSU3QiUyMmlzQ29ubmVjdGVkJTIyJTNBZmFsc2UlMkMlMjJjb25uZWN0VVJMJTIyJTNBJTIyaHR0cHMlM0ElNUMlMkYlNUMlMkZtaW5pbW9nLnRoZW1lbW92ZS5jb20lNUMlMkZtZWdhbW9nJTVDJTJGd3AtYWRtaW4lNUMlMkZhZG1pbi5waHAlM0ZwYWdlJTNEd2MtYWRkb25zJTI2c2VjdGlvbiUzRGhlbHBlciUyNndjLWhlbHBlci1jb25uZWN0JTNEMSUyNndjLWhlbHBlci1ub25jZSUzRGYxNmQ2ZmM3ZjMlMjIlMkMlMjJ1c2VyRW1haWwlMjIlM0ElMjIlMjIlMkMlMjJ1c2VyQXZhdGFyJTIyJTNBJTIyaHR0cHMlM0ElNUMlMkYlNUMlMkZzZWN1cmUuZ3JhdmF0YXIuY29tJTVDJTJGYXZhdGFyJTVDJTJGJTNGcyUzRDQ4JTI2ZCUzRG1tJTI2ciUzRGclMjIlMkMlMjJzdG9yZUNvdW50cnklMjIlM0ElMjJVUyUyMiUyQyUyMmluQXBwUHVyY2hhc2VVUkxQYXJhbXMlMjIlM0ElN0IlMjJ3Y2NvbS1zaXRlJTIyJTNBJTIyaHR0cHMlM0ElNUMlMkYlNUMlMkZtaW5pbW9nLnRoZW1lbW92ZS5jb20lNUMlMkZtZWdhbW9nJTIyJTJDJTIyd2Njb20tYmFjayUyMiUzQSUyMiUyNTJGbWVnYW1vZyUyNTJGcHJvZHVjdCUyNTJGZHZhbGEtc2hlZXQtc2V0JTI1MkYlMjIlMkMlMjJ3Y2NvbS13b28tdmVyc2lvbiUyMiUzQSUyMjguNS4xJTIyJTJDJTIyd2Njb20tY29ubmVjdC1ub25jZSUyMiUzQSUyMmYxNmQ2ZmM3ZjMlMjIlN0QlN0QlMkMlMjJfZmVhdHVyZV9ub25jZSUyMiUzQSUyMjNhOWQwYzgwNWIlMjIlMkMlMjJhbGVydENvdW50JTIyJTNBJTIyMSUyMiUyQyUyMnZpc2libGVUYXNrTGlzdElkcyUyMiUzQSU1QiUyMnNldHVwJTIyJTVEJTdEJTdEJyApICk7Cg=="></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_178f4d3163b38b06e6b4a00d28fbb5668edc.js?ver=07c2f0675ddd247d2325')}}" id="wc-settings-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/data-controls.min0740.js?ver=fe4ccc8a1782ea8e2cb1')}}" id="wp-data-controls-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/html-entities.min68f0.js?ver=36a4a255da7dd2e1bf8e')}}" id="wp-html-entities-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/notices.min380b.js?ver=38e88f4b627cf873edd0')}}" id="wp-notices-js"></script>
+			<script defer id="wc-blocks-middleware-js-before" src="data:text/javascript;base64,CgkJCXZhciB3Y0Jsb2Nrc01pZGRsZXdhcmVDb25maWcgPSB7CgkJCQlzdG9yZUFwaU5vbmNlOiAnOGQxMWZjZWFiNicsCgkJCQl3Y1N0b3JlQXBpTm9uY2VUaW1lc3RhbXA6ICcxNzM1MDc0MjQ5JwoJCQl9OwoJCQkK"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_bdc1e466fc436dc223abbd653674f2adce2b.js?ver=ca04183222edaf8a26be')}}" id="wc-blocks-middleware-js"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_d362db0897dcd4f234bab878252648ae997f.js?ver=c96aba0171b12e03b8a6')}}" id="wc-blocks-data-store-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/dom-ready.minded6.js?ver=392bdd43726760d1f3ca')}}" id="wp-dom-ready-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/a11y.min866e.js?ver=7032343a947cfccf5608')}}" id="wp-a11y-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/primitives.minfde7.js?ver=6984e6eb5d6157c4fe44')}}" id="wp-primitives-js"></script>
+			<script src="{{asset('assets/wp-includes/js/dist/warning.minb0b0.js?ver=122829a085511691f14d')}}" id="wp-warning-js"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_32eebd049df2f836e758e968164ef6fef69d.js?ver=b165bb2bd213326d7f31')}}" id="wc-blocks-components-js"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_da81d17da809a68f4d7dab3e8e0e1326297b.js?ver=9f469ef17beaf7c51576')}}" id="wc-blocks-checkout-js"></script>
+			<script defer src="{{asset('assets/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution-blocks.min2ff6.js?ver=8.5.1')}}" id="wc-order-attribution-blocks-js"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_e62aa30bcc0e150f64afc20a97388ce9b7d5.js?ver=6.1.9')}}" id="print-js"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_c67adc1d2b17eba3ab3a7859a140c1f5b7d5.js?ver=6.1.9')}}" id="table-head-fixer-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/perfect-scrollbar.min5b75.js?ver=3.0.2')}}" id="perfect-scrollbar-js"></script>
+			<script defer src="{{asset('assets/wp-includes/js/jquery/ui/core.min3f14.js?ver=1.13.2')}}" id="jquery-ui-core-js"></script>
+			<script defer src="{{asset('assets/wp-includes/js/jquery/ui/mouse.min3f14.js?ver=1.13.2')}}" id="jquery-ui-mouse-js"></script>
+			<script defer src="{{asset('assets/wp-includes/js/jquery/ui/sortable.min3f14.js?ver=1.13.2')}}" id="jquery-ui-sortable-js"></script>
+			<script defer id="woosc-frontend-js-extra" src="data:text/javascript;base64,CnZhciB3b29zY192YXJzID0geyJhamF4X3VybCI6Imh0dHBzOlwvXC9taW5pbW9nLnRoZW1lbW92ZS5jb21cL21lZ2Ftb2dcL3dwLWFkbWluXC9hZG1pbi1hamF4LnBocCIsIm5vbmNlIjoiMjk1MmY5OWZkMSIsImhhc2giOiJkYXBtIiwidXNlcl9pZCI6IjBjZGI2NGZhYjMyYTA1YmQzOTNiMjBjOGMzNTFkZTlmIiwicGFnZV91cmwiOiIjIiwib3Blbl9idXR0b24iOiIiLCJoaWRlX2VtcHR5X3JvdyI6InllcyIsInZhcmlhdGlvbnMiOiJ5ZXMiLCJvcGVuX2J1dHRvbl9hY3Rpb24iOiJvcGVuX3BvcHVwIiwibWVudV9hY3Rpb24iOiJvcGVuX3BvcHVwIiwiYnV0dG9uX2FjdGlvbiI6InNob3dfdGFibGUiLCJzaWRlYmFyX3Bvc2l0aW9uIjoicmlnaHQiLCJtZXNzYWdlX3Bvc2l0aW9uIjoicmlnaHQtdG9wIiwibWVzc2FnZV9hZGRlZCI6IntuYW1lfSBoYXMgYmVlbiBhZGRlZCB0byBDb21wYXJlIGxpc3QuIiwibWVzc2FnZV9yZW1vdmVkIjoie25hbWV9IGhhcyBiZWVuIHJlbW92ZWQgZnJvbSB0aGUgQ29tcGFyZSBsaXN0LiIsIm1lc3NhZ2VfZXhpc3RzIjoie25hbWV9IGlzIGFscmVhZHkgaW4gdGhlIENvbXBhcmUgbGlzdC4iLCJvcGVuX2JhciI6Im5vIiwiYmFyX2J1YmJsZSI6Im5vIiwiYWRkaW5nIjoicHJlcGVuZCIsImNsaWNrX2FnYWluIjoibm8iLCJoaWRlX2VtcHR5Ijoibm8iLCJjbGlja19vdXRzaWRlIjoieWVzIiwiZnJlZXplX2NvbHVtbiI6InllcyIsImZyZWV6ZV9yb3ciOiJ5ZXMiLCJzY3JvbGxiYXIiOiJ5ZXMiLCJsaW1pdCI6IjEwMCIsInJlbW92ZV9hbGwiOiJEbyB5b3Ugd2FudCB0byByZW1vdmUgYWxsIHByb2R1Y3RzIGZyb20gdGhlIGNvbXBhcmU/IiwibGltaXRfbm90aWNlIjoiWW91IGNhbiBhZGQgYSBtYXhpbXVtIG9mIHtsaW1pdH0gcHJvZHVjdHMgdG8gdGhlIGNvbXBhcmlzb24gdGFibGUuIiwiY29waWVkX3RleHQiOiJTaGFyZSBsaW5rICVzIHdhcyBjb3BpZWQgdG8gY2xpcGJvYXJkISIsImJ1dHRvbl90ZXh0IjoiQ29tcGFyZSIsImJ1dHRvbl90ZXh0X2FkZGVkIjoiQ29tcGFyZSIsImJ1dHRvbl9ub3JtYWxfaWNvbiI6Indvb3NjLWljb24tMSIsImJ1dHRvbl9hZGRlZF9pY29uIjoid29vc2MtaWNvbi03NCJ9Owo="></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_9ade3e9bf381b566c5d8761bc84701deb7d5.js?ver=6.1.9')}}" id="woosc-frontend-js"></script>
+			<script defer id="woosw-frontend-js-extra" src="data:text/javascript;base64,CnZhciB3b29zd192YXJzID0geyJhamF4X3VybCI6Imh0dHBzOlwvXC9taW5pbW9nLnRoZW1lbW92ZS5jb21cL21lZ2Ftb2dcL3dwLWFkbWluXC9hZG1pbi1hamF4LnBocCIsIm5vbmNlIjoiMWY4ZTQ4NTMxYiIsIm1lbnVfYWN0aW9uIjoib3Blbl9wYWdlIiwicGVyZmVjdF9zY3JvbGxiYXIiOiJ5ZXMiLCJ3aXNobGlzdF91cmwiOiJodHRwczpcL1wvbWluaW1vZy50aGVtZW1vdmUuY29tXC9tZWdhbW9nXC93aXNobGlzdFwvIiwiYnV0dG9uX2FjdGlvbiI6Imxpc3QiLCJtZXNzYWdlX3Bvc2l0aW9uIjoicmlnaHQtdG9wIiwiYnV0dG9uX2FjdGlvbl9hZGRlZCI6InBvcHVwIiwiZW1wdHlfY29uZmlybSI6IlRoaXMgYWN0aW9uIGNhbm5vdCBiZSB1bmRvbmUuIEFyZSB5b3Ugc3VyZT8iLCJkZWxldGVfY29uZmlybSI6IlRoaXMgYWN0aW9uIGNhbm5vdCBiZSB1bmRvbmUuIEFyZSB5b3Ugc3VyZT8iLCJjb3BpZWRfdGV4dCI6IkNvcGllZCB0aGUgd2lzaGxpc3QgbGluazoiLCJtZW51X3RleHQiOiJXaXNobGlzdCIsImJ1dHRvbl90ZXh0IjoiQWRkIHRvIHdpc2hsaXN0IiwiYnV0dG9uX3RleHRfYWRkZWQiOiJCcm93c2Ugd2lzaGxpc3QiLCJidXR0b25fbm9ybWFsX2ljb24iOiJ3b29zdy1pY29uLTUiLCJidXR0b25fYWRkZWRfaWNvbiI6Indvb3N3LWljb24tOCIsImJ1dHRvbl9sb2FkaW5nX2ljb24iOiJ3b29zdy1pY29uLTQifTsK"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_9402fc7d07010eff0b8ed90e852f3449287d.js?ver=4.8.0')}}" id="woosw-frontend-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/modal.min5b75.js?ver=3.0.2')}}" id="minimog-modal-js"></script>
+			<script defer id="minimog-script-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZyA9IHsiYWpheHVybCI6Imh0dHBzOlwvXC9taW5pbW9nLnRoZW1lbW92ZS5jb21cL21lZ2Ftb2dcL3dwLWFkbWluXC9hZG1pbi1hamF4LnBocCIsIm1pbmltb2dfYWpheF91cmwiOiJcL21lZ2Ftb2dcLz9taW5pbW9nLWFqYXg9JSVlbmRwb2ludCUlIiwibm9uY2UiOiIxOWIxMjNmNDNjIiwiaGVhZGVyX3N0aWNreV9lbmFibGUiOiIxIiwibGlnaHRfZ2FsbGVyeV9hdXRvX3BsYXkiOiIiLCJsaWdodF9nYWxsZXJ5X2Rvd25sb2FkIjoiMSIsImxpZ2h0X2dhbGxlcnlfZnVsbF9zY3JlZW4iOiIxIiwibGlnaHRfZ2FsbGVyeV96b29tIjoiMSIsImxpZ2h0X2dhbGxlcnlfdGh1bWJuYWlsIjoiIiwibGlnaHRfZ2FsbGVyeV9zaGFyZSI6IjEiLCJtb2JpbGVfbWVudV9icmVha3BvaW50IjoiMTE5OSIsImlzU2luZ2xlIjoiMSIsInBvc3RJRCI6IjExNDQiLCJwb3N0VHlwZSI6InByb2R1Y3QiLCJzZWFyY2giOnsiYWpheF9kaXNhYmxlIjpmYWxzZSwiZGVsYXkiOiIifSwiaTE4bCI6eyJub01hdGNoZXNGb3VuZCI6Ik5vIG1hdGNoZXMgZm91bmQiLCJhbGwiOiJBbGwgJXMifX07Cg=="></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/main.min5b75.js?ver=3.0.2')}}" id="minimog-script-js"></script>
+			<script defer id="minimog-promo-popup-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZ1BvcHVwID0geyJvbkxvYWQiOnsiZW5hYmxlIjoiMSIsImRlbGF5IjowfSwib25TY3JvbGxpbmciOnsiZW5hYmxlIjoiMCIsImRpcmVjdGlvbiI6ImRvd24iLCJvZmZzZXQiOjUwfSwib25DbGljayI6eyJlbmFibGUiOiIwIiwiY2xpY2tUaW1lcyI6IjEifSwicnVsZXMiOnsiYnlUaW1lcyI6eyJlbmFibGUiOiIxIiwidGltZXMiOiIxIn0sImJ5UGFnZVZpZXdzIjp7ImVuYWJsZSI6IjAiLCJyZWFjaCI6IjMifX19Owo="></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/promo-popup.min5b75.js?ver=3.0.2')}}" id="minimog-promo-popup-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/m-image.min5b75.js?ver=3.0.2')}}" id="minimog-image-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/libs/swiper/js/swiper.minc225.js?ver=5.4.1')}}" id="swiper-js"></script>
+			<script defer id="minimog-swiper-wrapper-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZ1N3aXBlciA9IHsicHJldlRleHQiOiJQcmV2IiwibmV4dFRleHQiOiJOZXh0In07Cg=="></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/swiper-wrapper.min5b75.js?ver=3.0.2')}}" id="minimog-swiper-wrapper-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/libs/smartmenus/jquery.smartmenus.minc64e.js?ver=1.1.1')}}" id="smartmenus-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/wishlist.min5b75.js?ver=3.0.2')}}" id="minimog-wc-wishlist-js"></script>
+			<script defer id="wc-add-to-cart-variation-js-extra" src="data:text/javascript;base64,CnZhciB3Y19hZGRfdG9fY2FydF92YXJpYXRpb25fcGFyYW1zID0geyJ3Y19hamF4X3VybCI6IlwvbWVnYW1vZ1wvP3djLWFqYXg9JSVlbmRwb2ludCUlIiwiaTE4bl9ub19tYXRjaGluZ192YXJpYXRpb25zX3RleHQiOiJTb3JyeSwgbm8gcHJvZHVjdHMgbWF0Y2hlZCB5b3VyIHNlbGVjdGlvbi4gUGxlYXNlIGNob29zZSBhIGRpZmZlcmVudCBjb21iaW5hdGlvbi4iLCJpMThuX21ha2VfYV9zZWxlY3Rpb25fdGV4dCI6IlBsZWFzZSBzZWxlY3Qgc29tZSBwcm9kdWN0IG9wdGlvbnMgYmVmb3JlIGFkZGluZyB0aGlzIHByb2R1Y3QgdG8geW91ciBjYXJ0LiIsImkxOG5fdW5hdmFpbGFibGVfdGV4dCI6IlNvcnJ5LCB0aGlzIHByb2R1Y3QgaXMgdW5hdmFpbGFibGUuIFBsZWFzZSBjaG9vc2UgYSBkaWZmZXJlbnQgY29tYmluYXRpb24uIn07Cg=="></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/add-to-cart-variation.min2ff6.js?ver=8.5.1')}}" id="wc-add-to-cart-variation-js" data-wp-strategy="defer"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/quantity-button.min5b75.js?ver=3.0.2')}}" id="minimog-quantity-button-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/nice-select.min5b75.js?ver=3.0.2')}}" id="minimog-nice-select-js"></script>
+			<script defer id="minimog-wc-general-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZ1dvbyA9IHsid2NfYWpheF91cmwiOiJcL21lZ2Ftb2dcLz93Yy1hamF4PSUlZW5kcG9pbnQlJSIsImFwcGx5X2NvdXBvbl9ub25jZSI6IjIwNDZiNmY1MzkiLCJyZW1vdmVfY291cG9uX25vbmNlIjoiNmUwYjc1NDg4ZCIsImlzX2NoZWNrb3V0IjoiIiwiYWRkX3RvX2NhcnRfYmVoYXZpb3VyIjoib3Blbl9jYXJ0X2RyYXdlciJ9Owo="></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/general.min5b75.js?ver=3.0.2')}}" id="minimog-wc-general-js"></script>
+			<script defer id="wc-cart-fragments-js-extra" src="data:text/javascript;base64,CnZhciB3Y19jYXJ0X2ZyYWdtZW50c19wYXJhbXMgPSB7ImFqYXhfdXJsIjoiXC9tZWdhbW9nXC93cC1hZG1pblwvYWRtaW4tYWpheC5waHAiLCJ3Y19hamF4X3VybCI6IlwvbWVnYW1vZ1wvP3djLWFqYXg9JSVlbmRwb2ludCUlIiwiY2FydF9oYXNoX2tleSI6IndjX2NhcnRfaGFzaF8xOTZiMzFhN2JjM2JhZjM2NmEyYTQ0MDNjZmVmMTI4ZCIsImZyYWdtZW50X25hbWUiOiJ3Y19mcmFnbWVudHNfMTk2YjMxYTdiYzNiYWYzNjZhMmE0NDAzY2ZlZjEyOGQiLCJyZXF1ZXN0X3RpbWVvdXQiOiI1MDAwIn07Cg=="></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/cart-fragments.min2ff6.js?ver=8.5.1')}}" id="wc-cart-fragments-js" data-wp-strategy="defer"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/countdown-timer.min5b75.js?ver=3.0.2')}}" id="minimog-countdown-timer-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/coupon.min5b75.js?ver=3.0.2')}}" id="minimog-wc-coupon-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/fly-cart.min5b75.js?ver=3.0.2')}}" id="minimog-wc-fly-cart-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/libs/lightGallery/js/lightgallery-all.mind203.js?ver=1.6.12')}}" id="lightgallery-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/tab-panel.min5b75.js?ver=3.0.2')}}" id="minimog-tab-panel-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/libs/spritespin/spritespin.min5b75.js?ver=3.0.2')}}" id="spritespin-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/libs/readmore/readmore.min6e0e.js?ver=3.0.0')}}" id="readmore-js"></script>
+			<script defer id="minimog-wc-product-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZ1Byb2R1Y3RTaW5nbGUgPSB7ImZlYXR1cmVTdHlsZSI6InNsaWRlciIsInNpbmdsZVByb2R1Y3RTdGlja3lCYXIiOiIwIiwiaTE4biI6eyJmaWxlc1NlbGVjdGVkIjoie2NvdW50fSBmaWxlcyBzZWxlY3RlZCIsInJlYWRNb3JlIjoiUmVhZCBtb3JlIiwicmVhZExlc3MiOiJSZWFkIGxlc3MifX07Cg=="></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/single.min5b75.js?ver=3.0.2')}}" id="minimog-wc-product-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/woo/product-questions.min5b75.js?ver=3.0.2')}}" id="minimog-wc-questions-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/hc-sticky.min5b75.js?ver=3.0.2')}}" id="hc-sticky-js"></script>
+			<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_lQl7ix2cmCXnkpYWn1mpgsyQDKjFcTM&amp;ver=3.4.2" id="dokan-maps-js"></script>
 
 
 
 
 
-	<script defer src="{{asset('assets/wp-includes/js/jquery/ui/datepicker.min3f14.js?ver=1.13.2')}}" id="jquery-ui-datepicker-js"></script>
-	<script defer id="jquery-ui-datepicker-js-after" src="data:text/javascript;base64,CmpRdWVyeShmdW5jdGlvbihqUXVlcnkpe2pRdWVyeS5kYXRlcGlja2VyLnNldERlZmF1bHRzKHsiY2xvc2VUZXh0IjoiQ2xvc2UiLCJjdXJyZW50VGV4dCI6IlRvZGF5IiwibW9udGhOYW1lcyI6WyJKYW51YXJ5IiwiRmVicnVhcnkiLCJNYXJjaCIsIkFwcmlsIiwiTWF5IiwiSnVuZSIsIkp1bHkiLCJBdWd1c3QiLCJTZXB0ZW1iZXIiLCJPY3RvYmVyIiwiTm92ZW1iZXIiLCJEZWNlbWJlciJdLCJtb250aE5hbWVzU2hvcnQiOlsiSmFuIiwiRmViIiwiTWFyIiwiQXByIiwiTWF5IiwiSnVuIiwiSnVsIiwiQXVnIiwiU2VwIiwiT2N0IiwiTm92IiwiRGVjIl0sIm5leHRUZXh0IjoiTmV4dCIsInByZXZUZXh0IjoiUHJldmlvdXMiLCJkYXlOYW1lcyI6WyJTdW5kYXkiLCJNb25kYXkiLCJUdWVzZGF5IiwiV2VkbmVzZGF5IiwiVGh1cnNkYXkiLCJGcmlkYXkiLCJTYXR1cmRheSJdLCJkYXlOYW1lc1Nob3J0IjpbIlN1biIsIk1vbiIsIlR1ZSIsIldlZCIsIlRodSIsIkZyaSIsIlNhdCJdLCJkYXlOYW1lc01pbiI6WyJTIiwiTSIsIlQiLCJXIiwiVCIsIkYiLCJTIl0sImRhdGVGb3JtYXQiOiJNTSBkLCB5eSIsImZpcnN0RGF5IjoxLCJpc1JUTCI6ZmFsc2V9KTt9KTsK"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_6bb05d6e8f69e366983d55244e2d46b4ccfb.js?ver=3.4.2')}}" id="dokan-tooltip-js"></script>
-	<script defer id="dokan-form-validate-js-extra" src="data:text/javascript;base64,CnZhciBEb2thblZhbGlkYXRlTXNnID0geyJyZXF1aXJlZCI6IlRoaXMgZmllbGQgaXMgcmVxdWlyZWQiLCJyZW1vdGUiOiJQbGVhc2UgZml4IHRoaXMgZmllbGQuIiwiZW1haWwiOiJQbGVhc2UgZW50ZXIgYSB2YWxpZCBlbWFpbCBhZGRyZXNzLiIsInVybCI6IlBsZWFzZSBlbnRlciBhIHZhbGlkIFVSTC4iLCJkYXRlIjoiUGxlYXNlIGVudGVyIGEgdmFsaWQgZGF0ZS4iLCJkYXRlSVNPIjoiUGxlYXNlIGVudGVyIGEgdmFsaWQgZGF0ZSAoSVNPKS4iLCJudW1iZXIiOiJQbGVhc2UgZW50ZXIgYSB2YWxpZCBudW1iZXIuIiwiZGlnaXRzIjoiUGxlYXNlIGVudGVyIG9ubHkgZGlnaXRzLiIsImNyZWRpdGNhcmQiOiJQbGVhc2UgZW50ZXIgYSB2YWxpZCBjcmVkaXQgY2FyZCBudW1iZXIuIiwiZXF1YWxUbyI6IlBsZWFzZSBlbnRlciB0aGUgc2FtZSB2YWx1ZSBhZ2Fpbi4iLCJtYXhsZW5ndGhfbXNnIjoiUGxlYXNlIGVudGVyIG5vIG1vcmUgdGhhbiB7MH0gY2hhcmFjdGVycy4iLCJtaW5sZW5ndGhfbXNnIjoiUGxlYXNlIGVudGVyIGF0IGxlYXN0IHswfSBjaGFyYWN0ZXJzLiIsInJhbmdlbGVuZ3RoX21zZyI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIGJldHdlZW4gezB9IGFuZCB7MX0gY2hhcmFjdGVycyBsb25nLiIsInJhbmdlX21zZyI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIGJldHdlZW4gezB9IGFuZCB7MX0uIiwibWF4X21zZyI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIGxlc3MgdGhhbiBvciBlcXVhbCB0byB7MH0uIiwibWluX21zZyI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byB7MH0uIn07Cg=="></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_635d3e5ab95c7df30c12b4bbfecc345bccfb.js?ver=3.4.2')}}" id="dokan-form-validate-js"></script>
-	<script defer src="{{asset('assets/wp-content/plugins/dokan-lite/assets/js/speakingurl.minccfb.js?ver=3.4.2')}}" id="speaking-url-js"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_5cd1fbb84de483cf07698d8d3105fdc63e1e.js?ver=1650874832')}}" id="dokan-vendor-registration-js"></script>
-	<script defer src="{{asset('assets/wp-includes/js/imgareaselect/jquery.imgareaselect.min75e4.js?ver=6.4.5')}}" id="imgareaselect-js"></script>
-	<script defer src="{{asset('assets/wp-includes/js/customize-base.min75e4.js?ver=6.4.5')}}" id="customize-base-js"></script>
-	<script defer src="{{asset('assets/wp-includes/js/backbone.min91ce.js?ver=1.5.0')}}" id="backbone-js"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_f42702f4ffb78b7e477e0f10f6d49e9cccfb.js?ver=3.4.2')}}" id="customize-model-js"></script>
-	<script defer src="{{asset('assets/wp-content/plugins/woocommerce/assets/js/jquery-tiptip/jquery.tipTip.minccfb.js?ver=3.4.2')}}" id="jquery-tiptip-js"></script>
-	<script defer src="{{asset('assets/wp-content/plugins/dokan-lite/assets/vendors/moment/moment.minccfb.js?ver=3.4.2')}}" id="dokan-moment-js"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_09a5e4f6af11cf7cb4cb4da4d3d2824a3e1e.js?ver=1650874832')}}" id="dokan-script-js"></script>
-	<script defer src="{{asset('assets/wp-content/plugins/dokan-lite/assets/vendors/select2/select2.full.minccfb.js?ver=3.4.2')}}" id="dokan-select2-js-js"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_ffe589943ec037c5ca817248393946ae3e1e.js?ver=1650874832')}}" id="dokan-login-form-popup-js"></script>
-	<script defer id="dco-comment-attachment-js-extra" src="data:text/javascript;base64,CnZhciBkY29fY2EgPSB7ImNvbW1lbnRpbmdfZm9ybV9ub3RfZm91bmQiOiJUaGUgY29tbWVudGluZyBmb3JtIG5vdCBmb3VuZC4ifTsK"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_99674764cdbaabe78e2c99125c3a558d8d5a.js?ver=2.4.0')}}" id="dco-comment-attachment-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/libs/validate/jquery.validate.min7e9d.js?ver=1.19.5')}}" id="validate-js"></script>
-	<script defer id="minimog-login-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZ0xvZ2luID0geyJ2YWxpZGF0b3JNZXNzYWdlcyI6eyJzaW1wbGUiOnsicmVxdWlyZWQiOiJUaGlzIGZpZWxkIGlzIHJlcXVpcmVkIiwicmVtb3RlIjoiUGxlYXNlIGZpeCB0aGlzIGZpZWxkIiwiZW1haWwiOiJBIHZhbGlkIGVtYWlsIGFkZHJlc3MgaXMgcmVxdWlyZWQiLCJ1cmwiOiJQbGVhc2UgZW50ZXIgYSB2YWxpZCBVUkwiLCJkYXRlIjoiUGxlYXNlIGVudGVyIGEgdmFsaWQgZGF0ZSIsImRhdGVJU08iOiJQbGVhc2UgZW50ZXIgYSB2YWxpZCBkYXRlIChJU08pIiwibnVtYmVyIjoiUGxlYXNlIGVudGVyIGEgdmFsaWQgbnVtYmVyLiIsImRpZ2l0cyI6IlBsZWFzZSBlbnRlciBvbmx5IGRpZ2l0cy4iLCJjcmVkaXRjYXJkIjoiUGxlYXNlIGVudGVyIGEgdmFsaWQgY3JlZGl0IGNhcmQgbnVtYmVyIiwiZXF1YWxUbyI6IlBsZWFzZSBlbnRlciB0aGUgc2FtZSB2YWx1ZSBhZ2FpbiIsImFjY2VwdCI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIHdpdGggYSB2YWxpZCBleHRlbnNpb24ifSwiZm9ybWF0Ijp7Im1heGxlbmd0aCI6IlBsZWFzZSBlbnRlciBubyBtb3JlIHRoYW4gezB9IGNoYXJhY3RlcnMiLCJtaW5sZW5ndGgiOiJQbGVhc2UgZW50ZXIgYXQgbGVhc3QgezB9IGNoYXJhY3RlcnMiLCJyYW5nZWxlbmd0aCI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIGJldHdlZW4gezB9IGFuZCB7MX0gY2hhcmFjdGVycyBsb25nIiwicmFuZ2UiOiJQbGVhc2UgZW50ZXIgYSB2YWx1ZSBiZXR3ZWVuIHswfSBhbmQgezF9IiwibWF4IjoiUGxlYXNlIGVudGVyIGEgdmFsdWUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvIHswfSIsIm1pbiI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byB7MH0ifX19Owo="></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/login.min2c75.js?ver=1.17.0')}}" id="minimog-login-js"></script>
-	<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/dokan/vendor-registration.min5b75.js?ver=3.0.2')}}" id="minimog-dokan-vendor-registration-js"></script>
-	<script defer id="minimog-child-showcase-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZ0NoaWxkID0geyJkZW1vX2hhc2giOiJmNWU2OGM0MzBhOTk1M2JiOWM3MWEzOTc3ZTkzZDQyMyJ9Owo="></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_d29ada74fd12253302827b1ee34a2530.js')}}" id="minimog-child-showcase-js"></script>
-	<script defer src="{{asset('assets/wp-content/plugins/elementor/assets/js/webpack.runtime.minf3b2.js?ver=3.18.3')}}" id="elementor-webpack-runtime-js"></script>
-	<script defer src="{{asset('assets/wp-content/plugins/elementor/assets/js/frontend-modules.minf3b2.js?ver=3.18.3')}}" id="elementor-frontend-modules-js"></script>
-	<script defer src="{{asset('assets/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2')}}" id="elementor-waypoints-js"></script>
-	<script defer id="elementor-frontend-js-before" src="data:text/javascript;base64,CnZhciBlbGVtZW50b3JGcm9udGVuZENvbmZpZyA9IHsiZW52aXJvbm1lbnRNb2RlIjp7ImVkaXQiOmZhbHNlLCJ3cFByZXZpZXciOmZhbHNlLCJpc1NjcmlwdERlYnVnIjpmYWxzZX0sImkxOG4iOnsic2hhcmVPbkZhY2Vib29rIjoiU2hhcmUgb24gRmFjZWJvb2siLCJzaGFyZU9uVHdpdHRlciI6IlNoYXJlIG9uIFR3aXR0ZXIiLCJwaW5JdCI6IlBpbiBpdCIsImRvd25sb2FkIjoiRG93bmxvYWQiLCJkb3dubG9hZEltYWdlIjoiRG93bmxvYWQgaW1hZ2UiLCJmdWxsc2NyZWVuIjoiRnVsbHNjcmVlbiIsInpvb20iOiJab29tIiwic2hhcmUiOiJTaGFyZSIsInBsYXlWaWRlbyI6IlBsYXkgVmlkZW8iLCJwcmV2aW91cyI6IlByZXZpb3VzIiwibmV4dCI6Ik5leHQiLCJjbG9zZSI6IkNsb3NlIiwiYTExeUNhcm91c2VsV3JhcHBlckFyaWFMYWJlbCI6IkNhcm91c2VsIHwgSG9yaXpvbnRhbCBzY3JvbGxpbmc6IEFycm93IExlZnQgJiBSaWdodCIsImExMXlDYXJvdXNlbFByZXZTbGlkZU1lc3NhZ2UiOiJQcmV2aW91cyBzbGlkZSIsImExMXlDYXJvdXNlbE5leHRTbGlkZU1lc3NhZ2UiOiJOZXh0IHNsaWRlIiwiYTExeUNhcm91c2VsRmlyc3RTbGlkZU1lc3NhZ2UiOiJUaGlzIGlzIHRoZSBmaXJzdCBzbGlkZSIsImExMXlDYXJvdXNlbExhc3RTbGlkZU1lc3NhZ2UiOiJUaGlzIGlzIHRoZSBsYXN0IHNsaWRlIiwiYTExeUNhcm91c2VsUGFnaW5hdGlvbkJ1bGxldE1lc3NhZ2UiOiJHbyB0byBzbGlkZSJ9LCJpc19ydGwiOmZhbHNlLCJicmVha3BvaW50cyI6eyJ4cyI6MCwic20iOjQ4MCwibWQiOjM2MSwibGciOjc2OCwieGwiOjE0NDAsInh4bCI6MTYwMH0sInJlc3BvbnNpdmUiOnsiYnJlYWtwb2ludHMiOnsibW9iaWxlIjp7ImxhYmVsIjoiTW9iaWxlIFBvcnRyYWl0IiwidmFsdWUiOjM2MCwiZGVmYXVsdF92YWx1ZSI6NzY3LCJkaXJlY3Rpb24iOiJtYXgiLCJpc19lbmFibGVkIjp0cnVlfSwibW9iaWxlX2V4dHJhIjp7ImxhYmVsIjoiTW9iaWxlIExhbmRzY2FwZSIsInZhbHVlIjo1NzUsImRlZmF1bHRfdmFsdWUiOjg4MCwiZGlyZWN0aW9uIjoibWF4IiwiaXNfZW5hYmxlZCI6dHJ1ZX0sInRhYmxldCI6eyJsYWJlbCI6IlRhYmxldCBQb3J0cmFpdCIsInZhbHVlIjo3NjcsImRlZmF1bHRfdmFsdWUiOjEwMjQsImRpcmVjdGlvbiI6Im1heCIsImlzX2VuYWJsZWQiOnRydWV9LCJ0YWJsZXRfZXh0cmEiOnsibGFiZWwiOiJUYWJsZXQgTGFuZHNjYXBlIiwidmFsdWUiOjk5MSwiZGVmYXVsdF92YWx1ZSI6MTIwMCwiZGlyZWN0aW9uIjoibWF4IiwiaXNfZW5hYmxlZCI6dHJ1ZX0sImxhcHRvcCI6eyJsYWJlbCI6IkxhcHRvcCIsInZhbHVlIjoxMTk5LCJkZWZhdWx0X3ZhbHVlIjoxMzY2LCJkaXJlY3Rpb24iOiJtYXgiLCJpc19lbmFibGVkIjp0cnVlfSwid2lkZXNjcmVlbiI6eyJsYWJlbCI6IldpZGVzY3JlZW4iLCJ2YWx1ZSI6MTYwMCwiZGVmYXVsdF92YWx1ZSI6MjQwMCwiZGlyZWN0aW9uIjoibWluIiwiaXNfZW5hYmxlZCI6dHJ1ZX19fSwidmVyc2lvbiI6IjMuMTguMyIsImlzX3N0YXRpYyI6ZmFsc2UsImV4cGVyaW1lbnRhbEZlYXR1cmVzIjp7ImVfb3B0aW1pemVkX2Fzc2V0c19sb2FkaW5nIjp0cnVlLCJlX29wdGltaXplZF9jc3NfbG9hZGluZyI6dHJ1ZSwiZV9mb250X2ljb25fc3ZnIjp0cnVlLCJhZGRpdGlvbmFsX2N1c3RvbV9icmVha3BvaW50cyI6dHJ1ZSwiYmxvY2tfZWRpdG9yX2Fzc2V0c19vcHRpbWl6ZSI6dHJ1ZSwibGFuZGluZy1wYWdlcyI6dHJ1ZSwiZV9sYXp5bG9hZCI6dHJ1ZSwiZV9pbWFnZV9sb2FkaW5nX29wdGltaXphdGlvbiI6dHJ1ZSwiZV9nbG9iYWxfc3R5bGVndWlkZSI6dHJ1ZX0sInVybHMiOnsiYXNzZXRzIjoiaHR0cHM6XC9cL21pbmltb2cudGhlbWVtb3ZlLmNvbVwvbWVnYW1vZ1wvd3AtY29udGVudFwvcGx1Z2luc1wvZWxlbWVudG9yXC9hc3NldHNcLyJ9LCJzd2lwZXJDbGFzcyI6InN3aXBlci1jb250YWluZXIiLCJzZXR0aW5ncyI6eyJwYWdlIjpbXSwiZWRpdG9yUHJlZmVyZW5jZXMiOltdfSwia2l0Ijp7ImFjdGl2ZV9icmVha3BvaW50cyI6WyJ2aWV3cG9ydF9tb2JpbGUiLCJ2aWV3cG9ydF9tb2JpbGVfZXh0cmEiLCJ2aWV3cG9ydF90YWJsZXQiLCJ2aWV3cG9ydF90YWJsZXRfZXh0cmEiLCJ2aWV3cG9ydF9sYXB0b3AiLCJ2aWV3cG9ydF93aWRlc2NyZWVuIl0sInZpZXdwb3J0X21vYmlsZSI6MzYwLCJ2aWV3cG9ydF9tb2JpbGVfZXh0cmEiOjU3NSwidmlld3BvcnRfdGFibGV0Ijo3NjcsInZpZXdwb3J0X3RhYmxldF9leHRyYSI6OTkxLCJ2aWV3cG9ydF9sYXB0b3AiOjExOTksInZpZXdwb3J0X3dpZGVzY3JlZW4iOjE2MDAsImdsb2JhbF9pbWFnZV9saWdodGJveCI6InllcyIsImxpZ2h0Ym94X2VuYWJsZV9jb3VudGVyIjoieWVzIiwibGlnaHRib3hfZW5hYmxlX2Z1bGxzY3JlZW4iOiJ5ZXMiLCJsaWdodGJveF9lbmFibGVfem9vbSI6InllcyIsImxpZ2h0Ym94X2VuYWJsZV9zaGFyZSI6InllcyIsImxpZ2h0Ym94X3RpdGxlX3NyYyI6InRpdGxlIiwibGlnaHRib3hfZGVzY3JpcHRpb25fc3JjIjoiZGVzY3JpcHRpb24ifSwicG9zdCI6eyJpZCI6MTE0NCwidGl0bGUiOiJEdmFsYSUyMFNoZWV0JTIwc2V0JTIwJUUyJTgwJTkzJTIwTWVnYW1vZyIsImV4Y2VycHQiOiJDb3R0b24gaXMgYSBzb2Z0LCBuYXR1cmFsIG1hdGVyaWFsIHRoYXQgYnJlYXRoZXMsIGFic29yYnMgbW9pc3R1cmUgYW5kIGZlZWxzIGNvbWZvcnRhYmxlIGFnYWluc3QgeW91ciBza2luLiBBbHNvLCBvdXIgY290dG9uIGlzIHN1c3RhaW5hYmx5IGdyb3duIHNvIHlvdSBjYW4gc2xlZXAgd2VsbCBcdTIwMTMgd2l0aCBhIGNsZWFuIGNvbnNjaWVuY2UuIiwiZmVhdHVyZWRJbWFnZSI6Imh0dHBzOlwvXC9taW5pbW9nLnRoZW1lbW92ZS5jb21cL21lZ2Ftb2dcL3dwLWNvbnRlbnRcL3VwbG9hZHNcL3NpdGVzXC8zXC8yMDIyXC8wM1wvcHJvZHVjdF9raXRjaGVuXzE4XzMuanBnIn19Owo="></script>
-	<script defer src="{{asset('assets/wp-content/plugins/elementor/assets/js/frontend.minf3b2.js?ver=3.18.3')}}" id="elementor-frontend-js"></script>
-	<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_20c6f71da9731e079b82ee05c4cc0d9d.js')}}" id="minimog-column-collapsible-js"></script>
-	<script defer id="wpforms-elementor-js-extra" src="data:text/javascript;base64,CnZhciB3cGZvcm1zRWxlbWVudG9yVmFycyA9IHsiY2FwdGNoYV9wcm92aWRlciI6InJlY2FwdGNoYSIsInJlY2FwdGNoYV90eXBlIjoidjIifTsK"></script>
-	<script defer src="{{asset('assets/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min3bd7.js?ver=1.8.6.2')}}" id="wpforms-elementor-js"></script>
+			<script defer src="{{asset('assets/wp-includes/js/jquery/ui/datepicker.min3f14.js?ver=1.13.2')}}" id="jquery-ui-datepicker-js"></script>
+			<script defer id="jquery-ui-datepicker-js-after" src="data:text/javascript;base64,CmpRdWVyeShmdW5jdGlvbihqUXVlcnkpe2pRdWVyeS5kYXRlcGlja2VyLnNldERlZmF1bHRzKHsiY2xvc2VUZXh0IjoiQ2xvc2UiLCJjdXJyZW50VGV4dCI6IlRvZGF5IiwibW9udGhOYW1lcyI6WyJKYW51YXJ5IiwiRmVicnVhcnkiLCJNYXJjaCIsIkFwcmlsIiwiTWF5IiwiSnVuZSIsIkp1bHkiLCJBdWd1c3QiLCJTZXB0ZW1iZXIiLCJPY3RvYmVyIiwiTm92ZW1iZXIiLCJEZWNlbWJlciJdLCJtb250aE5hbWVzU2hvcnQiOlsiSmFuIiwiRmViIiwiTWFyIiwiQXByIiwiTWF5IiwiSnVuIiwiSnVsIiwiQXVnIiwiU2VwIiwiT2N0IiwiTm92IiwiRGVjIl0sIm5leHRUZXh0IjoiTmV4dCIsInByZXZUZXh0IjoiUHJldmlvdXMiLCJkYXlOYW1lcyI6WyJTdW5kYXkiLCJNb25kYXkiLCJUdWVzZGF5IiwiV2VkbmVzZGF5IiwiVGh1cnNkYXkiLCJGcmlkYXkiLCJTYXR1cmRheSJdLCJkYXlOYW1lc1Nob3J0IjpbIlN1biIsIk1vbiIsIlR1ZSIsIldlZCIsIlRodSIsIkZyaSIsIlNhdCJdLCJkYXlOYW1lc01pbiI6WyJTIiwiTSIsIlQiLCJXIiwiVCIsIkYiLCJTIl0sImRhdGVGb3JtYXQiOiJNTSBkLCB5eSIsImZpcnN0RGF5IjoxLCJpc1JUTCI6ZmFsc2V9KTt9KTsK"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_6bb05d6e8f69e366983d55244e2d46b4ccfb.js?ver=3.4.2')}}" id="dokan-tooltip-js"></script>
+			<script defer id="dokan-form-validate-js-extra" src="data:text/javascript;base64,CnZhciBEb2thblZhbGlkYXRlTXNnID0geyJyZXF1aXJlZCI6IlRoaXMgZmllbGQgaXMgcmVxdWlyZWQiLCJyZW1vdGUiOiJQbGVhc2UgZml4IHRoaXMgZmllbGQuIiwiZW1haWwiOiJQbGVhc2UgZW50ZXIgYSB2YWxpZCBlbWFpbCBhZGRyZXNzLiIsInVybCI6IlBsZWFzZSBlbnRlciBhIHZhbGlkIFVSTC4iLCJkYXRlIjoiUGxlYXNlIGVudGVyIGEgdmFsaWQgZGF0ZS4iLCJkYXRlSVNPIjoiUGxlYXNlIGVudGVyIGEgdmFsaWQgZGF0ZSAoSVNPKS4iLCJudW1iZXIiOiJQbGVhc2UgZW50ZXIgYSB2YWxpZCBudW1iZXIuIiwiZGlnaXRzIjoiUGxlYXNlIGVudGVyIG9ubHkgZGlnaXRzLiIsImNyZWRpdGNhcmQiOiJQbGVhc2UgZW50ZXIgYSB2YWxpZCBjcmVkaXQgY2FyZCBudW1iZXIuIiwiZXF1YWxUbyI6IlBsZWFzZSBlbnRlciB0aGUgc2FtZSB2YWx1ZSBhZ2Fpbi4iLCJtYXhsZW5ndGhfbXNnIjoiUGxlYXNlIGVudGVyIG5vIG1vcmUgdGhhbiB7MH0gY2hhcmFjdGVycy4iLCJtaW5sZW5ndGhfbXNnIjoiUGxlYXNlIGVudGVyIGF0IGxlYXN0IHswfSBjaGFyYWN0ZXJzLiIsInJhbmdlbGVuZ3RoX21zZyI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIGJldHdlZW4gezB9IGFuZCB7MX0gY2hhcmFjdGVycyBsb25nLiIsInJhbmdlX21zZyI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIGJldHdlZW4gezB9IGFuZCB7MX0uIiwibWF4X21zZyI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIGxlc3MgdGhhbiBvciBlcXVhbCB0byB7MH0uIiwibWluX21zZyI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byB7MH0uIn07Cg=="></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_635d3e5ab95c7df30c12b4bbfecc345bccfb.js?ver=3.4.2')}}" id="dokan-form-validate-js"></script>
+			<script defer src="{{asset('assets/wp-content/plugins/dokan-lite/assets/js/speakingurl.minccfb.js?ver=3.4.2')}}" id="speaking-url-js"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_5cd1fbb84de483cf07698d8d3105fdc63e1e.js?ver=1650874832')}}" id="dokan-vendor-registration-js"></script>
+			<script defer src="{{asset('assets/wp-includes/js/imgareaselect/jquery.imgareaselect.min75e4.js?ver=6.4.5')}}" id="imgareaselect-js"></script>
+			<script defer src="{{asset('assets/wp-includes/js/customize-base.min75e4.js?ver=6.4.5')}}" id="customize-base-js"></script>
+			<script defer src="{{asset('assets/wp-includes/js/backbone.min91ce.js?ver=1.5.0')}}" id="backbone-js"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_f42702f4ffb78b7e477e0f10f6d49e9cccfb.js?ver=3.4.2')}}" id="customize-model-js"></script>
+			<script defer src="{{asset('assets/wp-content/plugins/woocommerce/assets/js/jquery-tiptip/jquery.tipTip.minccfb.js?ver=3.4.2')}}" id="jquery-tiptip-js"></script>
+			<script defer src="{{asset('assets/wp-content/plugins/dokan-lite/assets/vendors/moment/moment.minccfb.js?ver=3.4.2')}}" id="dokan-moment-js"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_09a5e4f6af11cf7cb4cb4da4d3d2824a3e1e.js?ver=1650874832')}}" id="dokan-script-js"></script>
+			<script defer src="{{asset('assets/wp-content/plugins/dokan-lite/assets/vendors/select2/select2.full.minccfb.js?ver=3.4.2')}}" id="dokan-select2-js-js"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_ffe589943ec037c5ca817248393946ae3e1e.js?ver=1650874832')}}" id="dokan-login-form-popup-js"></script>
+			<script defer id="dco-comment-attachment-js-extra" src="data:text/javascript;base64,CnZhciBkY29fY2EgPSB7ImNvbW1lbnRpbmdfZm9ybV9ub3RfZm91bmQiOiJUaGUgY29tbWVudGluZyBmb3JtIG5vdCBmb3VuZC4ifTsK"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_99674764cdbaabe78e2c99125c3a558d8d5a.js?ver=2.4.0')}}" id="dco-comment-attachment-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/libs/validate/jquery.validate.min7e9d.js?ver=1.19.5')}}" id="validate-js"></script>
+			<script defer id="minimog-login-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZ0xvZ2luID0geyJ2YWxpZGF0b3JNZXNzYWdlcyI6eyJzaW1wbGUiOnsicmVxdWlyZWQiOiJUaGlzIGZpZWxkIGlzIHJlcXVpcmVkIiwicmVtb3RlIjoiUGxlYXNlIGZpeCB0aGlzIGZpZWxkIiwiZW1haWwiOiJBIHZhbGlkIGVtYWlsIGFkZHJlc3MgaXMgcmVxdWlyZWQiLCJ1cmwiOiJQbGVhc2UgZW50ZXIgYSB2YWxpZCBVUkwiLCJkYXRlIjoiUGxlYXNlIGVudGVyIGEgdmFsaWQgZGF0ZSIsImRhdGVJU08iOiJQbGVhc2UgZW50ZXIgYSB2YWxpZCBkYXRlIChJU08pIiwibnVtYmVyIjoiUGxlYXNlIGVudGVyIGEgdmFsaWQgbnVtYmVyLiIsImRpZ2l0cyI6IlBsZWFzZSBlbnRlciBvbmx5IGRpZ2l0cy4iLCJjcmVkaXRjYXJkIjoiUGxlYXNlIGVudGVyIGEgdmFsaWQgY3JlZGl0IGNhcmQgbnVtYmVyIiwiZXF1YWxUbyI6IlBsZWFzZSBlbnRlciB0aGUgc2FtZSB2YWx1ZSBhZ2FpbiIsImFjY2VwdCI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIHdpdGggYSB2YWxpZCBleHRlbnNpb24ifSwiZm9ybWF0Ijp7Im1heGxlbmd0aCI6IlBsZWFzZSBlbnRlciBubyBtb3JlIHRoYW4gezB9IGNoYXJhY3RlcnMiLCJtaW5sZW5ndGgiOiJQbGVhc2UgZW50ZXIgYXQgbGVhc3QgezB9IGNoYXJhY3RlcnMiLCJyYW5nZWxlbmd0aCI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIGJldHdlZW4gezB9IGFuZCB7MX0gY2hhcmFjdGVycyBsb25nIiwicmFuZ2UiOiJQbGVhc2UgZW50ZXIgYSB2YWx1ZSBiZXR3ZWVuIHswfSBhbmQgezF9IiwibWF4IjoiUGxlYXNlIGVudGVyIGEgdmFsdWUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvIHswfSIsIm1pbiI6IlBsZWFzZSBlbnRlciBhIHZhbHVlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byB7MH0ifX19Owo="></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/login.min2c75.js?ver=1.17.0')}}" id="minimog-login-js"></script>
+			<script defer src="{{asset('assets/wp-content/themes/minimog/assets/js/dokan/vendor-registration.min5b75.js?ver=3.0.2')}}" id="minimog-dokan-vendor-registration-js"></script>
+			<script defer id="minimog-child-showcase-js-extra" src="data:text/javascript;base64,CnZhciAkbWluaW1vZ0NoaWxkID0geyJkZW1vX2hhc2giOiJmNWU2OGM0MzBhOTk1M2JiOWM3MWEzOTc3ZTkzZDQyMyJ9Owo="></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_d29ada74fd12253302827b1ee34a2530.js')}}" id="minimog-child-showcase-js"></script>
+			<script defer src="{{asset('assets/wp-content/plugins/elementor/assets/js/webpack.runtime.minf3b2.js?ver=3.18.3')}}" id="elementor-webpack-runtime-js"></script>
+			<script defer src="{{asset('assets/wp-content/plugins/elementor/assets/js/frontend-modules.minf3b2.js?ver=3.18.3')}}" id="elementor-frontend-modules-js"></script>
+			<script defer src="{{asset('assets/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2')}}" id="elementor-waypoints-js"></script>
+			<script defer id="elementor-frontend-js-before" src="data:text/javascript;base64,CnZhciBlbGVtZW50b3JGcm9udGVuZENvbmZpZyA9IHsiZW52aXJvbm1lbnRNb2RlIjp7ImVkaXQiOmZhbHNlLCJ3cFByZXZpZXciOmZhbHNlLCJpc1NjcmlwdERlYnVnIjpmYWxzZX0sImkxOG4iOnsic2hhcmVPbkZhY2Vib29rIjoiU2hhcmUgb24gRmFjZWJvb2siLCJzaGFyZU9uVHdpdHRlciI6IlNoYXJlIG9uIFR3aXR0ZXIiLCJwaW5JdCI6IlBpbiBpdCIsImRvd25sb2FkIjoiRG93bmxvYWQiLCJkb3dubG9hZEltYWdlIjoiRG93bmxvYWQgaW1hZ2UiLCJmdWxsc2NyZWVuIjoiRnVsbHNjcmVlbiIsInpvb20iOiJab29tIiwic2hhcmUiOiJTaGFyZSIsInBsYXlWaWRlbyI6IlBsYXkgVmlkZW8iLCJwcmV2aW91cyI6IlByZXZpb3VzIiwibmV4dCI6Ik5leHQiLCJjbG9zZSI6IkNsb3NlIiwiYTExeUNhcm91c2VsV3JhcHBlckFyaWFMYWJlbCI6IkNhcm91c2VsIHwgSG9yaXpvbnRhbCBzY3JvbGxpbmc6IEFycm93IExlZnQgJiBSaWdodCIsImExMXlDYXJvdXNlbFByZXZTbGlkZU1lc3NhZ2UiOiJQcmV2aW91cyBzbGlkZSIsImExMXlDYXJvdXNlbE5leHRTbGlkZU1lc3NhZ2UiOiJOZXh0IHNsaWRlIiwiYTExeUNhcm91c2VsRmlyc3RTbGlkZU1lc3NhZ2UiOiJUaGlzIGlzIHRoZSBmaXJzdCBzbGlkZSIsImExMXlDYXJvdXNlbExhc3RTbGlkZU1lc3NhZ2UiOiJUaGlzIGlzIHRoZSBsYXN0IHNsaWRlIiwiYTExeUNhcm91c2VsUGFnaW5hdGlvbkJ1bGxldE1lc3NhZ2UiOiJHbyB0byBzbGlkZSJ9LCJpc19ydGwiOmZhbHNlLCJicmVha3BvaW50cyI6eyJ4cyI6MCwic20iOjQ4MCwibWQiOjM2MSwibGciOjc2OCwieGwiOjE0NDAsInh4bCI6MTYwMH0sInJlc3BvbnNpdmUiOnsiYnJlYWtwb2ludHMiOnsibW9iaWxlIjp7ImxhYmVsIjoiTW9iaWxlIFBvcnRyYWl0IiwidmFsdWUiOjM2MCwiZGVmYXVsdF92YWx1ZSI6NzY3LCJkaXJlY3Rpb24iOiJtYXgiLCJpc19lbmFibGVkIjp0cnVlfSwibW9iaWxlX2V4dHJhIjp7ImxhYmVsIjoiTW9iaWxlIExhbmRzY2FwZSIsInZhbHVlIjo1NzUsImRlZmF1bHRfdmFsdWUiOjg4MCwiZGlyZWN0aW9uIjoibWF4IiwiaXNfZW5hYmxlZCI6dHJ1ZX0sInRhYmxldCI6eyJsYWJlbCI6IlRhYmxldCBQb3J0cmFpdCIsInZhbHVlIjo3NjcsImRlZmF1bHRfdmFsdWUiOjEwMjQsImRpcmVjdGlvbiI6Im1heCIsImlzX2VuYWJsZWQiOnRydWV9LCJ0YWJsZXRfZXh0cmEiOnsibGFiZWwiOiJUYWJsZXQgTGFuZHNjYXBlIiwidmFsdWUiOjk5MSwiZGVmYXVsdF92YWx1ZSI6MTIwMCwiZGlyZWN0aW9uIjoibWF4IiwiaXNfZW5hYmxlZCI6dHJ1ZX0sImxhcHRvcCI6eyJsYWJlbCI6IkxhcHRvcCIsInZhbHVlIjoxMTk5LCJkZWZhdWx0X3ZhbHVlIjoxMzY2LCJkaXJlY3Rpb24iOiJtYXgiLCJpc19lbmFibGVkIjp0cnVlfSwid2lkZXNjcmVlbiI6eyJsYWJlbCI6IldpZGVzY3JlZW4iLCJ2YWx1ZSI6MTYwMCwiZGVmYXVsdF92YWx1ZSI6MjQwMCwiZGlyZWN0aW9uIjoibWluIiwiaXNfZW5hYmxlZCI6dHJ1ZX19fSwidmVyc2lvbiI6IjMuMTguMyIsImlzX3N0YXRpYyI6ZmFsc2UsImV4cGVyaW1lbnRhbEZlYXR1cmVzIjp7ImVfb3B0aW1pemVkX2Fzc2V0c19sb2FkaW5nIjp0cnVlLCJlX29wdGltaXplZF9jc3NfbG9hZGluZyI6dHJ1ZSwiZV9mb250X2ljb25fc3ZnIjp0cnVlLCJhZGRpdGlvbmFsX2N1c3RvbV9icmVha3BvaW50cyI6dHJ1ZSwiYmxvY2tfZWRpdG9yX2Fzc2V0c19vcHRpbWl6ZSI6dHJ1ZSwibGFuZGluZy1wYWdlcyI6dHJ1ZSwiZV9sYXp5bG9hZCI6dHJ1ZSwiZV9pbWFnZV9sb2FkaW5nX29wdGltaXphdGlvbiI6dHJ1ZSwiZV9nbG9iYWxfc3R5bGVndWlkZSI6dHJ1ZX0sInVybHMiOnsiYXNzZXRzIjoiaHR0cHM6XC9cL21pbmltb2cudGhlbWVtb3ZlLmNvbVwvbWVnYW1vZ1wvd3AtY29udGVudFwvcGx1Z2luc1wvZWxlbWVudG9yXC9hc3NldHNcLyJ9LCJzd2lwZXJDbGFzcyI6InN3aXBlci1jb250YWluZXIiLCJzZXR0aW5ncyI6eyJwYWdlIjpbXSwiZWRpdG9yUHJlZmVyZW5jZXMiOltdfSwia2l0Ijp7ImFjdGl2ZV9icmVha3BvaW50cyI6WyJ2aWV3cG9ydF9tb2JpbGUiLCJ2aWV3cG9ydF9tb2JpbGVfZXh0cmEiLCJ2aWV3cG9ydF90YWJsZXQiLCJ2aWV3cG9ydF90YWJsZXRfZXh0cmEiLCJ2aWV3cG9ydF9sYXB0b3AiLCJ2aWV3cG9ydF93aWRlc2NyZWVuIl0sInZpZXdwb3J0X21vYmlsZSI6MzYwLCJ2aWV3cG9ydF9tb2JpbGVfZXh0cmEiOjU3NSwidmlld3BvcnRfdGFibGV0Ijo3NjcsInZpZXdwb3J0X3RhYmxldF9leHRyYSI6OTkxLCJ2aWV3cG9ydF9sYXB0b3AiOjExOTksInZpZXdwb3J0X3dpZGVzY3JlZW4iOjE2MDAsImdsb2JhbF9pbWFnZV9saWdodGJveCI6InllcyIsImxpZ2h0Ym94X2VuYWJsZV9jb3VudGVyIjoieWVzIiwibGlnaHRib3hfZW5hYmxlX2Z1bGxzY3JlZW4iOiJ5ZXMiLCJsaWdodGJveF9lbmFibGVfem9vbSI6InllcyIsImxpZ2h0Ym94X2VuYWJsZV9zaGFyZSI6InllcyIsImxpZ2h0Ym94X3RpdGxlX3NyYyI6InRpdGxlIiwibGlnaHRib3hfZGVzY3JpcHRpb25fc3JjIjoiZGVzY3JpcHRpb24ifSwicG9zdCI6eyJpZCI6MTE0NCwidGl0bGUiOiJEdmFsYSUyMFNoZWV0JTIwc2V0JTIwJUUyJTgwJTkzJTIwTWVnYW1vZyIsImV4Y2VycHQiOiJDb3R0b24gaXMgYSBzb2Z0LCBuYXR1cmFsIG1hdGVyaWFsIHRoYXQgYnJlYXRoZXMsIGFic29yYnMgbW9pc3R1cmUgYW5kIGZlZWxzIGNvbWZvcnRhYmxlIGFnYWluc3QgeW91ciBza2luLiBBbHNvLCBvdXIgY290dG9uIGlzIHN1c3RhaW5hYmx5IGdyb3duIHNvIHlvdSBjYW4gc2xlZXAgd2VsbCBcdTIwMTMgd2l0aCBhIGNsZWFuIGNvbnNjaWVuY2UuIiwiZmVhdHVyZWRJbWFnZSI6Imh0dHBzOlwvXC9taW5pbW9nLnRoZW1lbW92ZS5jb21cL21lZ2Ftb2dcL3dwLWNvbnRlbnRcL3VwbG9hZHNcL3NpdGVzXC8zXC8yMDIyXC8wM1wvcHJvZHVjdF9raXRjaGVuXzE4XzMuanBnIn19Owo="></script>
+			<script defer src="{{asset('assets/wp-content/plugins/elementor/assets/js/frontend.minf3b2.js?ver=3.18.3')}}" id="elementor-frontend-js"></script>
+			<script defer src="{{asset('assets/wp-content/cache/autoptimize/3/js/autoptimize_single_20c6f71da9731e079b82ee05c4cc0d9d.js')}}" id="minimog-column-collapsible-js"></script>
+			<script defer id="wpforms-elementor-js-extra" src="data:text/javascript;base64,CnZhciB3cGZvcm1zRWxlbWVudG9yVmFycyA9IHsiY2FwdGNoYV9wcm92aWRlciI6InJlY2FwdGNoYSIsInJlY2FwdGNoYV90eXBlIjoidjIifTsK"></script>
+			<script defer src="{{asset('assets/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min3bd7.js?ver=1.8.6.2')}}" id="wpforms-elementor-js"></script>
 </body>
 
 <!-- Mirrored from minimog.thememove.com/megamog/product/dvala-sheet-set/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Dec 2024 21:50:59 GMT -->

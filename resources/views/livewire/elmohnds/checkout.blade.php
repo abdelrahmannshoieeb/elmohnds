@@ -10,23 +10,23 @@
                             <h3>معلومات الدفع</h3>
                             <div class="woocommerce-billing-fields__field-wrapper">
                                 <p class="form-row form-row-first col-sm-6 validate-required" id="billing_first_name_field" data-priority="10"><label for="billing_first_name" class="">الاسم&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper">
-                                    <input wire:model="name" type="text" class="input-text " name="billing_first_name" id="billing_first_name" placeholder="" value="" autocomplete="given-name" />
-                                    @error('name')
+                                        <input wire:model="name" type="text" class="input-text " name="billing_first_name" id="billing_first_name" placeholder="" value="" autocomplete="given-name" />
+                                        @error('name')
                                         ادخل اسم من فضلك
-                                    @enderror
-                                </span><span class="form-error form-error__invalid-required" style="display: none;">This field is required.</span></p>
+                                        @enderror
+                                    </span><span class="form-error form-error__invalid-required" style="display: none;">This field is required.</span></p>
                                 <p class="form-row form-row-wide address-field col-sm-12 validate-required" id="billing_address_1_field" data-priority="50"><label for="billing_address_1" class="">علامة ميزة&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper">
-                                    <input wire:model="address" type="text" class="input-text " name="billing_address_1" id="billing_address_1" placeholder="House number and street name" value="" autocomplete="address-line1" />
-                                    @error('address')
+                                        <input wire:model="address" type="text" class="input-text " name="billing_address_1" id="billing_address_1" placeholder="House number and street name" value="" autocomplete="address-line1" />
+                                        @error('address')
                                         ادخل اسم من فضلك
-                                    @enderror
-                                </span><span class="form-error form-error__invalid-required" style="display: none;">This field is required.</span></p>
+                                        @enderror
+                                    </span><span class="form-error form-error__invalid-required" style="display: none;">This field is required.</span></p>
                                 <p class="form-row form-row-wide address-field col-sm-12 validate-required" id="billing_city_field" data-priority="70"><label for="billing_city" class="">المدينة&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper">
-                                    <input type="text" wire:model="city" class="input-text " name="billing_city" id="billing_city" placeholder="" value="" autocomplete="address-level2" />
-                                    @error('city')
+                                        <input type="text" wire:model="city" class="input-text " name="billing_city" id="billing_city" placeholder="" value="" autocomplete="address-level2" />
+                                        @error('city')
                                         ادخل اسم من فضلك
-                                    @enderror
-                                </span><span class="form-error form-error__invalid-required" style="display: none;">This field is required.</span></p>
+                                        @enderror
+                                    </span><span class="form-error form-error__invalid-required" style="display: none;">This field is required.</span></p>
                                 <p class="form-row form-row-wide address-field col-sm-12 validate-required validate-state">
                                     <label for="billing_state" class="">المحافظة&nbsp;<abbr class="required" title="required">*</abbr></label>
                                     <span class="woocommerce-input-wrapper">
@@ -41,11 +41,11 @@
                                     <span class="form-error form-error__invalid-required" style="display: none;">This field is required.</span>
                                 </p>
                                 <p class="form-row form-row-wide col-sm-6 validate-required validate-phone" id="billing_phone_field" data-priority="100"><label for="billing_phone" class="">Phone&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper">
-                                    <input wire:model="phone" type="tel" class="input-text " name="billing_phone" id="billing_phone" placeholder="" value="" autocomplete="tel" />
-                                    @error('phone')
+                                        <input wire:model="phone" type="tel" class="input-text " name="billing_phone" id="billing_phone" placeholder="" value="" autocomplete="tel" />
+                                        @error('phone')
                                         ادخل اسم من فضلك
-                                    @enderror
-                                </span><span class="form-error form-error__invalid-required" style="display: none;">This field is required.</span><span class="form-error form-error__invalid-phone" style="display: none;">Please enter valid phone number.</span></p>
+                                        @enderror
+                                    </span><span class="form-error form-error__invalid-required" style="display: none;">This field is required.</span><span class="form-error form-error__invalid-phone" style="display: none;">Please enter valid phone number.</span></p>
                                 <p class="form-row form-row-wide col-sm-6 validate-required validate-email" id="billing_email_field" data-priority="110"><label for="billing_email" class="">Email address&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input wire:model="email" type="email" class="input-text " name="billing_email" id="billing_email" placeholder="" value="" autocomplete="email username" /></span><span class="form-error form-error__invalid-required" style="display: none;">This field is required.</span><span class="form-error form-error__invalid-email" style="display: none;">Please enter valid email address.</span></p>
                             </div>
                         </div>
@@ -65,10 +65,9 @@
                     <div class="inner">
 
                         <div class="">
-                            <div id="woocommerce-checkout-review-order-table" class="woocommerce-order-details woocommerce-checkout-review-order-table" dir="rtl">
-
+                            <div id="woocommerce-checkout-review-order-table" class="woocommerce-order-details woocommerce-checkout-review-order-table" dir="ltr">
                                 <h3 id="order_review_heading"
-                                    class="checkout-order-review-heading">تفاصبيل الطلب</h3>
+                                    class="checkout-order-review-heading">تفاصيل الطلب</h3>
                                 <table class="wc-checkout-review-order-table">
                                     <tbody>
                                         @foreach ($items as $item )
@@ -195,10 +194,10 @@
                                     <a style="width: 100%; background: black; font-size: 20px" class="button alt" wire:click="placeOrder">اكد الطلب </a>
                                 </div>
                                 @if (session()->has('success'))
-                                    <div class="alert alert-success text-center text-success" style="margin-top: 10px; font-size: 20px ; color: #008dda">
-                                        {{ session('success') }}
+                                <div class="alert alert-success text-center text-success" style="margin-top: 10px; font-size: 20px ; color: #008dda">
+                                    {{ session('success') }}
                                     <a style="width: 100%; background: #008dda; font-size: 20px" href="{{ route('theproducts') }}" class="button alt">اذهب للمتجر </a>
-                                    </div>
+                                </div>
                                 @endif
                             </div>
                         </div>

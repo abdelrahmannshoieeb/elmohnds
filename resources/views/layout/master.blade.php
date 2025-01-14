@@ -669,110 +669,19 @@
             </div>
         </div>
     </div>
-    <div id="page-mobile-main-menu" class="page-mobile-main-menu" aria-hidden="true" role="dialog" hidden>
-        <div class="inner">
-            <div id="page-close-mobile-menu" class="page-close-mobile-menu">
-                <span class="fal fa-times"></span>
-            </div>
-            <div class="page-mobile-menu-content scroll-y">
-                <ul class="mobile-nav-tabs" role="tablist">
-                    <li class="active"
-                        id="tab-title-main-menu"
-                        aria-controls="tab-content-main-menu"
-                        role="tab"
-                        aria-selected="true"
-                        tabindex="0">Menu</li>
-                    <li id="tab-title-cat-menu"
-                        aria-controls="tab-content-cat-menu"
-                        role="tab"
-                        aria-selected="false"
-                        tabindex="-1">Categories</li>
-                </ul>
+	<livewire:elmohnds.aside>
 
-                <div class="mobile-menu-nav-menus">
-                    <div class="mobile-nav-tab mobile-nav-tab-main-menu"
-                        id="tab-content-main-menu"
-                        aria-labelledby="tab-title-main-menu"
-                        role="tabpanel"
-                        tabindex="0"
-                        aria-expanded="true">
-                        <ul id="mobile-menu-primary" class="menu__container">
-                            <li class="menu-item-open-modal-demo-preview menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-327 current_page_item menu-item-330 level-1"><a href="index.html">
-                                    <div class="menu-item-wrap"><span class="menu-item-title">Home</span></div>
-                                </a></li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"><a href="shop/index.html">
-                                    <div class="menu-item-wrap"><span class="menu-item-title">Shop</span></div>
-                                </a></li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"><a href="#">
-                                    <div class="menu-item-wrap"><span class="menu-item-title">Products</span></div>
-                                </a></li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"><a href="blog/index.html">
-                                    <div class="menu-item-wrap"><span class="menu-item-title">Blog</span></div>
-                                </a></li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"><a href="#">
-                                    <div class="menu-item-wrap"><span class="menu-item-title">Features</span></div>
-                                </a></li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"><a href="store-listing/index.html">
-                                    <div class="menu-item-wrap"><span class="menu-item-title">Store List</span></div>
-                                </a></li>
-                        </ul>
-                    </div>
-
-                    <div class="mobile-nav-tab mobile-nav-tab-cat-menu"
-                        id="tab-content-cat-menu"
-                        aria-labelledby="tab-title-cat-menu"
-                        role="tabpanel"
-                        tabindex="0"
-                        hidden
-                        aria-expanded="false">
-                    </div>
-                </div>
-
-                <div class="mobile-menu-components">
-
-                    <div class="mobile-menu-my-account">
-                        <span class="button-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14.5156 12.875C15.9479 12.875 17.1719 13.3958 18.1875 14.4375C19.2292 15.4531 19.75 16.6771 19.75 18.1094V19.125C19.75 19.6458 19.5677 20.0885 19.2031 20.4531C18.8385 20.8177 18.3958 21 17.875 21H4.125C3.60417 21 3.16146 20.8177 2.79688 20.4531C2.43229 20.0885 2.25 19.6458 2.25 19.125V18.1094C2.25 16.6771 2.75781 15.4531 3.77344 14.4375C4.8151 13.3958 6.05208 12.875 7.48438 12.875C7.82292 12.875 8.31771 12.9792 8.96875 13.1875C9.64583 13.3958 10.3229 13.5 11 13.5C11.6771 13.5 12.3542 13.3958 13.0312 13.1875C13.7083 12.9792 14.2031 12.875 14.5156 12.875ZM17.875 19.125V18.1094C17.875 17.1979 17.5365 16.4167 16.8594 15.7656C16.2083 15.0885 15.4271 14.75 14.5156 14.75C14.4375 14.75 14.0208 14.8542 13.2656 15.0625C12.5365 15.2708 11.7812 15.375 11 15.375C10.2188 15.375 9.45052 15.2708 8.69531 15.0625C7.96615 14.8542 7.5625 14.75 7.48438 14.75C6.57292 14.75 5.77865 15.0885 5.10156 15.7656C4.45052 16.4167 4.125 17.1979 4.125 18.1094V19.125H17.875ZM14.9844 10.6094C13.8906 11.7031 12.5625 12.25 11 12.25C9.4375 12.25 8.10938 11.7031 7.01562 10.6094C5.92188 9.51562 5.375 8.1875 5.375 6.625C5.375 5.0625 5.92188 3.73438 7.01562 2.64062C8.10938 1.54688 9.4375 1 11 1C12.5625 1 13.8906 1.54688 14.9844 2.64062C16.0781 3.73438 16.625 5.0625 16.625 6.625C16.625 8.1875 16.0781 9.51562 14.9844 10.6094ZM13.6562 3.96875C12.9271 3.23958 12.0417 2.875 11 2.875C9.95833 2.875 9.07292 3.23958 8.34375 3.96875C7.61458 4.69792 7.25 5.58333 7.25 6.625C7.25 7.66667 7.61458 8.55208 8.34375 9.28125C9.07292 10.0104 9.95833 10.375 11 10.375C12.0417 10.375 12.9271 10.0104 13.6562 9.28125C14.3854 8.55208 14.75 7.66667 14.75 6.625C14.75 5.58333 14.3854 4.69792 13.6562 3.96875Z" fill="#000000" />
-                            </svg></span>
-                        <span class="button-text">My Account</span>
-                    </div>
-                    <div class="tm-button-wrapper mobile-menu-login-btn"> <a class="tm-button style-flat tm-button-sm tm-button-full-wide  open-modal-login" href="#">
-                            <div class="button-content-wrapper">
-
-
-                                <span class="button-text">Log in</span>
-
-
-                            </div>
-                        </a> </div>
-                    <div class="tm-button-wrapper"> <a class="tm-button style-border tm-button-sm tm-button-full-wide  open-modal-register" href="#">
-                            <div class="button-content-wrapper">
-
-
-                                <span class="button-text">Register</span>
-
-
-                            </div>
-                        </a> </div>
-
-
-
-
-                </div>
-            </div>
-        </div>
-    </div>
     <div id="page-mobile-tabs" class="page-mobile-tabs">
         <div class="tabs">
 
-            <a href="index.html" class="mobile-tab-link" aria-label="Home">
+            <a href="{{ route('home') }}" class="mobile-tab-link" aria-label="Home">
                 <div class="icon">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M21.779 10.6767L12.369 2.94569C11.9843 2.62539 11.4995 2.45 10.999 2.45C10.4984 2.45 10.0136 2.62539 9.62892 2.94569L0.218899 10.6767C0.157352 10.7282 0.106553 10.7913 0.0694048 10.8625C0.0322563 10.9336 0.00948516 11.0114 0.00239165 11.0913C-0.00470186 11.1712 0.00402122 11.2518 0.0280628 11.3284C0.0521044 11.405 0.0909935 11.476 0.14251 11.5376L0.533623 12.0074C0.637642 12.1316 0.786713 12.2094 0.948074 12.2237C1.10943 12.238 1.26988 12.1877 1.39415 12.0838L2.44336 11.2221V18.3381C2.44426 18.662 2.57333 18.9724 2.80234 19.2014C3.03136 19.4304 3.34171 19.5595 3.66559 19.5604H8.55451C8.87838 19.5595 9.18873 19.4304 9.41775 19.2014C9.64677 18.9724 9.77583 18.662 9.77674 18.3381V14.3659H12.2212V18.3381C12.2221 18.662 12.3512 18.9724 12.5802 19.2014C12.8092 19.4304 13.1195 19.5595 13.4434 19.5604H18.3323C18.6547 19.5597 18.9638 19.4319 19.1926 19.2049C19.4214 18.9778 19.5515 18.6697 19.5546 18.3473V11.2213L20.6061 12.0853C20.7303 12.1892 20.8908 12.2395 21.0521 12.2252C21.2135 12.2109 21.3626 12.1331 21.4666 12.0089L21.8573 11.5395C21.909 11.4778 21.948 11.4065 21.9721 11.3296C21.9961 11.2528 22.0048 11.172 21.9975 11.0918C21.9902 11.0116 21.9672 10.9337 21.9297 10.8624C21.8922 10.7912 21.841 10.7281 21.779 10.6767V10.6767ZM17.7155 17.727H14.0545V13.7548C14.0536 13.4309 13.9246 13.1206 13.6956 12.8915C13.4665 12.6625 13.1562 12.5335 12.8323 12.5326H9.16562C8.84174 12.5335 8.53139 12.6625 8.30238 12.8915C8.07336 13.1206 7.9443 13.4309 7.94339 13.7548V17.727H4.2767V9.71646L10.999 4.19274L17.7212 9.71417L17.7155 17.727Z" fill="black" />
                     </svg>
                 </div>
             </a>
-            <a href="shop/index.html" class="mobile-tab-link" aria-label="Shop">
+            <a href="{{ route('theproducts') }}" class="mobile-tab-link" aria-label="Shop">
                 <div class="icon">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 4.125V17.875C1 18.3958 1.18229 18.8385 1.54688 19.2031C1.91146 19.5677 2.35417 19.75 2.875 19.75H19.125C19.6458 19.75 20.0885 19.5677 20.4531 19.2031C20.8177 18.8385 21 18.3958 21 17.875V4.125C21 3.60417 20.8177 3.16146 20.4531 2.79688C20.0885 2.43229 19.6458 2.25 19.125 2.25H2.875C2.35417 2.25 1.91146 2.43229 1.54688 2.79688C1.18229 3.16146 1 3.60417 1 4.125ZM10.0625 4.125V10.0625H2.875V4.35938C2.875 4.30729 2.90104 4.25521 2.95312 4.20312C3.00521 4.15104 3.05729 4.125 3.10938 4.125H10.0625ZM2.875 11.9375H10.0625V17.875H3.10938C3.05729 17.875 3.00521 17.849 2.95312 17.7969C2.90104 17.7448 2.875 17.6927 2.875 17.6406V11.9375ZM11.9375 17.875V11.9375H19.125V17.6406C19.125 17.6927 19.099 17.7448 19.0469 17.7969C18.9948 17.849 18.9427 17.875 18.8906 17.875H11.9375ZM19.125 10.0625H11.9375V4.125H18.8906C18.9427 4.125 18.9948 4.15104 19.0469 4.20312C19.099 4.25521 19.125 4.30729 19.125 4.35938V10.0625Z" fill="black" />
@@ -780,36 +689,43 @@
                 </div>
             </a>
             <a href="{{ route('wishlist') }}" class="mobile-tab-link has-badge wishlist-link" aria-label="Wishlist">
-                <div class="icon">
-                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20.425 7.71875C20.9458 7.77083 21.2844 8.04427 21.4406 8.53906C21.5969 9.03385 21.4927 9.46354 21.1281 9.82812L16.9875 13.8516L17.9641 19.5547C18.0422 20.0495 17.8729 20.4401 17.4562 20.7266C17.0396 21.0391 16.6099 21.0781 16.1672 20.8438L11.05 18.1875L5.93281 20.8438C5.4901 21.1042 5.06042 21.0781 4.64375 20.7656C4.22708 20.4531 4.05781 20.0495 4.13594 19.5547L5.1125 13.8516L0.971875 9.82812C0.607292 9.46354 0.503125 9.03385 0.659375 8.53906C0.815625 8.04427 1.15417 7.77083 1.675 7.71875L7.37812 6.85938L9.91719 1.70312C10.1516 1.23438 10.5292 1 11.05 1C11.5708 1 11.9484 1.23438 12.1828 1.70312L14.7219 6.85938L20.425 7.71875ZM14.9953 13.1875L18.9016 9.35938L13.4719 8.57812L11.05 3.65625L8.62812 8.57812L3.19844 9.35938L7.10469 13.1875L6.20625 18.6172L11.05 16.0391L15.8937 18.6172L14.9953 13.1875Z" fill="#000000" />
-                    </svg> 
-                    @php
+					<div class="icon">
+						<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M20.425 7.71875C20.9458 7.77083 21.2844 8.04427 21.4406 8.53906C21.5969 9.03385 21.4927 9.46354 21.1281 9.82812L16.9875 13.8516L17.9641 19.5547C18.0422 20.0495 17.8729 20.4401 17.4562 20.7266C17.0396 21.0391 16.6099 21.0781 16.1672 20.8438L11.05 18.1875L5.93281 20.8438C5.4901 21.1042 5.06042 21.0781 4.64375 20.7656C4.22708 20.4531 4.05781 20.0495 4.13594 19.5547L5.1125 13.8516L0.971875 9.82812C0.607292 9.46354 0.503125 9.03385 0.659375 8.53906C0.815625 8.04427 1.15417 7.77083 1.675 7.71875L7.37812 6.85938L9.91719 1.70312C10.1516 1.23438 10.5292 1 11.05 1C11.5708 1 11.9484 1.23438 12.1828 1.70312L14.7219 6.85938L20.425 7.71875ZM14.9953 13.1875L18.9016 9.35938L13.4719 8.57812L11.05 3.65625L8.62812 8.57812L3.19844 9.35938L7.10469 13.1875L6.20625 18.6172L11.05 16.0391L15.8937 18.6172L14.9953 13.1875Z"
+								fill="#000000" />
+						</svg>
+						@php
                     if(session()->has('wishlist')) {
                     $wishlist = session()->get('wishlist');
                     $count = count($wishlist);
                     }
+
+					if (session()->has ('cart')){
+						$cart = session ()->get ('cart');
+						$countcart = count ($cart);
+					}
                     @endphp
                     @if (session()->has('wishlist'))
                     <span class="icon-badge" data-count="0">{{ $count}}</span>
                     @else
                     <span class="icon-badge" data-count="0">0</span>
-                    @endif                </div>
-            </a>
-            <a href="cart/index.html" class="mini-cart__button has-badge mobile-tab-link" aria-label="Cart">
-                <div class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z" fill="#000000" />
-                    </svg>
-                    <div class="icon-badge mini-cart-badge" data-count="0">0</div>
-                </div>
-            </a>
-            <a href="index1919.html?s=" class="page-open-popup-search mobile-tab-link" aria-label="Search">
-                <div class="icon">
-                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20.8438 19.3203C21.0781 19.5286 21.0781 19.75 20.8438 19.9844L19.9844 20.8438C19.75 21.0781 19.5286 21.0781 19.3203 20.8438L14.5938 16.1172C14.4896 16.013 14.4375 15.9089 14.4375 15.8047V15.2578C12.901 16.5859 11.1302 17.25 9.125 17.25C6.88542 17.25 4.97135 16.4557 3.38281 14.8672C1.79427 13.2786 1 11.3646 1 9.125C1 6.88542 1.79427 4.97135 3.38281 3.38281C4.97135 1.79427 6.88542 1 9.125 1C11.3646 1 13.2786 1.79427 14.8672 3.38281C16.4557 4.97135 17.25 6.88542 17.25 9.125C17.25 11.1302 16.5859 12.901 15.2578 14.4375H15.8047C15.9349 14.4375 16.0391 14.4896 16.1172 14.5938L20.8438 19.3203ZM4.71094 13.5391C5.9349 14.763 7.40625 15.375 9.125 15.375C10.8438 15.375 12.3151 14.763 13.5391 13.5391C14.763 12.3151 15.375 10.8438 15.375 9.125C15.375 7.40625 14.763 5.9349 13.5391 4.71094C12.3151 3.48698 10.8438 2.875 9.125 2.875C7.40625 2.875 5.9349 3.48698 4.71094 4.71094C3.48698 5.9349 2.875 7.40625 2.875 9.125C2.875 10.8438 3.48698 12.3151 4.71094 13.5391Z" fill="#000000" />
-                    </svg>
-                </div>
-            </a>
+                    @endif					</div>
+				</a>
+				<a href="{{ route('cart') }}" class="mini-cart__button has-badge mobile-tab-link" aria-label="Cart">
+					<div class="icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z"
+								fill="#000000" />
+						</svg>
+						@if (session()->has('cart'))
+						<div class="icon-badge mini-cart-badge" data-count="0">{{ $cartcount}}</div>
+						@else
+						<div class="icon-badge mini-cart-badge" data-count="0">0</div>
+						@endif
+					</div>
+				</a>
 
         </div>
     </div>
@@ -820,135 +736,7 @@
                 aria-label="Close Cart">
                 <i class="fal fa-times"></i>
             </a>
-            <div class="fly-cart-wrap scroll-y">
-                <div class="fly-cart-content">
-                    <div class="fly-cart-header">
-
-                        <h3 class="fly-cart-title">Shopping Cart</h3>
-                        <div class="cart-data-js">
-                            <div data-value="{&quot;count&quot;:0,&quot;free_shipping_class_only&quot;:0}" class="cart-data-info"></div>
-                        </div>
-
-                        <div class="cart-countdown-timer"
-                            data-countdown="{&quot;loop&quot;:true,&quot;length&quot;:5,&quot;message&quot;:&quot;\ud83d\udd25 These products are limited, checkout within &lt;div class=\&quot;timer\&quot;&gt;00m 00s&lt;\/div&gt;&quot;,&quot;expired_message&quot;:&quot;You&#039;re out of time! Checkout now to avoid losing your order!&quot;,&quot;formatter&quot;:{&quot;day&quot;:&quot;d&quot;,&quot;hour&quot;:&quot;h&quot;,&quot;minute&quot;:&quot;m&quot;,&quot;second&quot;:&quot;s&quot;}}">
-                            <div class="inner">
-                                <div class="cart-countdown-message">🔥 These products are limited, checkout within <div class="timer">00m 00s</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="cart-goal-wrap">
-                            <div class="cart-goal">
-                                <div class="cart-goal-text">
-                                    Buy <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#36;</span>200.00</bdi></span> more to enjoy <strong>FREE Shipping</strong> <input type="hidden" name="cart-goal-percent" value="0"
-                                        class="cart-goal-percent" />
-                                </div>
-
-
-
-                                <div class="cart-goal-progress minimog-progress">
-                                    <div class="progress-bar-wrap">
-                                        <div class="progress-bar"
-                                            role="progressbar"
-                                            aria-label="Cart goal"
-                                            style="width: 0%"
-                                            aria-valuenow="0" aria-valuemin="0"
-                                            aria-valuemax="100">
-                                            <div class="progress-value">
-                                                <!-- fas-star -->
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                                                    <path
-                                                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="fly-cart-body scroll-y">
-                        <div class="fly-cart-body-content">
-                            <div class="fly-cart-messages"></div>
-                            <div class="widget_shopping_cart_content"></div>
-                        </div>
-                    </div>
-                    <div class="fly-cart-footer">
-                        <div class="cart-footer-actions">
-                            <a href="#" class="fly-cart-addon-modal-toggle"
-                                data-target="#fly-cart-modal-order-notes">
-                                <span class="icon">
-                                    <svg class="w-[20px] h-[20px]" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 19 19">
-                                        <path fill="currentColor"
-                                            d="M17.3672 2.21875c.4453.44531.668.98437.668 1.61719 0 .60937-.2227 1.13672-.668 1.58203L4.99219 17.793l-4.007815.457H.878906c-.257812 0-.46875-.0938-.632812-.2812-.164063-.1876-.234375-.4102-.210938-.668l.457032-4.0078L12.8672.917969C13.3125.472656 13.8398.25 14.4492.25c.6328 0 1.1719.222656 1.6172.667969l1.3008 1.300781zM4.46484 16.7383l9.28126-9.28127-2.918-2.91797-9.28122 9.28124-.35157 3.2695 3.26953-.3515zM16.5938 4.60938c.2109-.21094.3164-.46875.3164-.77344 0-.32813-.1055-.59766-.3164-.8086l-1.336-1.33593c-.2109-.21094-.4805-.31641-.8086-.31641-.3047 0-.5625.10547-.7734.31641l-2.0391 2.03906 2.918 2.91797 2.0391-2.03906z"></path>
-                                    </svg>
-                                </span>
-                                <span>Note</span>
-                            </a>
-
-                            <a href="#" class="fly-cart-addon-modal-toggle"
-                                data-target="#fly-cart-modal-shipping-calculator">
-                                <span class="icon">
-                                    <svg class="w-[22px] h-[22px]" fill="currentColor" stroke="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                                        <path
-                                            d="M280 192c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240zm352 192h-24V275.9c0-16.8-6.8-33.3-18.8-45.2l-83.9-83.9c-11.8-12-28.3-18.8-45.2-18.8H416V78.6c0-25.7-22.2-46.6-49.4-46.6H113.4C86.2 32 64 52.9 64 78.6V96H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H96V78.6c0-8.1 7.8-14.6 17.4-14.6h253.2c9.6 0 17.4 6.5 17.4 14.6V384H207.6C193 364.7 170 352 144 352c-18.1 0-34.6 6.2-48 16.4V288H64v144c0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16h195.2c-1.1 5.2-1.6 10.5-1.6 16 0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H632c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm-488 96c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm272-320h44.1c8.4 0 16.7 3.4 22.6 9.4l83.9 83.9c.8.8 1.1 1.9 1.8 2.8H416V160zm80 320c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-96h-16.4C545 364.7 522 352 496 352s-49 12.7-63.6 32H416v-96h160v96zM256 248v-16c0-4.4-3.6-8-8-8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8z"></path>
-                                    </svg>
-                                </span>
-                                <span>Shipping</span>
-                            </a>
-
-                            <a href="#" class="fly-cart-addon-modal-toggle"
-                                data-target="#fly-cart-modal-coupon">
-                                <span class="icon">
-                                    <svg class="w-[22px] h-[22px]" fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 21 14">
-                                        <path fill="currentColor"
-                                            d="M15.2812 3.875c.2344 0 .4336.08203.5977.24609.1641.16407.2461.36328.2461.59766v5.0625c0 .23435-.082.43355-.2461.59765-.1641.1641-.3633.2461-.5977.2461H5.71875c-.23437 0-.43359-.082-.59766-.2461-.16406-.1641-.24609-.3633-.24609-.59765v-5.0625c0-.23438.08203-.43359.24609-.59766.16407-.16406.36329-.24609.59766-.24609h9.56245zM15 9.5V5H6v4.5h9zm4.5-3.375c-.3047 0-.5742.11719-.8086.35156-.2109.21094-.3164.46875-.3164.77344s.1055.57422.3164.80859c.2344.21094.5039.31641.8086.31641h1.125v3.9375c0 .4687-.1641.8672-.4922 1.1953-.3281.3281-.7266.4922-1.1953.4922H2.0625c-.46875 0-.86719-.1641-1.195312-.4922C.539062 13.1797.375 12.7812.375 12.3125V8.375H1.5c.30469 0 .5625-.10547.77344-.31641.23437-.23437.35156-.5039.35156-.80859s-.11719-.5625-.35156-.77344C2.0625 6.24219 1.80469 6.125 1.5 6.125H.375V2.1875c0-.46875.164062-.86719.492188-1.195312C1.19531.664063 1.59375.5 2.0625.5h16.875c.4687 0 .8672.164063 1.1953.492188.3281.328122.4922.726562.4922 1.195312V6.125H19.5zm0 3.375c-.6094 0-1.1367-.22266-1.582-.66797-.4453-.44531-.668-.97265-.668-1.58203s.2227-1.13672.668-1.58203C18.3633 5.22266 18.8906 5 19.5 5V2.1875c0-.16406-.0586-.29297-.1758-.38672-.0937-.11719-.2226-.17578-.3867-.17578H2.0625c-.16406 0-.30469.05859-.42188.17578-.09374.09375-.14062.22266-.14062.38672V5c.60938 0 1.13672.22266 1.58203.66797.44531.44531.66797.97265.66797 1.58203s-.22266 1.13672-.66797 1.58203C2.63672 9.27734 2.10938 9.5 1.5 9.5v2.8125c0 .1641.04688.3047.14062.4219.11719.0937.25782.1406.42188.1406h16.875c.1641 0 .293-.0469.3867-.1406.1172-.1172.1758-.2578.1758-.4219V9.5z"></path>
-                                    </svg>
-                                </span>
-                                <span>Coupon</span>
-                            </a>
-                        </div>
-
-                        <table class="cart-totals-table">
-                            <tfoot>
-                                <tr class="cart-totals-row cart-subtotal">
-                                    <th class="cart-totals-label">Subtotal</th>
-                                    <td class="cart-totals-value"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#36;</span>0.00</bdi></span></td>
-                                </tr>
-
-
-
-
-
-
-                                <tr class="cart-totals-row order-total">
-                                    <th class="cart-totals-label">Total</th>
-                                    <td class="cart-totals-value"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#36;</span>0.00</bdi></span></strong> </td>
-                                </tr>
-
-                            </tfoot>
-                        </table>
-
-
-                        <div class="woocommerce-mini-cart__buttons buttons">
-                            <a href="checkout/index.html" class="button checkout wc-forward">Checkout</a> <a class="tm-button style-bottom-line tm-button-nm view-cart" href="cart/index.html">
-                                <div class="button-content-wrapper">
-
-
-                                    <span class="button-text">View cart</span>
-
-
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+         <livewire:elmohnds.cart-modal>
 
             <div id="fly-cart-modal-coupon"
                 class="fly-cart-addon-modal modal-coupon"

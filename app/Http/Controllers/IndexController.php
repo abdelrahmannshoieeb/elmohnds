@@ -22,7 +22,7 @@ class IndexController extends Controller
         $banner23 = Banner::where('order', '2.3')->first();
         $brands = Brand::all();
     
-        // dd($banner11);
+        // dd($brands);
         return view('elmohnds.index', [
             'products' => $products,
             'categories' => $categories,

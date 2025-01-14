@@ -56,6 +56,12 @@
                             @error('discount') <span class="text-red-500">{{ $message }}</span> @enderror
 
                         </div>
+                        <div class="">
+                            <label for="start-date" class="mb-2 block" style="font-weight:600;">التقييم</label>
+                            <input type="text" id="start-date" class="form-input" style="font-weight:600;" wire:model="rating"></input>
+                            @error('rating') <span class="text-red-500">{{ $message }}</span> @enderror
+
+                        </div>
                         <div>
                             <label for="select-label" class="mb-2 block" style="font-weight:600;">التصنيف التابع له</label>
                             <select id="select-label" class="form-select" wire:model="category_id">

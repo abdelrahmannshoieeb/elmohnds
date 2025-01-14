@@ -34,9 +34,17 @@
             </div>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-3">
             <div class="form-group" wire:click="send">
                 <input type="submit" value="ارسل رسالة" class="btn btn-primary">
+                <div class="submitting"></div>
+            </div>
+            
+        </div>
+        <div class="col-md-3">
+         
+            <div class="form-group" wire:click="goToPrevious">
+                <input type="submit" value=" عد للموقع" class="btn btn-primary">
                 <div class="submitting"></div>
             </div>
         </div>

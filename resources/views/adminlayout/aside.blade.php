@@ -80,133 +80,28 @@
             </li>
           
 
-            <li class="menu-title">الصندوق</li>
             
+            <li class="menu-title">الاوردرات</li>
             <li class="menu-item">
-                <a href="" class="menu-link">
+                <a href="{{ route('orders')}}" class="menu-link">
                     <span class="menu-icon"><i class="mgc_folder_2_line"></i></span>
-                    <span class="menu-text font-bold"> التحكم  في الصندوق </span>
+                    <span class="menu-text font-bold"> الاوردر </span>
                 </a>
             </li>
+            <li class="menu-title">التعليقات والتقييمات</li>
             <li class="menu-item">
-                <a href="" class="menu-link">
+                <a href="{{ route('comments')}}" class="menu-link">
                     <span class="menu-icon"><i class="mgc_folder_2_line"></i></span>
-                    <span class="menu-text font-bold"> سحب واضافة الى الصندوق </span>
+                    <span class="menu-text font-bold"> التعليقات </span>
                 </a>
             </li>
-            <li class="menu-title">المصاريف</li>
-            
+            <li class="menu-title">الاوردرات</li>
             <li class="menu-item">
-                <a href="" class="menu-link">
+                <a href="{{ route('admin.contact')}}" class="menu-link">
                     <span class="menu-icon"><i class="mgc_folder_2_line"></i></span>
-                    <span class="menu-text font-bold"> عرض حركة المصاريف </span>
+                    <span class="menu-text font-bold"> طلبات الصيانة </span>
                 </a>
             </li>
-            <li class="menu-item">
-                <a href="" class="menu-link">
-                    <span class="menu-icon"><i class="mgc_folder_2_line"></i></span>
-                    <span class="menu-text font-bold"> اضافة سند مصاريف </span>
-                </a>
-            </li>
-            
-            
-            <li class="menu-title">العملاء</li>
-            <li class="menu-item">
-                <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
-                    <span class="menu-icon"><i class="mgc_building_2_line"></i></span>
-                    <span class="menu-text"> العملاء </span>
-                    <span class="menu-arrow"></span>
-                </a>
-
-                <ul class="sub-menu hidden">
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <span class="menu-text"> العملاء</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <span class="menu-text">اضافة عميل</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <span class="menu-text">اضافة رصيد العملاء</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <span class="menu-text">سندات العملاء</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="menu-title">الموردين</li>
-            <li class="menu-item">
-                <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
-                    <span class="menu-icon"><i class="mgc_building_2_line"></i></span>
-                    <span class="menu-text"> الموردين </span>
-                    <span class="menu-arrow"></span>
-                </a>
-
-                <ul class="sub-menu hidden">
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <span class="menu-text"> الموردين</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <span class="menu-text">اضافة مورد</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <span class="menu-text">اضافة رصيد للمورد</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <span class="menu-text">سندات الموردين</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="menu-title">Custom</li>
-
-            <li class="menu-item">
-                <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
-                    <span class="menu-icon"><i class="mgc_user_3_line"></i></span>
-                    <span class="menu-text"> Auth Pages </span>
-                    <span class="menu-arrow"></span>
-                </a>
-
-                <ul class="sub-menu hidden">
-                    <li class="menu-item">
-                        <a href="auth-login.html" class="menu-link">
-                            <span class="menu-text">Log In</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="auth-register.html" class="menu-link">
-                            <span class="menu-text">Register</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="auth-recoverpw.html" class="menu-link">
-                            <span class="menu-text">Recover Password</span>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="auth-lock-screen.html" class="menu-link">
-                            <span class="menu-text">Lock Screen</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-      
         </ul>
 
         <!-- Help Box Widget -->

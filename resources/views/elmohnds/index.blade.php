@@ -151,7 +151,7 @@
                                                                             <div class="elementor-widget-wrap">
                                                                                 <div class="elementor-element elementor-element-3c2ccde elementor-align-right elementor-mobile_extra-align-left elementor-tablet-align-left elementor-widget elementor-widget-tm-button" data-id="3c2ccde" data-element_type="widget" data-widget_type="tm-button.default">
                                                                                     <div class="elementor-widget-container">
-                                                                                        <a href="shop/index.html" class="tm-button-link tm-button style-bottom-line tm-button-nm" role="button">
+                                                                                    <a href="{{ route('theproducts') }}" class="tm-button-link tm-button style-bottom-line tm-button-nm" role="button">
 
                                                                                             <div class="button-content-wrapper">
 
@@ -200,10 +200,12 @@
                                                                                         <div class="thumbnail">
                                                                                             <a href="{{ route('product', $product->id) }}" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
                                                                                                 <div class="product-main-image">
-                                                                                                    <m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product->image) }}" width="450" height="450" alt="Upplyst LED wall lamp" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" /></m-image>
+                                                                                                    <m-image
+
+                                                                                                     class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product->image) }}" width="450" height="450" alt="Upplyst LED wall lamp" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" /></m-image>
                                                                                                 </div>
                                                                                                 <div class="product-hover-image">
-                                                                                                    <m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product->image) }}" width="450" height="450" alt="product_storage_05_2" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" /></m-image>
+                                                                                                    <m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product->image) }}" width="450" height="450" alt="product_storage_05_2" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" /></m-image>
                                                                                                 </div>
 
                                                                                             </a>
@@ -283,7 +285,7 @@
                                                                             <div class="elementor-widget-wrap">
                                                                                 <div class="elementor-element elementor-element-e2e644c elementor-align-right elementor-mobile_extra-align-left elementor-widget elementor-widget-tm-button" data-id="e2e644c" data-element_type="widget" data-widget_type="tm-button.default">
                                                                                     <div class="elementor-widget-container">
-                                                                                        <a href="shop/index.html" class="tm-button-link tm-button style-bottom-line tm-button-nm" role="button">
+                                                                                        <a href="{{ route('theproducts') }}" class="tm-button-link tm-button style-bottom-line tm-button-nm" role="button">
 
                                                                                             <div class="button-content-wrapper">
 
@@ -320,8 +322,8 @@
                                                                             <div class="minimog-image-wrapper grid-item-height">
                                                                                 <div class="minimog-image-inner">
                                                                                     <div class="minimog-image image">
-                                                                                        <a href="product-category/laundry-cleaning/index.html" class="cat-image minimog-box">
-                                                                                            <m-image class="minimog-lazy-image" style="--lazy-image-width: 350px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $category->image)}}" width="350" height="350" alt="megamog_cat_laundry2" loading="lazy" class="attachment-350x350 size-350x350" /></m-image> </a>
+                                                                                        <a href="{{ route('category', $category->id) }}" class="cat-image minimog-box">
+                                                                                            <m-image class="minimog-lazy-image" style="--lazy-image-width: 350px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $category->image)}}" width="350" height="350" alt="megamog_cat_laundry2" loading="lazy" class="attachment-350x350 size-350x350" /></m-image> </a>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -475,25 +477,7 @@
                                                                             <h2 class="minimog-tabs__title elementor-heading-title">Best seller in the last month</h2>
                                                                         </div>
 
-                                                                        <div class="minimog-tabs__header-inner">
-                                                                            <div class="minimog-tabs__header" role="tablist">
-                                                                                <div class="tab-title active" id="tab-title-53f0966" data-tab="1" role="tab" aria-controls="tab-content-53f0966" aria-selected="true" tabindex="0">
-                                                                                    <span class="tab-title__text">Top 20</span>
-                                                                                </div>
-                                                                                <div class="tab-title" id="tab-title-8c30e91" data-tab="2" role="tab" aria-controls="tab-content-8c30e91" aria-selected="false" tabindex="-1">
-                                                                                    <span class="tab-title__text">Furniture</span>
-                                                                                </div>
-                                                                                <div class="tab-title" id="tab-title-52b35ae" data-tab="3" role="tab" aria-controls="tab-content-52b35ae" aria-selected="false" tabindex="-1">
-                                                                                    <span class="tab-title__text">Baby &amp; kids</span>
-                                                                                </div>
-                                                                                <div class="tab-title" id="tab-title-7e41334" data-tab="4" role="tab" aria-controls="tab-content-7e41334" aria-selected="false" tabindex="-1">
-                                                                                    <span class="tab-title__text">Lighting</span>
-                                                                                </div>
-                                                                                <div class="tab-title" id="tab-title-759fec1" data-tab="5" role="tab" aria-controls="tab-content-759fec1" aria-selected="false" tabindex="-1">
-                                                                                    <span class="tab-title__text">All</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                                                                      
                                                                     </div>
                                                                     <div class="minimog-tabs__content">
                                                
@@ -621,8 +605,8 @@
                                                                                                     <div class="product-wrapper">
                                                                                                         <div class="product-thumbnail">
                                                                                                             <div class="thumbnail"><a href="{{ route('product', $product->id) }}" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-                                                                                                                    <div class="product-main-image"><m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product->image)}}" width="450" height="450" alt="Morabo Loveseat" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" /></m-image></div>
-                                                                                                                    <div class="product-hover-image"><m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product->image)}}" width="450" height="450" alt="product_furniture_14_6" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" /></m-image></div>
+                                                                                                                    <div class="product-main-image"><m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product->image)}}" width="450" height="450" alt="Morabo Loveseat" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" /></m-image></div>
+                                                                                                                    <div class="product-hover-image"><m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product->image)}}" width="450" height="450" alt="product_furniture_14_6" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" /></m-image></div>
                                                                                                                 </a></div>
                                                                                                             <div class="product-actions">
                                                                                                                 <div class="product-action wishlist-btn style-01 icon-star hint--bounce hint--left"
@@ -805,7 +789,7 @@
                                                                         <div class="swiper-container">
                                                                             <div class="swiper-wrapper">
                                                                                 @foreach ($brands as $brand )
-                                                                                <div class="swiper-slide">
+                                                                                <div class="swiper-slide" onclick="window.location.href='{{ route('brand', $brand->id) }}';">
                                                                                     @if ($brand->image)
                                                                                     <div class="image">
                                                                                         <m-image class="minimog-lazy-image"  data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $brand->image) }}" width="129" height="40" alt="megamog_brand_01" loading="lazy" class="attachment-full size-full" /></m-image>

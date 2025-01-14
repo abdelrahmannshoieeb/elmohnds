@@ -1248,7 +1248,7 @@
 			<div id="page-content" class="page-content">
 
 
-			<livewire:products.elmohnds-products>
+			<livewire:elmohnds.category>
 			
 			</div>
 		</div><!-- /.content-wrapper -->
@@ -1516,7 +1516,7 @@
 		</div>
 	</div>
 	<livewire:elmohnds.aside>
-
+	
 	<div id="page-mobile-tabs" class="page-mobile-tabs">
 		<div class="tabs">
 
@@ -1579,7 +1579,6 @@
 				aria-label="Close Cart">
 				<i class="fal fa-times"></i>
 			</a>
-			<livewire:elmohnds.cart-modal>
 		
 
 			<div id="fly-cart-modal-coupon"
