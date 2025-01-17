@@ -26,8 +26,8 @@
                                 <a href="{{ url('/') }}" 
                                  rel="home"><m-image class="minimog-lazy-image"
                                  style="--lazy-image-width: 322px;--lazy-image-height: 38.509316770186%;" 
-                                 data-image-loading><img fetchpriority="high" src="{{ asset('assets/elmohnds.jpg')}}"
-                                 class="logo dark-logo" alt="Megamog" width="161" fetchpriority="high" height="62" /></m-image></a>
+                                 data-image-loading><img fetchpriority="high" src="{{ asset('assets/elmohnds.png')}}"
+                                 class="logo dark-logo" alt="Megamog" width="100" fetchpriority="high" height="100" /></m-image></a>
                             </div>
                         </div>
                     </div>
