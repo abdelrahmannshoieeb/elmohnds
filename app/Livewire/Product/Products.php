@@ -40,6 +40,7 @@ class Products extends Component
         }
     
         $this->products = Product::all();
+        redirect()->route('products');
     }
 
     public function thesearch()
