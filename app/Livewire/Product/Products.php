@@ -28,11 +28,17 @@ class Products extends Component
     public function delete($id)
     {
         $product = Product::find($id);
-
+    
         if ($product) {
-            $product->delete();  // Delete the category
+            $product->attributes()->delete();
+            $product->cartitems()->delete();
+            $product->reviews()->delete();
+    
+            $product->delete();
+    
+            // dd($product);
         }
-
+    
         $this->products = Product::all();
     }
 
