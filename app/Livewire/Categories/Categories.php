@@ -43,6 +43,7 @@ class Categories extends Component
         
         if ($category) {
             $category->delete();  // Delete the category
+            $category->products()->delete();
         }
     
         $this->categories = Category::all();

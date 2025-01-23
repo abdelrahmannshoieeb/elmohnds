@@ -792,8 +792,17 @@
                                                                                 <div class="swiper-slide" onclick="window.location.href='{{ route('brand', $brand->id) }}';">
                                                                                     @if ($brand->image)
                                                                                     <div class="image">
-                                                                                        <m-image class="minimog-lazy-image"  data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $brand->image) }}" width="129" height="40" alt="megamog_brand_01" loading="lazy" class="attachment-full size-full" /></m-image>
-                                                                                    </div>
+<m-image class="minimog-lazy-image" data-image-loading>
+    <img 
+        loading="lazy" 
+        decoding="async" 
+        src="{{ asset('storage/' . $brand->image) }}" 
+        width="129" 
+        height="40" 
+        alt="megamog_brand_01" 
+        class="attachment-full size-full" 
+    />
+</m-image>                                                                                    </div>
                                                                                     @endif
                                                                                 </div>
                                                                                 @endforeach

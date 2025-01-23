@@ -46,6 +46,7 @@ class Brands extends Component
         
         if ($category) {
             $category->delete();  // Delete the category
+            $category->products()->delete();
         }
     
         $this->brands = Brand::all();
