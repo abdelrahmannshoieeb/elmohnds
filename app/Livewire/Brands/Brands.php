@@ -45,8 +45,20 @@ class Brands extends Component
         $category = Brand::find($id);
         
         if ($category) {
-            $category->delete();  // Delete the category
+            // Delete related attributes for all products in the category
+            foreach ($category->products as $product) {
+                $product->attributes()->delete();
+                $product->ratings()->delete();
+                $product->cartitems()->delete();
+                $product->wishlists()->delete();
+                $product->reviews()->delete();
+            }
+        
+            // Delete the products
             $category->products()->delete();
+        
+            // Delete the category
+            $category->delete();
         }
     
         $this->brands = Brand::all();

@@ -41,9 +41,12 @@ class Categories extends Component
     {
         $category = Category::find($id);
         
-        if ($category) {
-            $category->delete();  // Delete the category
-            $category->products()->delete();
+        foreach ($category->products as $product) {
+            $product->attributes()->delete();
+            $product->ratings()->delete();
+            $product->cartitems()->delete();
+            $product->wishlists()->delete();
+            $product->reviews()->delete();
         }
     
         $this->categories = Category::all();
