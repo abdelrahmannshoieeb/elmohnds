@@ -17,14 +17,13 @@
                     </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Default file input example</label>
-                        <input class="form-control" type="file" id="formFile" wire:model="image">
+                        <input class="form-control" id="fileInput" type="file" accept="image/*" wire:model="image">
                     </div>
-                    @if ($image)
-                    <div class="mt-3">
-                        <label class="mb-2 block" style="font-weight:600;">صورة المنتج:</label>
-                        <img src="{{ $image->temporaryUrl() }}" alt="Uploaded Image" class="w-24 h-24 rounded-md border">
+                    <div class="mt-3" wire:ignore>
+                        <label class="mb-2 block font-bold">Image Preview:</label>
+                        <img id="imagePreview" alt="Image Preview" class="w-24 h-24 rounded-md border mt-3" style="display: none;">
                     </div>
-                    @endif
+
 
                 </div>
             </div>
@@ -55,11 +54,11 @@
                             class="form-input ps-11 font-bold"
                             placeholder="ابحث عن التصنيفات"
                             wire:model="search">
-                            
-                             <button type="button" wire:click="thesearch" class="btn bg-info text-white" style="margin:10px">ابحث</button>
-                             <button type="button" wire:click="viewAll" class="btn bg-dark text-white" style="margin:10px"> الكل</button>
+
+                        <button type="button" wire:click="thesearch" class="btn bg-info text-white" style="margin:10px">ابحث</button>
+                        <button type="button" wire:click="viewAll" class="btn bg-dark text-white" style="margin:10px"> الكل</button>
                     </div>
-                    
+
                 </div>
 
 
@@ -90,3 +89,30 @@
         </div>
     </div>
 </main>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.getElementById('fileInput');
+        const imagePreview = document.getElementById('imagePreview');
+
+        if (fileInput && imagePreview) {
+            fileInput.addEventListener('change', function(event) {
+                const file = event.target.files[0]; // Get the selected file
+
+                if (file) {
+                    // Create a temporary URL for the file
+                    const temporaryUrl = URL.createObjectURL(file);
+
+                    // Set the image preview source and make it visible
+                    imagePreview.src = temporaryUrl;
+                    imagePreview.style.display = 'block';
+                } else {
+                    // Hide the image preview if no file is selected
+                    imagePreview.style.display = 'none';
+                }
+            });
+        }
+    });
+</script>

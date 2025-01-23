@@ -65,7 +65,9 @@
                                 </ul>
                             </td>
                             <td class="flex items-center justify-center">
-                                <img src="{{ asset('storage/' . $product->image) }}" class="w-20 h-20" alt="">
+                                <img
+                                    src="{{ url('public/storage/' . $product->image) }}"
+                                    class="w-20 h-20" alt="">
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200   text-center" style="font-size: larger; font-weight: bolder">{{ $product->category->name }}</td>
 
