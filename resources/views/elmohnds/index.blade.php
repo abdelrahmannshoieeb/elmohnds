@@ -796,7 +796,8 @@
     <img 
         loading="lazy" 
         decoding="async" 
-        src="{{ asset('storage/' . $brand->image) }}" 
+        src="{{ url('public/storage/' . $brand->image) }}"
+
         width="129" 
         height="40" 
         alt="megamog_brand_01" 
