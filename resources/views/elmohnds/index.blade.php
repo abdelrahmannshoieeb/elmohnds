@@ -30,7 +30,7 @@
                                                                                     <div class="elementor-widget-container">
                                                                                         <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
                                                                                             <div class="minimog-image">
-                                                                                                <m-background data-background-loading class="image" data-src="{{ url('public/storage/' . $baner11->image) }}">
+                                                                                                <m-background data-background-loading class="image" data-src="{{ url('public/storage/' . $banner11->image) }}">
                                                                                                     <img decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner11->image) }}" alt="Lazy background" />
                                                                                                 </m-background>
                                                                                             </div>
@@ -202,10 +202,10 @@
                                                                                                 <div class="product-main-image">
                                                                                                     <m-image
 
-                                                                                                     class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ url('public/storage/' . $product->image) }}" width="450" height="450" alt="Upplyst LED wall lamp" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" /></m-image>
+                                                                                                     class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async"         src="{{ url('public/storage/' . $product->image) }}" width="450" height="450" alt="Upplyst LED wall lamp" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" /></m-image>
                                                                                                 </div>
                                                                                                 <div class="product-hover-image">
-                                                                                                    <m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{{ url('public/storage/' . $product->image) }}" width="450" height="450" alt="product_storage_05_2" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" /></m-image>
+                                                                                                    <m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ url('public/storage/' . $product->image) }}" width="450" height="450" alt="product_storage_05_2" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" /></m-image>
                                                                                                 </div>
 
                                                                                             </a>
