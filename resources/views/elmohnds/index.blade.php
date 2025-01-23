@@ -30,8 +30,8 @@
                                                                                     <div class="elementor-widget-container">
                                                                                         <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
                                                                                             <div class="minimog-image">
-                                                                                                <m-background data-background-loading class="image" data-src="{{ asset('storage/' . $banner11->image) }}">
-                                                                                                    <img decoding="async" loading="lazy" src="{{ asset('storage/' . $banner11->image) }}" alt="Lazy background" />
+                                                                                                <m-background data-background-loading class="image" data-src="{{ url('public/storage/' . $baner11->image) }}">
+                                                                                                    <img decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner11->image) }}" alt="Lazy background" />
                                                                                                 </m-background>
                                                                                             </div>
                                                                                             <div class="content-wrap">
@@ -62,8 +62,8 @@
                                                                                     <div class="elementor-widget-container">
                                                                                         <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
                                                                                             <div class="minimog-image">
-                                                                                                <m-background data-background-loading class="image" data-src="{{ asset('storage/' . $banner12->image) }}">
-                                                                                                    <img decoding="async" loading="lazy" src="{{ asset('storage/' . $banner12->image) }}" alt="Lazy background" />
+                                                                                                <m-background data-background-loading class="image" data-src="{{ url('public/storage/' . $banner12->image) }}">
+                                                                                                    <img decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner12->image) }}" alt="Lazy background" />
                                                                                                 </m-background>
                                                                                             </div>
                                                                                             <div class="content-wrap">
@@ -81,8 +81,8 @@
                                                                                     <div class="elementor-widget-container">
                                                                                         <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
                                                                                             <div class="minimog-image">
-                                                                                                <m-background data-background-loading class="image" data-src="{{ asset('storage/' . $banner13->image) }}">
-                                                                                                    <img decoding="async" loading="lazy" src="{{ asset('storage/' . $banner13->image) }}" alt="Lazy background" />
+                                                                                                <m-background data-background-loading class="image" data-src="{{ url('public/storage/' . $banner13->image) }}">
+                                                                                                    <img decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner13->image) }}" alt="Lazy background" />
                                                                                                 </m-background>
                                                                                             </div>
                                                                                             <div class="content-wrap">
@@ -202,10 +202,10 @@
                                                                                                 <div class="product-main-image">
                                                                                                     <m-image
 
-                                                                                                     class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product->image) }}" width="450" height="450" alt="Upplyst LED wall lamp" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" /></m-image>
+                                                                                                     class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ url('public/storage/' . $product->image) }}" width="450" height="450" alt="Upplyst LED wall lamp" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" /></m-image>
                                                                                                 </div>
                                                                                                 <div class="product-hover-image">
-                                                                                                    <m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product->image) }}" width="450" height="450" alt="product_storage_05_2" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" /></m-image>
+                                                                                                    <m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{{ url('public/storage/' . $product->image) }}" width="450" height="450" alt="product_storage_05_2" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" /></m-image>
                                                                                                 </div>
 
                                                                                             </a>
@@ -323,7 +323,7 @@
                                                                                 <div class="minimog-image-inner">
                                                                                     <div class="minimog-image image">
                                                                                         <a href="{{ route('category', $category->id) }}" class="cat-image minimog-box">
-                                                                                            <m-image class="minimog-lazy-image" style="--lazy-image-width: 350px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $category->image)}}" width="350" height="350" alt="megamog_cat_laundry2" loading="lazy" class="attachment-350x350 size-350x350" /></m-image> </a>
+                                                                                            <m-image class="minimog-lazy-image" style="--lazy-image-width: 350px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ url('public/storage/' . $category->image) }}" width="350" height="350" alt="megamog_cat_laundry2" loading="lazy" class="attachment-350x350 size-350x350" /></m-image> </a>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -368,8 +368,8 @@
                                                             <div class="elementor-widget-container">
                                                                 <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
                                                                     <div class="minimog-image">
-                                                                        <m-background data-background-loading class="image" data-src="{{ asset('storage/' . $banner21->image) }}">
-                                                                            <img decoding="async" loading="lazy" src="{{ asset('storage/' . $banner12->image) }}" alt="Lazy background" />
+                                                                        <m-background data-background-loading class="image" data-src="{{ url('public/storage/' . $banner21->image) }}">
+                                                                            <img decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner21->image) }}" alt="Lazy background" />
                                                                         </m-background>
                                                                     </div>
                                                                     <div class="content-wrap">
@@ -400,8 +400,8 @@
                                                             <div class="elementor-widget-container">
                                                                 <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
                                                                     <div class="minimog-image">
-                                                                        <m-background data-background-loading class="image" data-src="{{ asset('storage/' . $banner22->image) }}">
-                                                                            <img decoding="async" loading="lazy" src="{{ asset('storage/' . $banner22->image) }}" alt="Lazy background" />
+                                                                        <m-background data-background-loading class="image" data-src="{{ url('public/storage/' . $banner22->image) }}">
+                                                                            <img decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner22->image) }}" alt="Lazy background" />
                                                                         </m-background>
                                                                     </div>
                                                                     <div class="content-wrap">
@@ -435,8 +435,8 @@
                                                             <div class="elementor-widget-container">
                                                                 <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
                                                                     <div class="minimog-image">
-                                                                        <m-background data-background-loading class="image" data-src="{{ asset('storage/' . $banner23->image) }}">
-                                                                            <img decoding="async" loading="lazy" src="{{ asset('storage/' . $banner23->image) }}" alt="Lazy background" />
+                                                                        <m-background data-background-loading class="image" data-src="{{ url('public/storage/' . $banner23->image) }}">
+                                                                            <img decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner23->image) }}" alt="Lazy background" />
                                                                         </m-background>
                                                                     </div>
                                                                     <div class="content-wrap">
@@ -605,8 +605,8 @@
                                                                                                     <div class="product-wrapper">
                                                                                                         <div class="product-thumbnail">
                                                                                                             <div class="thumbnail"><a href="{{ route('product', $product->id) }}" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-                                                                                                                    <div class="product-main-image"><m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product->image)}}" width="450" height="450" alt="Morabo Loveseat" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" /></m-image></div>
-                                                                                                                    <div class="product-hover-image"><m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product->image)}}" width="450" height="450" alt="product_furniture_14_6" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" /></m-image></div>
+                                                                                                                    <div class="product-main-image"><m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ url('public/storage/' . $product->image) }}" width="450" height="450" alt="Morabo Loveseat" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" /></m-image></div>
+                                                                                                                    <div class="product-hover-image"><m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%; max-width: 150px; max-height: 150px; object-fit: contain;" data-image-loading><img loading="lazy" decoding="async" src="{{ url('public/storage/' . $product->image) }}" width="450" height="450" alt="product_furniture_14_6" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" /></m-image></div>
                                                                                                                 </a></div>
                                                                                                             <div class="product-actions">
                                                                                                                 <div class="product-action wishlist-btn style-01 icon-star hint--bounce hint--left"
