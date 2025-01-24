@@ -1177,7 +1177,7 @@
                     @endphp
 
 
-                    @if (session()->has('wishlist'))
+                    @if (session()->has('wishlist') && $count > 0)
                     <span class="icon-badge" data-count="0">{{ $count}}</span>
                     @else
                     <span class="icon-badge" data-count="0">0</span>
