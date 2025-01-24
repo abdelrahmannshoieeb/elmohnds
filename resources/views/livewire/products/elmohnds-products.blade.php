@@ -193,7 +193,7 @@
                                                         <img
                                                             loading="lazy"
                                                             src="{{ url('public/storage/' . $product->image) }}"
-                                                            style="max-width: 250px; max-height: 250px; object-fit: contain;"
+                                                            style="max-width: 250px; min-height: 250px; min-width: 250px; max-height: 250px; object-fit: contain;"
                                                             alt="365+ Food container with lid"
                                                             class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" />
                                                     </m-image>
@@ -206,7 +206,7 @@
                                                         src="{{ url('public/storage/' . $product->image) }}"
                                                         width="450"
                                                         height="450"
-                                                        style="max-width: 250px; max-height: 250px; object-fit: contain;"
+                                                        style="max-width: 250px; min-height: 250px; min-width: 250px max-height: 250px; object-fit: contain;"
                                                         alt="365+ Food container with lid"
                                                         class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" />
                                                 </m-image>
