@@ -1201,20 +1201,7 @@
 				<div class="page-title-bar-inner">
 					<div class="page-title-bar-bg"></div>
 
-					<div id="page-breadcrumb" class="page-breadcrumb">
-						<div class="container-broad">
-							<div class="page-breadcrumb-wrap">
-								<ul class="insight_core_breadcrumb">
-									<li class="level-1 top item-home"><a href="../../index.html">Home</a></li>
-									<li class="level-2 sub item-archive"><a href="../../shop/index.html">Products</a></li>
-									<li class="level-3 sub item-term_ancestor"><a href="../../product-category/beds-mattresses/index.html">Beds &amp; Mattresses</a></li>
-									<li class="level-4 sub item-term_ancestor"><a href="../../product-category/beds-mattresses/bedding/index.html">Bedding</a></li>
-									<li class="level-5 sub item-post_term"><a href="../../product-category/beds-mattresses/bedding/bed-linen/index.html">Bed linen</a></li>
-									<li class="level-6 sub item-current tail current"><span>Dvala Sheet set</span></li>
-								</ul>
-							</div>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 			<div id="page-content" class="page-content">

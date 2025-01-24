@@ -1222,16 +1222,7 @@
 				<div class="page-title-bar-bg"></div>
 
 				<div class="page-title-bar-inner">
-					<div id="page-breadcrumb" class="page-breadcrumb">
-						<div class="container-broad">
-							<div class="page-breadcrumb-wrap">
-								<ul class="insight_core_breadcrumb">
-									<li class="level-1 top item-home"><a href="../index.html">Home</a></li>
-									<li class="level-2 sub item-current tail current"><span>Products</span></li>
-								</ul>
-							</div>
-						</div>
-					</div>
+				
 
 					<div class="page-title-bar-content">
 						<div class="container-broad">
