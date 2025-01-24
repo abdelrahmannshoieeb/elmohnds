@@ -50,29 +50,33 @@ class Cart extends Component
         $this->items = $cart;
         session()->flash('message', 'Item removed from cart.');
     }
-
+    
     public function updateQuantity($productId, $change)
     {
-        // Update quantity in session
+        // Get the cart from the session
         $cart = session()->get('cart', []);
-        foreach ($cart as &$item) {
+    
+        // Loop through the cart items
+        foreach ($cart as $key => &$item) {
             if ($item['product_id'] == $productId) {
+                // Update the quantity
                 $item['quantity'] += $change;
-
+    
                 // Ensure quantity is not negative
-                if ($item['quantity'] < 0) {
-                    $item['quantity'] = 0;
+                if ($item['quantity'] < 1) {
+                    // Remove the item from the cart if quantity is 0 or less
+                    unset($cart[$key]);
+                    session()->flash('message', 'Item removed from cart.');
                 }
-
+    
                 break;
             }
         }
-
-        // Update session and component data
+    
+        // Update the session and component data
         session()->put('cart', $cart);
-        $this->mount();
+        $this->mount(); // Refresh the component
     }
-
     public function saveCart()
     {
         $userId = Auth::check() ? Auth::id() : null;
