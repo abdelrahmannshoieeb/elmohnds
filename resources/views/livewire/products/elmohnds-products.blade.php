@@ -192,13 +192,22 @@
                                                         <img
                                                             loading="lazy"
                                                             src="{{ url('public/storage/' . $product->image) }}"
-                                                            style="max-width: 150px; max-height: 150px; object-fit: contain;"
                                                             alt="365+ Food container with lid"
                                                             class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" />
                                                     </m-image>
                                             </div>
 
-                                           
+                                            <div class="product-hover-image">
+                                                <m-image class="minimog-lazy-image" style="--lazy-image-width: 450px; --lazy-image-height: 100%; max-width: 450px; max-height: 450px;" data-image-loading>
+                                                    <img
+                                                        loading="lazy"
+                                                        src="{{ url('public/storage/' . $product->image) }}"
+                                                        width="450"
+                                                        height="450"
+                                                        alt="365+ Food container with lid"
+                                                        class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" />
+                                                </m-image>
+                                            </div>
 
                                         </a>
                                     </div>
