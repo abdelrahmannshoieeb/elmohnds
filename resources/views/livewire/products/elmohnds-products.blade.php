@@ -181,7 +181,9 @@
                     data-grid="{&quot;type&quot;:&quot;grid&quot;,&quot;columns&quot;:&quot;4&quot;,&quot;columnsTabletExtra&quot;:&quot;3&quot;,&quot;columnsMobileExtra&quot;:&quot;2&quot;,&quot;gutter&quot;:&quot;30&quot;,&quot;gutterTabletExtra&quot;:&quot;20&quot;,&quot;gutterMobileExtra&quot;:&quot;16&quot;}" style="--grid-columns-desktop: 4;--grid-columns-tablet-extra: 3;--grid-columns-mobile-extra: 2;--grid-gutter-desktop: 30;--grid-gutter-tablet-extra: 20;--grid-gutter-mobile-extra: 16;">
                     <div class="minimog-grid lazy-grid">
                         @foreach ($products as $product )
-                        <div class="grid-item has-hover-thumbnail product type-product post-1484 status-publish first instock product_cat-cookware-tableware has-post-thumbnail shipping-taxable purchasable product-type-variable has-default-attributes vi-sctv-product">
+                        <div
+                        style="max-width: 250px; max-height: 250px;"
+                         class="grid-item has-hover-thumbnail product type-product post-1484 status-publish first instock product_cat-cookware-tableware has-post-thumbnail shipping-taxable purchasable product-type-variable has-default-attributes vi-sctv-product">
                             <div class="product-wrapper">
                                 <div class="product-thumbnail">
                                     <div class="thumbnail">
