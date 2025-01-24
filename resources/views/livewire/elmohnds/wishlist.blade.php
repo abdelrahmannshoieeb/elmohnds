@@ -4,7 +4,7 @@
         <td class="woosw-item--image">
             <a href="../product/{{ $product->slug }}/index.html">
                 <img loading="lazy" decoding="async" width="450" height="450"
-                    src="{{ asset('storage/' . $product->image) }}"
+                    src="{{ url('public/storage/' . $product->image) }}"
                     class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" />
             </a>
         </td>

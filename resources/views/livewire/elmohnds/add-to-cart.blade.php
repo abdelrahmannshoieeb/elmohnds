@@ -10,13 +10,13 @@
                             <div class="swiper-inner">
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
-                                        <div data-src="{{ asset('storage/' . $product->image)}}" data-sub-html="&lt;h4&gt;product_kitchen_18_3&lt;/h4&gt;" data-image-id="1147" class="swiper-slide zoom product-main-image">
-                                            <div class="woocommerce-product-gallery__image"><m-image class="minimog-lazy-image" style="--lazy-image-width: 655px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" src="{{ asset('storage/' . $product->image)}}" width="655" height="655" alt="Dvala Sheet set" class="attachment-655x655 size-655x655 wp-post-image" /></m-image></div>
+                                        <div data-src="{{ url('public/storage/' . $product->image) }}" data-sub-html="&lt;h4&gt;product_kitchen_18_3&lt;/h4&gt;" data-image-id="1147" class="swiper-slide zoom product-main-image">
+                                            <div class="woocommerce-product-gallery__image"><m-image class="minimog-lazy-image" style="--lazy-image-width: 655px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" src="{{ url('public/storage/' . $product->image) }}" width="655" height="655" alt="Dvala Sheet set" class="attachment-655x655 size-655x655 wp-post-image" /></m-image></div>
                                         </div>
                                         @if (!empty($gallery))
                                         @foreach ($gallery as $image)
-                                        <div data-src="{{ asset('storage/' . $image)}}" data-sub-html="&lt;h4&gt;product_kitchen_18_3&lt;/h4&gt;" data-image-id="1147" class="swiper-slide zoom product-main-image">
-                                            <div class="woocommerce-product-gallery__image"><m-image class="minimog-lazy-image" style="--lazy-image-width: 655px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" src="{{ asset('storage/' . $image)}}" width="655" height="655" alt="Dvala Sheet set" class="attachment-655x655 size-655x655 wp-post-image" /></m-image></div>
+                                        <div data-src="{{ url('public/storage/' . $product->image) }}" data-sub-html="&lt;h4&gt;product_kitchen_18_3&lt;/h4&gt;" data-image-id="1147" class="swiper-slide zoom product-main-image">
+                                            <div class="woocommerce-product-gallery__image"><m-image class="minimog-lazy-image" style="--lazy-image-width: 655px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" src="{{ url('public/storage/' . $product->image) }}" width="655" height="655" alt="Dvala Sheet set" class="attachment-655x655 size-655x655 wp-post-image" /></m-image></div>
                                         </div>
                                         @endforeach
                                         @endif
@@ -35,7 +35,7 @@
                                             @if (!empty($gallery))
                                             @foreach ($gallery as $image)
                                             <div class="swiper-slide">
-                                                <div class="swiper-thumbnail-wrap"><m-image class="minimog-lazy-image" style="--lazy-image-width: 150px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" src="{{ asset('storage/' . $image)}}" width="150" height="150" alt="Dvala Sheet set" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail" /></m-image></div>
+                                                <div class="swiper-thumbnail-wrap"><m-image class="minimog-lazy-image" style="--lazy-image-width: 150px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" src="{{ url('public/storage/' . $image) }}" width="150" height="150" alt="Dvala Sheet set" class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail" /></m-image></div>
                                             </div>
                                             @endforeach
                                             @endif

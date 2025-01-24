@@ -43,7 +43,7 @@ class="post-7 page type-page status-publish hentry post-no-thumbnail">
                                                     data-image-loading><img
                                                         loading="lazy"
                                                         decoding="async"
-                                                        src="{{ asset('storage/' . $product_image) }}"
+                                                        src="{{ url('public/storage/' . $product->image) }}"
                                                         width="450"
                                                         height="450"
                                                         alt="Upplyst LED wall lamp"

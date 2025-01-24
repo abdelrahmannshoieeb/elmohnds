@@ -79,7 +79,7 @@
                                                     $product_image = $product->image;
                                                     @endphp
                                                     <div class="product-thumbnail">
-                                                        <m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" decoding="async" src="{{ asset('storage/' . $product_image) }}" width="450" height="450" alt="Upplyst LED wall lamp" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" /></m-image>
+                                                        <m-image class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%;" data-image-loading><img loading="lazy" decoding="async" src="{{ url('public/storage/' . $product->image) }}" width="450" height="450" alt="Upplyst LED wall lamp" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" /></m-image>
                                                     </div>
 
                                                     <div class="product-caption">
