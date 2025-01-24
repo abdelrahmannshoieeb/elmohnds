@@ -196,7 +196,7 @@
                         data-id="0dad5e0" data-element_type="section"
                         data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
                         <div class="elementor-container elementor-column-gap-extended">
-                            <div class="elementor-row">
+                            <div class="elementor-row" style="margin-bottom: 50px;">
                                 <div class="elementor-column__tm-collapsible elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-d43a1e3"
                                     data-id="d43a1e3" data-element_type="column"
                                     data-settings="{&quot;tm_collapsible&quot;:&quot;yes&quot;,&quot;tm_collapsible_title&quot;:&quot;Company&quot;,&quot;tm_collapsible_on&quot;:[&quot;mobile&quot;,&quot;mobile_extra&quot;],&quot;tm_collapsible_title_size&quot;:&quot;h4&quot;}">
