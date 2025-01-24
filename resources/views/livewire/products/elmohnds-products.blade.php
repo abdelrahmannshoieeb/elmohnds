@@ -192,6 +192,7 @@
                                                         <img
                                                             loading="lazy"
                                                             src="{{ url('public/storage/' . $product->image) }}"
+                                                            style="max-width: 150px; max-height: 150px;"
                                                             alt="365+ Food container with lid"
                                                             class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" />
                                                     </m-image>
@@ -204,6 +205,7 @@
                                                         src="{{ url('public/storage/' . $product->image) }}"
                                                         width="450"
                                                         height="450"
+                                                        style="max-width: 150px; max-height: 150px; "
                                                         alt="365+ Food container with lid"
                                                         class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img" />
                                                 </m-image>
