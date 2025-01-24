@@ -162,8 +162,8 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="formFile23" class="form-label">Default file input example</label>
-                        <input class="form-control" type="file" id="formFile13" wire:model="image23">
+                        <label for="formFile13" class="form-label">Default file input example</label>
+                        <input class="form-control" type="file" id="formFile13" wire:model="image13">
                     </div>
                     <div class="mt-3" wire:ignore>
                         <label class="mb-2 block font-bold">Image Preview:</label>
