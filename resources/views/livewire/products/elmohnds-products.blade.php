@@ -182,7 +182,6 @@
                     <div class="minimog-grid lazy-grid">
                         @foreach ($products as $product )
                         <div
-                        style="max-width: 250px; max-height: 250px;"
                          class="grid-item has-hover-thumbnail product type-product post-1484 status-publish first instock product_cat-cookware-tableware has-post-thumbnail shipping-taxable purchasable product-type-variable has-default-attributes vi-sctv-product">
                             <div class="product-wrapper">
                                 <div class="product-thumbnail">
