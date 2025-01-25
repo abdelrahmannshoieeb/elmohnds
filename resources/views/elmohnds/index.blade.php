@@ -34,21 +34,7 @@
                                                                                                     <img decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner11->image) }}" alt="Lazy background" />
                                                                                                 </m-background>
                                                                                             </div>
-                                                                                            <div class="content-wrap">
-                                                                                                <div class="content-wrap__inner">
-                                                                                                    <h3 class="sub-title">{{ $banner11->main_text }}</h3>
-                                                                                                    <div class="title">{{ $banner11->seconderay_text }}</div>
-                                                                                                </div>
-                                                                                                <div class="content-wrap__bottom">
-                                                                                                    <div class="tm-button-wrapper">
-                                                                                                        <div class="tm-button style-flat tm-button-nm">
-                                                                                                            <div class="button-content-wrapper">
-                                                                                                                <span class="button-text">{{ $banner11->button_text }}</span>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
+                                                                                        
                                                                                         </a>
                                                                                     </div>
                                                                                 </div>
@@ -66,14 +52,7 @@
                                                                                                     <img decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner12->image) }}" alt="Lazy background" />
                                                                                                 </m-background>
                                                                                             </div>
-                                                                                            <div class="content-wrap">
-                                                                                                <div class="content-wrap__inner">
-                                                                                                    <h3 class="sub-title">{{ $banner12->main_text }}</h3>
-                                                                                                    <div class="title"> <b>{{ $banner12->seconderay_text }}</b></div>
-                                                                                                </div>
-                                                                                                <div class="content-wrap__bottom">
-                                                                                                </div>
-                                                                                            </div>
+                                                                                        
                                                                                         </a>
                                                                                     </div>
                                                                                 </div>
@@ -85,15 +64,7 @@
                                                                                                     <img decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner13->image) }}" alt="Lazy background" />
                                                                                                 </m-background>
                                                                                             </div>
-                                                                                            <div class="content-wrap">
-                                                                                                <div class="content-wrap__inner">
-                                                                                                    <h3 class="sub-title">{{ $banner13->main_text }}</h3>
-                                                                                                    <div class="title"><b>{{ $banner13->seconderay_text }}</b>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="content-wrap__bottom">
-                                                                                                </div>
-                                                                                            </div>
+                                                                                      
                                                                                         </a>
                                                                                     </div>
                                                                                 </div>
@@ -372,21 +343,7 @@
                                                                             <img decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner21->image) }}" alt="Lazy background" />
                                                                         </m-background>
                                                                     </div>
-                                                                    <div class="content-wrap">
-                                                                        <div class="content-wrap__inner">
-                                                                            <h3 class="sub-title">{{ $banner21->main_text }}</h3>
-                                                                            <h4 class="title">{{ $banner21->seconderay_text }}</h4>
-                                                                        </div>
-                                                                        <div class="content-wrap__bottom">
-                                                                            <div class="tm-button-wrapper">
-                                                                                <div class="tm-button style-flat tm-button-nm">
-                                                                                    <div class="button-content-wrapper">
-                                                                                        <span class="button-text">{{ $banner21->button_text }}</span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                                 
                                                                 </a>
                                                             </div>
                                                         </div>
