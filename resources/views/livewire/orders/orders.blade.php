@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-            <div class="overflow-hidden overflow-x-auto" style="min-height: 400px">
+            <div class="overflow-hidden overflow-x-auto" style="min-height: 600px">
                 <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                     <thead class="bg-gray-50 dark:bg-gray-700">
                         <tr>
@@ -52,11 +52,11 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">{{ $order->id }}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ $order->name }}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ $order->phone }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"style="font-size: larger; max-width: 300px; max-height: 100px; overflow: auto; white-space: normal; display: inline-block;">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200" style="font-size: larger; max-width: 300px; max-height: 100px; overflow: auto; white-space: normal; display: inline-block;">
                                 <ul>
                                     @if ($order->cart && $order->cart->cartitems)
                                     @foreach ($order->cart->cartitems as $product)
-                                    <li  title="{{ $product->product->name }}">
+                                    <li title="{{ $product->product->name }}">
                                         {{ $product->product->name }}
                                     </li>
                                     @endforeach
@@ -73,16 +73,21 @@
                             @if ($order->landmark) <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ $order->landmark }}</td> @endif
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ $order->shipping }}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ $order->subtotal + $order->shipping }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ $order->status }}</td>
-                            <td class="px-6 py-4 text-sm text-gray-900">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+    {{ $statuses[$order->status] ?? 'غير معروف' }}
+</td>                            <td class="px-6 py-4 text-sm text-gray-900">
                                 <div x-data="{ open: false }" class="relative">
+                                    <!-- Button to open status dropdown -->
                                     <button @click="open = !open" class="py-2 px-3 inline-flex bg-primary text-white justify-center items-center text-sm gap-2 rounded-md font-medium shadow-sm align-middle transition-all">
-                                        Change Status <i class="mgc_down_line text-base"></i>
+                                        تغيير الحالة <i class="mgc_down_line text-base"></i>
                                     </button>
+
+                                    <!-- Dropdown menu -->
                                     <div x-show="open" @click.outside="open = false" class="absolute z-50 mt-2 bg-white border shadow-md rounded-lg p-2 dark:bg-slate-800 dark:border-slate-700">
-                                        @foreach ($statuses as $statusOption)
-                                        <a wire:click.prevent="updateStatus({{ $order->id }}, '{{ $statusOption }}')" class="block py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300">
-                                            {{ $statusOption }}
+                                        @foreach ($statuses as $statusEnglish => $statusArabic)
+                                        <a style="cursor: pointer;"
+                                         wire:click.prevent="updateStatus({{ $order->id }}, '{{ $statusArabic }}')" class="block py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300">
+                                            {{ $statusArabic }}
                                         </a>
                                         @endforeach
                                     </div>

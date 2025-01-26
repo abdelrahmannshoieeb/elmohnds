@@ -9,8 +9,16 @@ class Orders extends Component
 {
 
  
-    public $statuses = ['started', 'cancelled', 'pending', 'seen', 'rejected' , 'completed' , 'deliverd' , 'refuse_to_deliver']; 
-    public $SearchId;
+    public $statuses = [
+        'started' => 'تم البدء',
+        'cancelled' => 'تم الإلغاء',
+        'pending' => 'قيد الانتظار',
+        'seen' => 'تمت المشاهدة',
+        'rejected' => 'مرفوض',
+        'completed' => 'مكتمل',
+        'delivered' => 'تم التسليم',
+        'refuse_to_deliver' => 'رفض التسليم',
+    ];    public $SearchId;
     public $orders = [];
 
     public function mount()
@@ -23,16 +31,23 @@ class Orders extends Component
     }
 
 
-    public function updateStatus($orderId, $newStatus)
+    public function updateStatus($contactId, $statusArabic)
     {
-        $order = Order::find($orderId);
-        if ($order) {
-            $order->status = $newStatus;
-            $order->save();
-        }
+        // Convert Arabic status to English
+        $statusEnglish = array_search($statusArabic, $this->statuses);
 
-        // Update the orders list to reflect the change
-        $this->orders = Order::all();
+        $contact = Order::find($contactId);
+
+        if ($contact) {
+            $contact->update([
+                'status' => $statusEnglish, // Store in English
+            ]);
+
+            session()->flash('message', 'تم تحديث الحالة بنجاح.');
+            $this->orders = Order::all(); // Refresh the contacts list
+        } else {
+            session()->flash('error', 'لم يتم العثور على الاتصال.');
+        }
     }
  
     public function delete($orderId)
