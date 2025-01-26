@@ -56,7 +56,7 @@
                                                                                             <div class="minimog-image">
                                                                                                 <m-background style="display: inline-block;"
                                                                                                  data-background-loading class="image" data-src="{{ url('public/storage/' . $banner12->image) }}">
-                                                                                                    <img   style="max-width: 100%; height: 250px;"
+                                                                                                    <img   style="max-width: 100%; height: 240px;"
                                                                                                     decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner12->image) }}" alt="Lazy background" />
                                                                                                 </m-background>
                                                                                             </div>
@@ -70,7 +70,7 @@
                                                                                             <div class="minimog-image">
                                                                                                 <m-background style="display: inline-block;"
                                                                                                 data-background-loading class="image" data-src="{{ url('public/storage/' . $banner13->image) }}">
-                                                                                                    <img  style="max-width: 100%; height: 250px;"
+                                                                                                    <img  style="max-width: 100%; height: 240px;"
                                                                                                     decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner13->image) }}" alt="Lazy background" />
                                                                                                 </m-background>
                                                                                             </div>
