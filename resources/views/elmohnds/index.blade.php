@@ -31,8 +31,13 @@
                                                                                         <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
                                                                                             <div class="minimog-image">
                                                                                                 <m-background data-background-loading class="image" data-src="{{ url('public/storage/' . $banner11->image) }}">
-                                                                                                    <img decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner11->image) }}" alt="Lazy background" />
-                                                                                                </m-background>
+                                                                                                <img 
+    decoding="async" 
+    loading="lazy" 
+    src="{{ url('public/storage/' . $banner11->image) }}" 
+    alt="Lazy background" 
+    style="max-width: 100%; height: auto;"
+/>                                                                                                </m-background>
                                                                                             </div>
                                                                                         
                                                                                         </a>
