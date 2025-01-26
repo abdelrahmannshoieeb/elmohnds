@@ -30,7 +30,8 @@
                                                                                     <div class="elementor-widget-container">
                                                                                         <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
                                                                                             <div class="minimog-image">
-                                                                                                <m-background data-background-loading class="image" data-src="{{ url('public/storage/' . $banner11->image) }}">
+                                                                                                <m-background style="display: inline-block;
+                                                                                                data-background-loading class="image" data-src="{{ url('public/storage/' . $banner11->image) }}">
                                                                                                 <img 
     decoding="async" 
     loading="lazy" 
@@ -53,7 +54,8 @@
                                                                                     <div class="elementor-widget-container">
                                                                                         <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
                                                                                             <div class="minimog-image">
-                                                                                                <m-background data-background-loading class="image" data-src="{{ url('public/storage/' . $banner12->image) }}">
+                                                                                                <m-background style="display: inline-block;
+                                                                                                 data-background-loading class="image" data-src="{{ url('public/storage/' . $banner12->image) }}">
                                                                                                     <img   style="max-width: 100%; height: auto;"
                                                                                                     decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner12->image) }}" alt="Lazy background" />
                                                                                                 </m-background>
@@ -66,8 +68,9 @@
                                                                                     <div class="elementor-widget-container">
                                                                                         <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
                                                                                             <div class="minimog-image">
-                                                                                                <m-background data-background-loading class="image" data-src="{{ url('public/storage/' . $banner13->image) }}">
-                                                                                                    <img  style="max-width: 100%; height: auto;"
+                                                                                                <m-background style="display: inline-block;
+                                                                                                data-background-loading class="image" data-src="{{ url('public/storage/' . $banner13->image) }}">
+                                                                                                    <img 
                                                                                                     decoding="async" loading="lazy" src="{{ url('public/storage/' . $banner13->image) }}" alt="Lazy background" />
                                                                                                 </m-background>
                                                                                             </div>
