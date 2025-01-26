@@ -724,7 +724,7 @@
                                 fill="#000000" />
                         </svg>
                         @if (session()->has('cart') && count(session('cart')) > 0)
-                        <div class="icon-badge mini-cart-badge" data-count="0">{{ $cartcount}}</div>
+                        <div class="icon-badge mini-cart-badge" data-count="0">{{ $countcart}}</div>
                         @else
                         <div class="icon-badge mini-cart-badge" data-count="0">0</div>
                         @endif

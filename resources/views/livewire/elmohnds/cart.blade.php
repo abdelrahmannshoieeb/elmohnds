@@ -30,8 +30,13 @@ class="post-7 page type-page status-publish hentry post-no-thumbnail">
                                     <div class="product-wrap">
                                         <div class="product-thumbnail">
                                             @php
-                                            $product = App\Models\Product::find($item['id']);
-                                            $product_image = $product->image;
+                                            if ($item != null) {
+                                                
+                                                 $product = App\Models\Product::find($item['id']);
+                                                 $product_image = $product->image;
+
+                                            }
+                                                
                                             @endphp
                                             <a
                                                 href="../product/upplyst-led-wall-lamp/index.html"><m-image

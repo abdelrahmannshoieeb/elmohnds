@@ -1,4 +1,4 @@
-<div class="fly-cart-wrap scroll-y" wire:poll.5s>
+<div class="fly-cart-wrap scroll-y">
     <div class="fly-cart-content">
         <div class="fly-cart-header">
 
@@ -20,7 +20,7 @@
                                 <th class="col-product-inf">Product</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody >
 
                             @foreach ($items as $item)
                             <tr
