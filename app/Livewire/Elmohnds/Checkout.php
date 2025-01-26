@@ -73,6 +73,7 @@ class Checkout extends Component
             'phone' => 'required|string|max:15',
             'email' => 'email|max:255',
             'city' => 'required|string|max:255',
+            'government' => 'required',
         ]);
         $cart = session()->get('cart');
         if ( empty($cart)) {

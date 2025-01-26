@@ -38,6 +38,9 @@
                                         </select>
                                     </span>
 
+                                    @error('government')
+                                     اختر محافظة من فضلك
+                                    @enderror
                                     <span class="form-error form-error__invalid-required" style="display: none;">This field is required.</span>
                                 </p>
                                 <p class="form-row form-row-wide col-sm-6 validate-required validate-phone" id="billing_phone_field" data-priority="100"><label for="billing_phone" class="">Phone&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper">
