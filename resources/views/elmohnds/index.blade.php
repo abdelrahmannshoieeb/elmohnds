@@ -29,7 +29,7 @@
                                                                                 <div class="elementor-element elementor-element-71a4457 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner" data-id="71a4457" data-element_type="widget" data-widget_type="tm-banner.default">
                                                                                     <div class="elementor-widget-container">
                                                                                         <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
-                                                                                            <div class="minimog-image">
+                                                                                            <div class="minimog-image" style="display: inline-block;">
                                                                                                 <m-background style="display: inline-block;"
                                                                                                 data-background-loading class="image" data-src="{{ url('public/storage/' . $banner11->image) }}">
                                                                                                 <img 
@@ -53,7 +53,7 @@
                                                                                 <div class="elementor-element elementor-element-26a0826 minimog-animation-zoom-in elementor-widget-tablet__width-initial elementor-widget-mobile_extra__width-inherit sub-title-position-above_title elementor-widget elementor-widget-tm-banner" data-id="26a0826" data-element_type="widget" data-widget_type="tm-banner.default">
                                                                                     <div class="elementor-widget-container">
                                                                                         <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
-                                                                                            <div class="minimog-image">
+                                                                                            <div class="minimog-image" style="display: inline-block;">
                                                                                                 <m-background style="display: inline-block;"
                                                                                                  data-background-loading class="image" data-src="{{ url('public/storage/' . $banner12->image) }}">
                                                                                                     <img   style="max-width: 100%; height: 240px;"
@@ -67,7 +67,7 @@
                                                                                 <div class="elementor-element elementor-element-32fb43e minimog-animation-zoom-in elementor-widget-tablet__width-initial elementor-widget-mobile_extra__width-inherit sub-title-position-above_title elementor-widget elementor-widget-tm-banner" data-id="32fb43e" data-element_type="widget" data-widget_type="tm-banner.default">
                                                                                     <div class="elementor-widget-container">
                                                                                         <a class="minimog-banner minimog-box link-secret" href="shop/index.html">
-                                                                                            <div class="minimog-image">
+                                                                                            <div class="minimog-image" style="display: inline-block;"> 
                                                                                                 <m-background style="display: inline-block;"
                                                                                                 data-background-loading class="image" data-src="{{ url('public/storage/' . $banner13->image) }}">
                                                                                                     <img  style="max-width: 100%; height: 240px;"
